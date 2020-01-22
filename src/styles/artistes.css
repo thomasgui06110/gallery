@@ -1,0 +1,19 @@
+.cadre:hover .texte{
+    opacity:1;
+    transition:800ms;
+    background-color: #e5e5e5;
+
+   
+}
+@media (max-width: 1000px) {
+    .cadre:hover .texte{
+        opacity:1;
+        transition:500ms;
+        transform: translateY(0%);
+    }
+  }
+
+
+.texte {
+    transform: scale(1) rotate(0deg);
+}

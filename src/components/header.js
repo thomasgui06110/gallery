@@ -1,42 +1,47 @@
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
-import React from "react"
+import PropTypes from "prop-types";
+import React from "react";
+import ImageH from "./imageHome";
+import MainMenu from "./MainMenu";
+import styled from "styled-components";
+import Sticky from "react-stickynode";
+
+const HeaderMain = styled.header`
+  top: 0px;
+  {'' /* width:1140px; */}
+  width:100%;
+  padding:1rem 0rem 2rem 0rem;
+  background-color: rgba(245,242,240,0);
+  display: block;
+  justify-content: space-between;
+  position: relative;
+
+
+  z-index: 10;
+`;
+
+const TopLogo = styled.div`
+  width: 200px;
+  height: auto;
+  margin: 0 auto 0 auto;
+`;
 
 const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </header>
-)
+  <HeaderMain>
+    <TopLogo>
+      <ImageH />
+    </TopLogo>
+    <Sticky enabled={true} top={0} bottomBoundary={1200}>
+      <MainMenu />
+    </Sticky>
+  </HeaderMain>
+);
 
 Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
+  siteTitle: PropTypes.string
+};
 
 Header.defaultProps = {
-  siteTitle: ``,
-}
+  siteTitle: ``
+};
 
-export default Header
+export default Header;
