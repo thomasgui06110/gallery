@@ -101,7 +101,7 @@ const Small = styled.small`
   font-style: italic;
   margin: 0 0 2rem 0;
 `;
-const Headline_center = styled.span`
+const HeadlineCenter = styled.span`
   &::after {
     content: " ";
     display: block;
@@ -115,7 +115,7 @@ export default ({ pageContext }) => (
     <Row>
       <Col className="text-center" mt="0" md="12">
         <h1 mb="0">
-          <Headline_center>Le Blog Gallery 122</Headline_center>
+          <HeadlineCenter>Le Blog Gallery 122</HeadlineCenter>
         </h1>
         <p className="font-italic">Suivez notre actu !</p>
       </Col>

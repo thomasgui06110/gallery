@@ -3,7 +3,6 @@ import { graphql, StaticQuery } from "gatsby";
 import { Col } from "react-bootstrap";
 import styled from "styled-components";
 import Img from "gatsby-image";
-import artistes from "../styles/artistes.css";
 
 const StyledFlexBox = styled.div`
   

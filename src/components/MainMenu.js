@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { graphql, StaticQuery, Link } from "gatsby";
-import { Navbar, Button, Nav } from "react-bootstrap";
+import { Navbar, Nav } from "react-bootstrap";
 import menu from "../styles/menu.css";
 
 const GlobalMenu = styled.div`
@@ -19,11 +19,6 @@ const GlobalMenu = styled.div`
   box-shadow: 0px 15px 10px 5px #cfcfcf96;
   &:hover {
   }
-`;
-
-const MainMenuWrapper = styled.div`
-  display: flex;
-  flex-direction:colum;
 `;
 
 const MenuItems = styled(Link)`
@@ -57,18 +52,6 @@ const Contact = styled(Link)`
     
     background-color: #333333;
   }
-`;
-const Font = styled.div`
-font-size:2rem;
-transition:500ms;
-
-&:hover{
-    opacity:0.5
-    cursor:pointer;
-}
-@media (max-width:1000px) {
-  display:none;
-}
 `;
 
 const MainMenu = () => {

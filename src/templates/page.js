@@ -1,6 +1,6 @@
 import React from "react";
 import GLayout from "../components/layout";
-import styled, { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from "styled-components";
 import { Row, Col, Media } from "react-bootstrap";
 import { graphql, StaticQuery } from "gatsby";
 
@@ -13,15 +13,7 @@ h1 {
   text-align:center;
 }
 `;
-const StyledImg = styled.div`
-  transition: opacity 0.3s ease-in-out, transform 0.5s ease-in-out,
-    -webkit-transform 0.5s ease-in-out;
 
-  &:hover {
-    transform: scale(1.3) rotate(5deg);
-    opacity: 0.9;
-  }
-`;
 export default ({ pageContext }) => (
   <StaticQuery
     query={graphql`
