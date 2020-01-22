@@ -17,3 +17,10 @@
 .texte {
     transform: scale(1) rotate(0deg);
 }
+.photo {
+    border-radius: 20px;
+}
+
+.rowExpo {
+    background-color: #fff;
+}

@@ -16,7 +16,7 @@ const GlobalStyles = createGlobalStyle`
 body {
   { /* background-color: rgba(245,242,240,.95); 
   background-color: rgba(255,255,255,.95);*/}
-  background-color: rgba(228, 228, 228, 0.15);
+  background-color: #f8f9fa;
   font-family:"Helvetica Neue",Arial;
   color: #71818c !important;
   }
@@ -46,11 +46,14 @@ figure {
 
 const Section = styled.section`
   margin: 1rem auto 2rem auto;
+ 
 `;
-
+const Wrapper = styled.div`
+background-color: #f8f9fa;
+`
 const GLayout = ({ children }) => {
   return (
-    <div>
+    <Wrapper>
       <GlobalStyles />
 
       <Header />
@@ -58,7 +61,7 @@ const GLayout = ({ children }) => {
         <Section> {children}</Section>
       </Container>
       <Footer />
-    </div>
+    </Wrapper>
   );
 };
 

@@ -22,7 +22,7 @@ export default ({ pageContext }) => (
         <Row>
       <Col className="text-center" mt="0" md="12">
         <h1 mb="0">
-          <HeadlineCenter>Les Artistes</HeadlineCenter>
+          <HeadlineCenter className="display-4">Les Artistes</HeadlineCenter>
         </h1>
       
       </Col>

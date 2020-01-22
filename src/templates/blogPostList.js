@@ -115,7 +115,7 @@ export default ({ pageContext }) => (
     <Row>
       <Col className="text-center" mt="0" md="12">
         <h1 mb="0">
-          <HeadlineCenter>Le Blog Gallery 122</HeadlineCenter>
+          <HeadlineCenter className="display-4">Le Blog Gallery 122</HeadlineCenter>
         </h1>
         <p className="font-italic">Suivez notre actu !</p>
       </Col>
@@ -130,7 +130,7 @@ export default ({ pageContext }) => (
                   <Link to={`/post/${post.node.slug}`}>
                     <img
                       width="100%"
-                      className="mt-3"
+                      className="mt-0"
                       src={post.node.featured_media.source_url}
                       alt={post.node.title}
                     />
