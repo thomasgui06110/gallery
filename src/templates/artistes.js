@@ -12,19 +12,18 @@ const HeadlineCenter = styled.span`
     width: 100px;
 
     margin: 15px auto;
-    
+
     border: 2px solid #4f5153;
   }
 `;
 
 export default ({ pageContext }) => (
   <GLayout>
-        <Row>
+    <Row>
       <Col className="text-center" mt="0" md="12">
         <h1 mb="0">
           <HeadlineCenter className="display-4">Les Artistes</HeadlineCenter>
         </h1>
-      
       </Col>
     </Row>
 

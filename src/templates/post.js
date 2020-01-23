@@ -20,6 +20,7 @@ const Small = styled.small`
 
 const Article = styled.article`
   margin: 3rem auto;
+  font-size:1.3rem;
 `;
 export default ({ pageContext }) => (
   <StaticQuery
@@ -63,7 +64,9 @@ export default ({ pageContext }) => (
         {pageContext.title !== "HomePage" && (
           <h1 dangerouslySetInnerHTML={{ __html: pageContext.title }}></h1>
         )}
+        {pageContext.title !== "HomePage" && (
         <Small>le {moment(pageContext.date).format("DD MMMM YYYY")}</Small>
+        )}
         <GlobalStyles />
         <Article dangerouslySetInnerHTML={{ __html: pageContext.content }} />
       </GLayout>
