@@ -1,5 +1,5 @@
 import React from "react";
-import { graphql, StaticQuery } from "gatsby";
+import { graphql, StaticQuery, Link } from "gatsby";
 import { Col } from "react-bootstrap";
 import styled from "styled-components";
 import Img from "gatsby-image";
@@ -102,6 +102,7 @@ const ArtistsItems = () => {
               node {
                 excerpt
                 id
+                slug
                 content
                 title
                 featured_media {
@@ -127,6 +128,7 @@ const ArtistsItems = () => {
             <StyledFlexBox>
               <StyledFlexBoxArtist className="cadre">
                 <StyledImg className="photo">
+                <Link to={`/artiste/${ArtistsItem.node.slug}`}>
                   <Img
                     fluid={
                       ArtistsItem.node.featured_media.localFile.childImageSharp
@@ -134,6 +136,7 @@ const ArtistsItems = () => {
                     }
                     alt={ArtistsItem.node.title}
                   />
+                    </Link>
                 </StyledImg>
                 <StyledTexte className="texte">
                   <StyledH2>{ArtistsItem.node.title}</StyledH2>

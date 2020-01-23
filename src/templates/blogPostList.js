@@ -137,9 +137,9 @@ export default ({ pageContext }) => (
                   </Link>
                 </StyledImg>
               </Picture>
-              <h2 dangerouslySetInnerHTML={{ __html: post.node.title }} />
-              <Small>le {moment(post.node.date).format("DD MMMM YYYY")}</Small>
-              <p dangerouslySetInnerHTML={{ __html: post.node.excerpt }}></p>
+              <h2 className="pl-2" dangerouslySetInnerHTML={{ __html: post.node.title }} />
+              <Small className="pl-2">le {moment(post.node.date).format("DD MMMM YYYY")}</Small>
+              <p className="pl-2 pr-2 mt-2" dangerouslySetInnerHTML={{ __html: post.node.excerpt }}></p>
               <NextWrap>
                 <Link to={`/post/${post.node.slug}`}>
                   <Next>Lire la suite </Next>

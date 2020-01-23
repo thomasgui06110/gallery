@@ -115,6 +115,7 @@ exports.createPages = ({ graphql, actions }) => {
                   node {
                     excerpt
                     content
+                    slug
                     title
                     featured_media {
                       source_url
@@ -129,13 +130,21 @@ exports.createPages = ({ graphql, actions }) => {
             console.log(result.errors);
             reject(result.errors);
           }
-          const ArtistsTemplate = path.resolve("./src/templates/artistes.js");
+          const ArtistsTemplateList = path.resolve("./src/templates/artistes.js");
           // We want to create a detailed page for each
           // post node. We'll just use the WordPress Slug for the slug.
           // The Post ID is prefixed with 'POST_'
           _.each(result.data.allWordpressWpPortfolio.edges, edge => {
             createPage({
               path: `/artistes`,
+              component: slash(ArtistsTemplateList),
+              context: edge.node
+            });
+          });
+          const ArtistsTemplate = path.resolve("./src/templates/post.js");
+          _.each(result.data.allWordpressWpPortfolio.edges, edge => {
+            createPage({
+              path: `/artiste/${edge.node.slug}`,
               component: slash(ArtistsTemplate),
               context: edge.node
             });
