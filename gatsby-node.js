@@ -123,16 +123,37 @@ exports.createPages = ({ graphql, actions }) => {
                         path
                         source_url
                         alt_text
+                        localFile {
+                          childImageSharp {
+                            fluid(maxWidth: 400) {
+                              src
+                            }
+                          }
+                        }
                       }
                       wordpress_2eme_photo {
                         path
                         source_url
                         alt_text
+                        localFile {
+                          childImageSharp {
+                            fluid(maxWidth: 400) {
+                              src
+                            }
+                          }
+                        }
                       }
                       wordpress_3eme_photo {
                         path
                         source_url
                         alt_text
+                        localFile {
+                          childImageSharp {
+                            fluid(maxWidth: 400) {
+                              src
+                            }
+                          }
+                        }
                       }
                       dates
                     }
