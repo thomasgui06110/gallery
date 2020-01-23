@@ -67,7 +67,7 @@ export default ({ pageContext }) => (
       <Col md="4">
         {pageContext.acf.wordpress_3eme_photo !== null && (
           <img
-            src={pageContext.acf.wordpress_3eme_photo.source_url}
+            src={pageContext.acf.wordpress_3eme_photo.localFile.childImageSharp.fluid.src}
             alt={pageContext.acf.wordpress_3eme_photo.alt_text}
             width="100%"
           />
