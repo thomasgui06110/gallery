@@ -179,18 +179,3 @@ export default ({ pageContext, data }) => (
   </Layout>
 );
 
-export const query = graphql`
-  query($slug: String!) {
-    wordpressPost(slug: { eq: $slug }) {
-      content
-      title
-      featured_media {
-        source_url
-      }
-      categories {
-        name
-      }
-      excerpt
-    }
-  }
-`;
