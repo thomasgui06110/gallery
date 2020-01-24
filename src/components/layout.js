@@ -8,6 +8,7 @@
 import React from "react";
 import Header from "./header";
 import Footer from "./Footer";
+import { Helmet } from "react-helmet";
 
 import styled, { createGlobalStyle } from "styled-components";
 import { Container } from "react-bootstrap";
@@ -46,16 +47,20 @@ figure {
 
 const Section = styled.section`
   margin: 1rem auto 2rem auto;
- 
 `;
 const Wrapper = styled.div`
-background-color: #f8f9fa;
-`
+  background-color: #f8f9fa;
+`;
 const GLayout = ({ children }) => {
   return (
     <Wrapper>
       <GlobalStyles />
-
+      <Helmet>
+        <title>Gallerie 122 - Cannes</title>
+        <meta name="description" content="Gallerie 122, artiste moderne, exposition..."/>
+        <meta name="keywords" content="gallerie, tableaux, peintre" />
+        <meta name="robot" content="index,follow" />
+      </Helmet>
       <Header />
       <Container>
         <Section> {children}</Section>

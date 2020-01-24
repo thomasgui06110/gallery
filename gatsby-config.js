@@ -1,31 +1,30 @@
 require("dotenv").config({
-  path: '.env'
-})
+  path: ".env"
+});
 
 module.exports = {
   siteMetadata: {
     title: `Gallery 122`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@Gallery122`,
+    author: `@Gallery122`
   },
   plugins: [
     `gatsby-plugin-transition-link`,
     `gatsby-plugin-react-helmet`,
-    
+
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/src/images`,
-      },
+        path: `${__dirname}/src/images`
+      }
     },
     {
       resolve: `gatsby-wordpress-inline-images`,
-      options:
-      {
+      options: {
         baseUrl: `gallery.planethoster.world/gallery`,
         protocol: `https`,
-        maxWidth: 1050,
+        maxWidth: 1050
       }
     },
     `gatsby-transformer-sharp`,
@@ -39,8 +38,8 @@ module.exports = {
         background_color: `#fff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
-      },
+        icon: `src/images/gatsby-icon.png` // This path is relative to the root of the site.
+      }
     },
     {
       resolve: "gatsby-source-wordpress",
@@ -61,7 +60,7 @@ module.exports = {
         // This feature is untested for sites hosted on wordpress.com.
         // Defaults to true.
         useACF: true,
-        
+
         // Include specific ACF Option Pages that have a set post ID
         // Regardless if an ID is set, the default options route will still be retrieved
         // Must be using V3 of ACF to REST to include these routes
@@ -94,7 +93,7 @@ module.exports = {
           // plugin, you can specify user and password to obtain access token and use authenticated requests against WordPress REST API.
           jwt_user: process.env.JWT_USER,
           jwt_pass: process.env.JWT_PASSWORD,
-          jwt_base_path: "/jwt-auth/v1/token", // Default - can skip if you are using https://wordpress.org/plugins/jwt-authentication-for-wp-rest-api/
+          jwt_base_path: "/jwt-auth/v1/token" // Default - can skip if you are using https://wordpress.org/plugins/jwt-authentication-for-wp-rest-api/
         },
         // Set cookies that should be send with requests to WordPress as key value pairs
         cookies: {},
@@ -106,7 +105,7 @@ module.exports = {
         // Search and Replace Urls across WordPress content.
         searchAndReplaceContentUrls: {
           sourceUrl: "https://source-url.com",
-          replacementUrl: "https://replacement-url.com",
+          replacementUrl: "https://replacement-url.com"
         },
         // Set how many simultaneous requests are sent at once.
         concurrentRequests: 10,
@@ -141,14 +140,13 @@ module.exports = {
         keepMediaSizes: false,
         // use a custom normalizer which is applied after the built-in ones.
         normalizer: function({ entities }) {
-          return entities
-        },
-      },
+          return entities;
+        }
+      }
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
-    'gatsby-plugin-netlify'
-  ],
-
-}
+    "gatsby-plugin-netlify"
+  ]
+};
