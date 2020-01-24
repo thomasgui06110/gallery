@@ -1,9 +1,8 @@
 import React from "react";
 import { graphql, StaticQuery } from "gatsby";
-import styled from "styled-components";
 import Img from "gatsby-image";
-import { Nav, Col } from "react-bootstrap";
-
+import { Col } from "react-bootstrap";
+import SEO from "../components/SEO";
 
 const PageItems = (props) => {
   return (
@@ -52,6 +51,7 @@ const PageItems = (props) => {
       render={props =>
         props.allWordpressPage.edges.map(PageItem => (
           <div>
+           <SEO title= "fgsfg" />
             <Col md="3" key={PageItem.node.id}>
              {props.page} -
               {PageItem.node.acf.expositions !== null && (

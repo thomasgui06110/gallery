@@ -3,6 +3,7 @@ import GLayout from "../components/layout";
 import styled, { createGlobalStyle } from "styled-components";
 import { graphql, StaticQuery } from "gatsby";
 import moment from "moment";
+import SEO from "../components/SEO";
 
 const GlobalStyles = createGlobalStyle`
 figure {
@@ -20,7 +21,7 @@ const Small = styled.small`
 
 const Article = styled.article`
   margin: 3rem auto;
-  font-size:1.3rem;
+  font-size: 1.3rem;
 `;
 export default ({ pageContext }) => (
   <StaticQuery
@@ -31,6 +32,7 @@ export default ({ pageContext }) => (
             node {
               id
               slug
+              excerpt
               title
               content
               acf {
@@ -59,17 +61,26 @@ export default ({ pageContext }) => (
         }
       }
     `}
-    render={data => (
-      <GLayout>
-        {pageContext.title !== "HomePage" && (
-          <h1 dangerouslySetInnerHTML={{ __html: pageContext.title }}></h1>
-        )}
-        {pageContext.title !== "HomePage" && (
-        <Small>le {moment(pageContext.date).format("DD MMMM YYYY")}</Small>
-        )}
-        <GlobalStyles />
-        <Article dangerouslySetInnerHTML={{ __html: pageContext.content }} />
-      </GLayout>
-    )}
+    render={data => {
+      return (
+        <div>
+          <GLayout>
+            <SEO title={pageContext.title} description={pageContext.excerpt}/>
+            {pageContext.title !== "HomePage" && (
+              <h1 dangerouslySetInnerHTML={{ __html: pageContext.title }}></h1>
+            )}
+            {pageContext.title !== "HomePage" && (
+              <Small>
+                le {moment(pageContext.date).format("DD MMMM YYYY")}
+              </Small>
+            )}
+            <GlobalStyles />
+            <Article
+              dangerouslySetInnerHTML={{ __html: pageContext.content }}
+            />
+          </GLayout>
+        </div>
+      );
+    }}
   />
 );

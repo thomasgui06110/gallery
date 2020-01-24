@@ -3,7 +3,7 @@ import { graphql, StaticQuery } from "gatsby";
 import { Col, Row } from "react-bootstrap";
 import styled from "styled-components";
 import Img from "gatsby-image";
-
+import SEO from "../components/SEO";
 const StyledFlexBox = styled.div`
   
   {'' /* border: 12px solid #fff;
@@ -51,7 +51,6 @@ const StyledTexte = styled.div`
   @media (max-width: 1000px) {
     opacity: 1;
     transition: 800ms;
-   
   }
 `;
 
@@ -97,40 +96,45 @@ const OuevresItems = () => {
       `}
       render={props =>
         props.allWordpressWpPortfolio2.edges.map(ArtistsItem => (
-          <Row
-            className="mt-3 mb-5 mr-1 ml-1 pb-4 pt-4 rowExpo"
-            key={ArtistsItem.node.id}
-          >
-            <Col md="6">
-              <StyledFlexBox>
-                <StyledFlexBoxArtist className="cadre">
-                  <StyledImg className="mt-0">
-                    <Img
-                      className="mt-0"
-                      fluid={
-                        ArtistsItem.node.featured_media.localFile
-                          .childImageSharp.fluid
-                      }
-                      alt={ArtistsItem.node.title}
-                    />
-                  </StyledImg>
-                </StyledFlexBoxArtist>
-              </StyledFlexBox>
-            </Col>
+          <>
+            <SEO title="Nos expositions | Gallerie 122" />
+            <Row
+              className="mt-3 mb-5 mr-1 ml-1 pb-4 pt-4 rowExpo"
+              key={ArtistsItem.node.id}
+            >
+              <Col md="6">
+                <StyledFlexBox>
+                  <StyledFlexBoxArtist className="cadre">
+                    <StyledImg className="mt-0">
+                      <Img
+                        className="mt-0"
+                        fluid={
+                          ArtistsItem.node.featured_media.localFile
+                            .childImageSharp.fluid
+                        }
+                        alt={ArtistsItem.node.title}
+                      />
+                    </StyledImg>
+                  </StyledFlexBoxArtist>
+                </StyledFlexBox>
+              </Col>
 
-            <Col md="6">
-              <StyledTexte>
-                <h2
-                  className="mt-0 display-4 text-center bold"
-                  dangerouslySetInnerHTML={{ __html: ArtistsItem.node.title }}
-                />
-                <p
-                  className="mt-3"
-                  dangerouslySetInnerHTML={{ __html: ArtistsItem.node.content }}
-                ></p>
-              </StyledTexte>
-            </Col>
-          </Row>
+              <Col md="6">
+                <StyledTexte>
+                  <h2
+                    className="mt-0 display-4 text-center bold"
+                    dangerouslySetInnerHTML={{ __html: ArtistsItem.node.title }}
+                  />
+                  <p
+                    className="mt-3"
+                    dangerouslySetInnerHTML={{
+                      __html: ArtistsItem.node.content
+                    }}
+                  ></p>
+                </StyledTexte>
+              </Col>
+            </Row>
+          </>
         ))
       }
     />

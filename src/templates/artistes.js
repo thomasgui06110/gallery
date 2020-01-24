@@ -4,7 +4,7 @@ import styled from "styled-components";
 import ArtistsItems from "../components/ArtistsItems";
 import { Row, Col } from "react-bootstrap";
 import artistes from "../styles/artistes.css";
-
+import SEO from "../components/SEO";
 const HeadlineCenter = styled.span`
   &::after {
     content: " ";
@@ -19,6 +19,7 @@ const HeadlineCenter = styled.span`
 
 export default ({ pageContext }) => (
   <GLayout>
+    <SEO title="Artistes exposés" />
     <Row>
       <Col className="text-center" mt="0" md="12">
         <h1 mb="0">

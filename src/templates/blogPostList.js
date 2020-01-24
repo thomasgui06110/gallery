@@ -4,6 +4,8 @@ import { Link } from "gatsby";
 import styled from "styled-components";
 import moment from "moment";
 import { Row, Col } from "react-bootstrap";
+import { graphql } from "gatsby";
+
 
 const Pagination = styled.div`
   display: flex;
@@ -110,12 +112,15 @@ const HeadlineCenter = styled.span`
     border: 2px solid #4f5153;
   }
 `;
-export default ({ pageContext }) => (
+export default ({ pageContext, data }) => (
+  
   <Layout>
     <Row>
       <Col className="text-center" mt="0" md="12">
         <h1 mb="0">
-          <HeadlineCenter className="display-4">Le Blog Gallery 122</HeadlineCenter>
+          <HeadlineCenter className="display-4">
+            Le Blog Gallery 122
+          </HeadlineCenter>
         </h1>
         <p className="font-italic">Suivez notre actu !</p>
       </Col>
@@ -123,6 +128,7 @@ export default ({ pageContext }) => (
     <Wrap>
       {pageContext.posts.map(post => (
         <Col md="6" key={post.node.wordpress_id}>
+         
           <StyledFlexBox>
             <StyledFlexBoxArtist className="cadre">
               <Picture>
@@ -137,9 +143,17 @@ export default ({ pageContext }) => (
                   </Link>
                 </StyledImg>
               </Picture>
-              <h2 className="pl-2" dangerouslySetInnerHTML={{ __html: post.node.title }} />
-              <Small className="pl-2">le {moment(post.node.date).format("DD MMMM YYYY")}</Small>
-              <p className="pl-2 pr-2 mt-2" dangerouslySetInnerHTML={{ __html: post.node.excerpt }}></p>
+              <h2
+                className="pl-2"
+                dangerouslySetInnerHTML={{ __html: post.node.title }}
+              />
+              <Small className="pl-2">
+                le {moment(post.node.date).format("DD MMMM YYYY")}
+              </Small>
+              <p
+                className="pl-2 pr-2 mt-2"
+                dangerouslySetInnerHTML={{ __html: post.node.excerpt }}
+              ></p>
               <NextWrap>
                 <Link to={`/post/${post.node.slug}`}>
                   <Next>Lire la suite </Next>
@@ -164,3 +178,19 @@ export default ({ pageContext }) => (
     </Pagination>
   </Layout>
 );
+
+export const query = graphql`
+  query($slug: String!) {
+    wordpressPost(slug: { eq: $slug }) {
+      content
+      title
+      featured_media {
+        source_url
+      }
+      categories {
+        name
+      }
+      excerpt
+    }
+  }
+`;

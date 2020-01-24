@@ -3,8 +3,7 @@ import GLayout from "../components/layout";
 import styled from "styled-components";
 import OuevresItems from "../components/oeuvresItems";
 import { Row, Col } from "react-bootstrap";
-
-
+import SEO from "../components/SEO";
 const HeadlineCenter = styled.span`
   &::after {
     content: " ";
@@ -14,7 +13,13 @@ const HeadlineCenter = styled.span`
     border: 2px solid #4f5153;
   }
 `;
-export default ({ pageContext }) => (
+export default ({ data }) => (
+  <>
+  <SEO title="hhh" 
+  description="ff"
+  keywords="fr"
+  image="ffef"
+/>
   <GLayout>
     <Row>
       <Col className="text-center" mt="0" md="12">
@@ -23,8 +28,8 @@ export default ({ pageContext }) => (
         </h1>
       </Col>
     </Row>
-   
-      <OuevresItems />
-   
+
+    <OuevresItems />
   </GLayout>
+  </>
 );

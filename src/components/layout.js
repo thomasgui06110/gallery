@@ -8,10 +8,10 @@
 import React from "react";
 import Header from "./header";
 import Footer from "./Footer";
-import { Helmet } from "react-helmet";
-
+import SEO from "./SEO";
 import styled, { createGlobalStyle } from "styled-components";
 import { Container } from "react-bootstrap";
+
 
 const GlobalStyles = createGlobalStyle`
 body {
@@ -51,16 +51,12 @@ const Section = styled.section`
 const Wrapper = styled.div`
   background-color: #f8f9fa;
 `;
-const GLayout = ({ children }) => {
+const GLayout = ({ children, title, description }) => {
+  
   return (
     <Wrapper>
       <GlobalStyles />
-      <Helmet>
-        <title>Gallerie 122 - Cannes</title>
-        <meta name="description" content="Gallerie 122, artiste moderne, exposition..."/>
-        <meta name="keywords" content="gallerie, tableaux, peintre" />
-        <meta name="robot" content="index,follow" />
-      </Helmet>
+      <SEO title={title} description={description}/>
       <Header />
       <Container>
         <Section> {children}</Section>
@@ -71,3 +67,4 @@ const GLayout = ({ children }) => {
 };
 
 export default GLayout;
+

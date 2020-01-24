@@ -3,7 +3,7 @@ import { graphql, StaticQuery, Link } from "gatsby";
 import { Col } from "react-bootstrap";
 import styled from "styled-components";
 import Img from "gatsby-image";
-
+import SEO from "../components/SEO";
 const StyledFlexBox = styled.div`
   
   border: 12px solid #fff;
@@ -124,6 +124,8 @@ const ArtistsItems = () => {
       `}
       render={props =>
         props.allWordpressWpPortfolio.edges.map(ArtistsItem => (
+          <>
+          <SEO title= "Artistes exposés" />
           <Col md="3" key={ArtistsItem.node.id}>
             <StyledFlexBox>
               <StyledFlexBoxArtist className="cadre">
@@ -143,7 +145,7 @@ const ArtistsItems = () => {
                 </StyledTexte>
               </StyledFlexBoxArtist>
             </StyledFlexBox>
-          </Col>
+          </Col></>
         ))
       }
     />

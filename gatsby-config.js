@@ -4,9 +4,12 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: `Gallery 122`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@Gallery122`
+    title: `Galerie d’art contemporain à Cannes - Galerie 122`,
+    description: `Galerie d’art à Paris et à Cannes, la galerie Vieceli expose artistes, peintres, sculpteurs et oeuvres d’art contemporain, moderne et abstrait`,
+    author: `@Gallery122`,
+    keywords: `gallerie, art contemporain, sculpteurs`,
+    image: '/static/gatsby.jpg',
+    url: 'https://www.gatsbyjs.org'
   },
   plugins: [
     `gatsby-plugin-transition-link`,
