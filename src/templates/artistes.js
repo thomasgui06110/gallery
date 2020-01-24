@@ -4,7 +4,7 @@ import styled from "styled-components";
 import ArtistsItems from "../components/ArtistsItems";
 import { Row, Col } from "react-bootstrap";
 import artistes from "../styles/artistes.css";
-import SEO from "../components/SEO";
+import SEO from "../components/Seo";
 const HeadlineCenter = styled.span`
   &::after {
     content: " ";

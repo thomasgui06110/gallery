@@ -3,7 +3,7 @@ import GLayout from "../components/layout";
 import styled, { createGlobalStyle } from "styled-components";
 import { graphql, StaticQuery } from "gatsby";
 import moment from "moment";
-import SEO from "../components/SEO";
+import SEO from "../components/Seo";
 
 const GlobalStyles = createGlobalStyle`
 figure {

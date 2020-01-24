@@ -3,7 +3,7 @@ import { graphql, StaticQuery } from "gatsby";
 import { Col, Row } from "react-bootstrap";
 import styled from "styled-components";
 import Img from "gatsby-image";
-import SEO from "../components/SEO";
+import SEO from "../components/Seo";
 const StyledFlexBox = styled.div`
   
   {'' /* border: 12px solid #fff;
