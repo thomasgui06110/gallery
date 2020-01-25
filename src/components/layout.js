@@ -54,7 +54,7 @@ const Section = styled.section`
   margin: 1rem auto 2rem auto;
 `;
 const Wrapper = styled.div`
-  background-color: rgba(210, 210, 210, 0.7);
+  background-color: rgba(210, 210, 210, 0.5);
 `;
 const GLayout = ({ children, title, description }) => {
   return (

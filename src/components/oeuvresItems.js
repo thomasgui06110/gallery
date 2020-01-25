@@ -128,7 +128,7 @@ const OuevresItems = () => {
               <Col md="6">
                 <StyledTexte>
                   <h2
-                    className="mt-0 display-4 text-center bold"
+                    className="mt-0 display-5 text-center bold"
                     dangerouslySetInnerHTML={{ __html: ArtistsItem.node.title }}
                   />
                   <Article>

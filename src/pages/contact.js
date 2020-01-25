@@ -1,7 +1,6 @@
 import React from "react";
 import { Col, Row, Form, InputGroup, Button } from "react-bootstrap";
 import styled from "styled-components";
-import Img from "gatsby-image";
 import SEO from "../components/SEO";
 import GLayout from "../components/layout";
 
