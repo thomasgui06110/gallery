@@ -31,6 +31,7 @@ const Contact = () => {
           <Col className="col-8">
             <h3>Envoyez-nous un message</h3>
             <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+            <input type="hidden" name="form-name" value="Contact Form" />
               <Form>
                 <Form.Group controlId="formBasicEmail">
                   <Form.Label>Your Name / Votre Nom</Form.Label>
