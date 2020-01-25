@@ -9,20 +9,26 @@ const HeadlineCenter = styled.span`
     content: " ";
     display: block;
     width: 100px;
-
     margin: 15px auto;
-
     border: 2px solid #4f5153;
   }
 `;
 const Article = styled.article`
   margin: 3rem auto;
   font-size: 1.3rem;
+  @media (max-width: 1000px) {
+    font-size: 1rem;
+  }
+`;
+const Wrap = styled.div`
+  background-color: #fff;
+  padding: 1rem 2rem;
+  border-radius: 10px;
 `;
 
 export default ({ pageContext }) => (
-  <div>
-    <GLayout>
+  <GLayout>
+    <Wrap>
       <SEO title={pageContext.title} description={pageContext.title} />
       <Row>
         <Col className="text-center" mt="0" md="12">
@@ -80,6 +86,6 @@ export default ({ pageContext }) => (
           )}
         </Col>
       </Row>
-    </GLayout>
-  </div>
+    </Wrap>
+  </GLayout>
 );

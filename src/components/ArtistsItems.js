@@ -4,9 +4,9 @@ import { Col } from "react-bootstrap";
 import styled from "styled-components";
 import Img from "gatsby-image";
 import SEO from "./SEO";
+
 const StyledFlexBox = styled.div`
-  
-  border: 12px solid #fff;
+  border: 5px solid #fff;
   border-radius: 5px;
   box-shadow: 1rem 1rem 30px -5px rgba(0, 0, 0, 0.3);
   transition: box-shadow 0.9s;
@@ -19,7 +19,6 @@ const StyledFlexBox = styled.div`
     transition: opacity 0.3s ease-in-out, transform 0.6s ease-in-out,
       -webkit-transform 0.6s ease-in-out;
     }
-  
 `;
 
 const StyledFlexBoxArtist = styled.div`

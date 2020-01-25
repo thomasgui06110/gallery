@@ -8,7 +8,7 @@ module.exports = {
     description: `Galerie d’art à Paris et à Cannes, la galerie Vieceli expose artistes, peintres, sculpteurs et oeuvres d’art contemporain, moderne et abstrait`,
     author: `@Gallery122`,
     keywords: `gallerie, art contemporain, sculpteurs`,
-    image: '/static/gatsby.jpg',
+    image: '/static/gallerie_icon.png',
     url: 'https://www.gatsbyjs.org'
   },
   plugins: [
@@ -38,10 +38,10 @@ module.exports = {
         name: `gatsby-starter-default`,
         short_name: `starter`,
         start_url: `/`,
-        background_color: `#fff`,
+        background_color: `#f0f0f0`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png` // This path is relative to the root of the site.
+        icon: `src/images/gallerie_icon_122.png` // This path is relative to the root of the site.
       }
     },
     {

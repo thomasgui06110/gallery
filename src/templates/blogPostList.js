@@ -4,7 +4,6 @@ import { Link } from "gatsby";
 import styled from "styled-components";
 import moment from "moment";
 import { Row, Col } from "react-bootstrap";
-import { graphql } from "gatsby";
 
 
 const Pagination = styled.div`
@@ -27,6 +26,8 @@ const Wrap = styled.div`
   color: #71818c !important;
   @media (max-width: 1000px) {
     column-count: 1;
+    padding-left:0;
+    margin-left: -15px;
   }
 `;
 
@@ -137,7 +138,7 @@ export default ({ pageContext, data }) => (
                     <img
                       width="100%"
                       className="mt-0"
-                      src={post.node.featured_media.source_url}
+                      src={post.node.featured_media.localFile.childImageSharp.fluid.src}
                       alt={post.node.title}
                     />
                   </Link>

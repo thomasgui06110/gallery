@@ -53,7 +53,13 @@ const StyledTexte = styled.div`
     transition: 800ms;
   }
 `;
-
+const Article = styled.article`
+  margin: 3rem auto;
+  font-size: 1.3rem;
+  @media (max-width: 1000px) {
+    font-size: 1rem;
+  }
+`;
 const StyledImg = styled.div`
   border-radius: 20px;
   transition: opacity 0.3s ease-in-out, transform 0.5s ease-in-out,
@@ -125,12 +131,14 @@ const OuevresItems = () => {
                     className="mt-0 display-4 text-center bold"
                     dangerouslySetInnerHTML={{ __html: ArtistsItem.node.title }}
                   />
-                  <p
-                    className="mt-3"
-                    dangerouslySetInnerHTML={{
-                      __html: ArtistsItem.node.content
-                    }}
-                  ></p>
+                  <Article>
+                    <p
+                      className="mt-3"
+                      dangerouslySetInnerHTML={{
+                        __html: ArtistsItem.node.content
+                      }}
+                    ></p>
+                  </Article>
                 </StyledTexte>
               </Col>
             </Row>
