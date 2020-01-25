@@ -36,11 +36,7 @@ const Contact = () => {
               data-netlify="true"
             >
               <input type="hidden" name="bot-field" />
-              <p>
-                <label>
-                  Your Name: <input type="text" name="name" />
-                </label>
-              </p>
+
               <Form.Group controlId="formBasicEmail">
                 <Form.Label>Your Name / Votre Nom</Form.Label>
                 <Form.Control
