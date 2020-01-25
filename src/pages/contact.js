@@ -38,61 +38,12 @@ const Contact = () => {
               <input type="hidden" name="bot-field" />
               <p>
                 <label>
-                  Your Name: <input type="text" name="name2" />
+                  Your Name: <input type="text" name="name" />
                 </label>
               </p>
-              <Form>
-                <Form.Group controlId="formBasicEmail">
-                  <Form.Label>Your Name / Votre Nom</Form.Label>
-                  <Form.Control
-                    type="text"
-                    name="name"
-                    placeholder="Name"
-                    id="name"
-                  />
-                </Form.Group>
-                <Form.Group controlId="formBasicEmail">
-                  <Form.Label>Your email / Votre email</Form.Label>
-                  <InputGroup>
-                    <InputGroup.Prepend>
-                      <InputGroup.Text id="inputGroupPrepend">
-                        @
-                      </InputGroup.Text>
-                    </InputGroup.Prepend>
-                    <Form.Control
-                      type="email"
-                      name="email"
-                      aria-describedby="inputGroupPrepend"
-                      placeholder="Mail"
-                      id="email"
-                    />
-                  </InputGroup>
-                </Form.Group>
-                <Form.Group controlId="formBasicEmail">
-                  <Form.Label>Subject / Sujet</Form.Label>
-                  <Form.Control
-                    type="text"
-                    name="subject"
-                    placeholder="Subject"
-                    id="subject"
-                  />
-                </Form.Group>
-
-                <Form.Group controlId="formBasicEmail">
-                  <Form.Label>Message</Form.Label>
-                  <Form.Control
-                    as="textarea"
-                    name="message"
-                    rows="4"
-                    placeholder="Your Message"
-                    id="message"
-                  />
-                </Form.Group>
-
-                <Button variant="primary" type="submit">
-                  Send / Envoyer
-                </Button>
-              </Form>
+              <p>
+                <button type="submit">Send</button>
+              </p>
             </form>
           </Col>
           <Col className="col-4">Téléphone</Col>
