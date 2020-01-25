@@ -31,13 +31,11 @@ const Contact = () => {
           <Col className="col-8">
             <h3>Envoyez-nous un message</h3>
             <form
-              name="contact"
-              method="POST"
+              method="post"
+              netlify-honeypot="bot-field"
               data-netlify="true"
-              netlify
-              data-netlify-honeypot="bot-field"
             >
-              <input type="hidden" name="form-name" value="Contact Form" />
+              <input type="hidden" name="bot-field" />
               <p>
                 <label>
                   Your Name: <input type="text" name="name2" />
