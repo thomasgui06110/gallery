@@ -32,6 +32,9 @@ const Contact = () => {
             <h3>Envoyez-nous un message</h3>
             <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
             <input type="hidden" name="form-name" value="Contact Form" />
+            <p>
+    <label>Your Name: <input type="text" name="name2" /></label>   
+  </p>
               <Form>
                 <Form.Group controlId="formBasicEmail">
                   <Form.Label>Your Name / Votre Nom</Form.Label>
