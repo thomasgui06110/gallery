@@ -41,8 +41,17 @@ const Contact = () => {
                   Your Name: <input type="text" name="name" />
                 </label>
               </p>
+              <Form.Group controlId="formBasicEmail">
+                <Form.Label>Your Name / Votre Nom</Form.Label>
+                <Form.Control
+                  type="text"
+                  name="name"
+                  placeholder="Name"
+                  id="name"
+                />
+              </Form.Group>
               <p>
-              <Button variant="primary" type="submit">
+                <Button variant="primary" type="submit">
                   Send / Envoyer
                 </Button>
               </p>
