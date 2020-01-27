@@ -74,81 +74,37 @@ const Contact = () => {
             <LeftCol>
               <h3 className="mb-4">Envoyez-nous un message !</h3>
               <form
-                name="FormContact"
+                name="contact"
                 method="post"
-                netlify-honeypot="bot-field"
                 data-netlify="true"
+                data-netlify-honeypot="bot-field"
               >
                 <input type="hidden" name="bot-field" />
-
-                <Form.Group>
-                  <InputGroup>
-                    <InputGroup.Prepend>
-                      <InputGroup.Text id="inputGroupPrepend">
-                        <FaUserCircle />
-                      </InputGroup.Text>
-                    </InputGroup.Prepend>
-                    <Form.Control
-                      type="text"
-                      name="name2"
-                      placeholder="Your Name / Votre Nom"
-                      id="name2"
+                <input type="hidden" name="form-name" value="contact" />
+                <div className="field half first">
+                  <label htmlFor="name">Name</label>
+                  <input type="text" name="name" id="name" />
+                </div>
+                <div className="field half">
+                  <label htmlFor="email">Email</label>
+                  <input type="text" name="email" id="email" />
+                </div>
+                <div className="field">
+                  <label htmlFor="message">Message</label>
+                  <textarea name="message" id="message" rows="6" />
+                </div>
+                <ul className="actions">
+                  <li>
+                    <input
+                      type="submit"
+                      value="Send Message"
+                      className="special"
                     />
-                  </InputGroup>
-                </Form.Group>
-                <Form.Group>
-                  <InputGroup>
-                    <InputGroup.Prepend>
-                      <InputGroup.Text id="inputGroupPrepend">
-                        @
-                      </InputGroup.Text>
-                    </InputGroup.Prepend>
-                    <Form.Control
-                      type="email"
-                      name="email"
-                      aria-describedby="inputGroupPrepend"
-                      placeholder="Mail"
-                      id="email"
-                    />
-                  </InputGroup>
-                </Form.Group>
-                <Form.Group >
-                  <InputGroup>
-                    <InputGroup.Prepend>
-                      <InputGroup.Text id="inputGroupPrepend">
-                        <MdPhoneIphone />
-                      </InputGroup.Text>
-                    </InputGroup.Prepend>
-                    <Form.Control
-                      type="text"
-                      name="Phone"
-                      aria-describedby="inputGroupPrepend"
-                      placeholder="Your Phone / Votre Telephone"
-                      id="Phone"
-                    />
-                  </InputGroup>
-                </Form.Group>
-                <Form.Group>
-                  <InputGroup>
-                    <InputGroup.Prepend>
-                      <InputGroup.Text id="inputGroupPrepend">
-                        <FaEnvelopeOpenText />
-                      </InputGroup.Text>
-                    </InputGroup.Prepend>
-                    <Form.Control
-                      as="textarea"
-                      name="message"
-                      rows="4"
-                      placeholder="Your Message / Votre message"
-                      id="message"
-                    />
-                  </InputGroup>
-                </Form.Group>
-                <p>
-                  <Button variant="primary" type="submit">
-                    Send / Envoyer
-                  </Button>
-                </p>
+                  </li>
+                  <li>
+                    <input type="reset" value="Clear" />
+                  </li>
+                </ul>
               </form>
             </LeftCol>
           </Col>
@@ -157,7 +113,7 @@ const Contact = () => {
               <h3>Phone /Téléphone</h3>
               <p>+33 4 93 93 93 93</p>
               <h3>Adress / Adresse</h3>
-             Gallerie122
+              Gallerie122
               <br />
               122 Rue d'Antibes
               <br />
@@ -175,15 +131,12 @@ const Contact = () => {
         </Row>
         <Row className="mt-3">
           <Col>
-         
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2891.6199390697197!2d7.024202915720587!3d43.55196376698875!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12ce8195c5ea6603%3A0x9caff7af986269d7!2s122%20Rue%20d&#39;Antibes%2C%2006400%20Cannes!5e0!3m2!1sfr!2sfr!4v1580144183896!5m2!1sfr!2sfr"
-                width="100%"
-                height="500px"
-                allowFullScreen=""
-               
-              ></iframe>
-            
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2891.6199390697197!2d7.024202915720587!3d43.55196376698875!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12ce8195c5ea6603%3A0x9caff7af986269d7!2s122%20Rue%20d&#39;Antibes%2C%2006400%20Cannes!5e0!3m2!1sfr!2sfr!4v1580144183896!5m2!1sfr!2sfr"
+              width="100%"
+              height="500px"
+              allowFullScreen=""
+            ></iframe>
           </Col>
         </Row>
       </GLayout>
