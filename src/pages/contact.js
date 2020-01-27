@@ -53,25 +53,7 @@ const RCol = styled.div`
     border-top-right-radius: 0px;
     border-top-left-radius: 0px;
     margin-left: 1rem;
-
-    color: #fff;
-  }
-`;
-
-const MapCol = styled.div`
-  width: 100%;
-  height: 50vh;
-  margin: 0;
-
-  @media (max-width: 1000px) {
-    padding: 2rem 1rem 2rem 1rem;
-    transition: 800ms;
-    border-bottom-right-radius: 10px;
-    border-bottom-left-radius: 10px;
-    border-top-right-radius: 0px;
-    border-top-left-radius: 0px;
-    margin-left: 1rem;
-
+    background-color: #333333;
     color: #fff;
   }
 `;
@@ -92,14 +74,14 @@ const Contact = () => {
             <LeftCol>
               <h3 className="mb-4">Envoyez-nous un message !</h3>
               <form
-                className="mt-4"
+                name="FormContact"
                 method="post"
                 netlify-honeypot="bot-field"
                 data-netlify="true"
               >
                 <input type="hidden" name="bot-field" />
 
-                <Form.Group controlId="formBasicName">
+                <Form.Group>
                   <InputGroup>
                     <InputGroup.Prepend>
                       <InputGroup.Text id="inputGroupPrepend">
@@ -114,7 +96,7 @@ const Contact = () => {
                     />
                   </InputGroup>
                 </Form.Group>
-                <Form.Group controlId="formBasicEmail">
+                <Form.Group>
                   <InputGroup>
                     <InputGroup.Prepend>
                       <InputGroup.Text id="inputGroupPrepend">
@@ -130,7 +112,7 @@ const Contact = () => {
                     />
                   </InputGroup>
                 </Form.Group>
-                <Form.Group controlId="formBasicEmail">
+                <Form.Group >
                   <InputGroup>
                     <InputGroup.Prepend>
                       <InputGroup.Text id="inputGroupPrepend">
@@ -146,7 +128,7 @@ const Contact = () => {
                     />
                   </InputGroup>
                 </Form.Group>
-                <Form.Group controlId="formBasicText">
+                <Form.Group>
                   <InputGroup>
                     <InputGroup.Prepend>
                       <InputGroup.Text id="inputGroupPrepend">
@@ -175,7 +157,7 @@ const Contact = () => {
               <h3>Phone /Téléphone</h3>
               <p>+33 4 93 93 93 93</p>
               <h3>Adress / Adresse</h3>
-              <bold>Galleri122</bold>
+             Gallerie122
               <br />
               122 Rue d'Antibes
               <br />
