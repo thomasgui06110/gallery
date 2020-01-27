@@ -97,6 +97,54 @@ const Contact = () => {
                     />
                   </InputGroup>
                 </Form.Group>
+                <Form.Group>
+                  <InputGroup>
+                    <InputGroup.Prepend>
+                      <InputGroup.Text id="inputGroupPrepend">
+                        @
+                      </InputGroup.Text>
+                    </InputGroup.Prepend>
+                    <Form.Control
+                      type="email"
+                      name="email"
+                      aria-describedby="inputGroupPrepend"
+                      placeholder="Mail"
+                      id="email"
+                    />
+                  </InputGroup>
+                </Form.Group>
+                <Form.Group >
+                  <InputGroup>
+                    <InputGroup.Prepend>
+                      <InputGroup.Text id="inputGroupPrepend">
+                        <MdPhoneIphone />
+                      </InputGroup.Text>
+                    </InputGroup.Prepend>
+                    <Form.Control
+                      type="text"
+                      name="Phone"
+                      aria-describedby="inputGroupPrepend"
+                      placeholder="Your Phone / Votre Telephone"
+                      id="Phone"
+                    />
+                  </InputGroup>
+                </Form.Group>
+                <Form.Group>
+                  <InputGroup>
+                    <InputGroup.Prepend>
+                      <InputGroup.Text id="inputGroupPrepend">
+                        <FaEnvelopeOpenText />
+                      </InputGroup.Text>
+                    </InputGroup.Prepend>
+                    <Form.Control
+                      as="textarea"
+                      name="message"
+                      rows="4"
+                      placeholder="Your Message / Votre message"
+                      id="message"
+                    />
+                  </InputGroup>
+                </Form.Group>
                 <div className="field half">
                   <label htmlFor="email">Email</label>
                   <input type="text" name="email" id="email" />
