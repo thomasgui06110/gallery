@@ -62,7 +62,7 @@ const Contact = () => {
     <div>
       <GLayout>
         <SEO
-          title="Contacter la Gallerie 122 Cannes"
+          title="Message envoyé"
           description="Pour toute demande de renseignements, n'hésitez pas à contacter la Gallerie 122 à l'aide du formulaire. Nous vous répondrons très rapidement"
         />
         <h1 mb="0">
@@ -152,6 +152,7 @@ const Contact = () => {
                   </Button>
                 </p>
               </form>
+              <p>Merci votre message a été correctement envoyé.</p>
             </LeftCol>
           </Col>
           <Col md="4" xs="12" className=" pl-0">
