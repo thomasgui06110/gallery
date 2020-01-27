@@ -81,10 +81,22 @@ const Contact = () => {
               >
                 <input type="hidden" name="bot-field" />
                 <input type="hidden" name="form-name" value="contact" />
-                <div className="field half first">
-                  <label htmlFor="name">Name</label>
-                  <input type="text" name="name" id="name" />
-                </div>
+
+                <Form.Group>
+                  <InputGroup>
+                    <InputGroup.Prepend>
+                      <InputGroup.Text id="inputGroupPrepend">
+                        <FaUserCircle />
+                      </InputGroup.Text>
+                    </InputGroup.Prepend>
+                    <Form.Control
+                      type="text"
+                      name="name2"
+                      placeholder="Your Name / Votre Nom"
+                      id="name2"
+                    />
+                  </InputGroup>
+                </Form.Group>
                 <div className="field half">
                   <label htmlFor="email">Email</label>
                   <input type="text" name="email" id="email" />
@@ -93,18 +105,11 @@ const Contact = () => {
                   <label htmlFor="message">Message</label>
                   <textarea name="message" id="message" rows="6" />
                 </div>
-                <ul className="actions">
-                  <li>
-                    <input
-                      type="submit"
-                      value="Send Message"
-                      className="special"
-                    />
-                  </li>
-                  <li>
-                    <input type="reset" value="Clear" />
-                  </li>
-                </ul>
+                <p>
+                  <Button variant="primary" type="submit">
+                    Send / Envoyer
+                  </Button>
+                </p>
               </form>
             </LeftCol>
           </Col>
