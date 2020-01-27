@@ -113,7 +113,7 @@ const Contact = () => {
                     />
                   </InputGroup>
                 </Form.Group>
-                <Form.Group >
+                <Form.Group>
                   <InputGroup>
                     <InputGroup.Prepend>
                       <InputGroup.Text id="inputGroupPrepend">
@@ -145,14 +145,7 @@ const Contact = () => {
                     />
                   </InputGroup>
                 </Form.Group>
-                <div className="field half">
-                  <label htmlFor="email">Email</label>
-                  <input type="text" name="email" id="email" />
-                </div>
-                <div className="field">
-                  <label htmlFor="message">Message</label>
-                  <textarea name="message" id="message" rows="6" />
-                </div>
+
                 <p>
                   <Button variant="primary" type="submit">
                     Send / Envoyer
