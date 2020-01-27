@@ -71,87 +71,7 @@ const Contact = () => {
         <Row>
           <Col md="8" xs="12" className="mr-0 pr-0">
             <LeftCol>
-              <h3 className="mb-4">Envoyez-nous un message !</h3>
-              <form
-                name="contact"
-                method="post"
-                action="/success"
-                data-netlify="true"
-                data-netlify-honeypot="bot-field"
-              >
-                <input type="hidden" name="bot-field" />
-                <input type="hidden" name="form-name" value="contact" />
-
-                <Form.Group>
-                  <InputGroup>
-                    <InputGroup.Prepend>
-                      <InputGroup.Text id="inputGroupPrepend">
-                        <FaUserCircle />
-                      </InputGroup.Text>
-                    </InputGroup.Prepend>
-                    <Form.Control
-                      type="text"
-                      name="name2"
-                      placeholder="Your Name / Votre Nom"
-                      id="name2"
-                    />
-                  </InputGroup>
-                </Form.Group>
-                <Form.Group>
-                  <InputGroup>
-                    <InputGroup.Prepend>
-                      <InputGroup.Text id="inputGroupPrepend">
-                        @
-                      </InputGroup.Text>
-                    </InputGroup.Prepend>
-                    <Form.Control
-                      type="email"
-                      name="email"
-                      aria-describedby="inputGroupPrepend"
-                      placeholder="Mail"
-                      id="email"
-                    />
-                  </InputGroup>
-                </Form.Group>
-                <Form.Group>
-                  <InputGroup>
-                    <InputGroup.Prepend>
-                      <InputGroup.Text id="inputGroupPrepend">
-                        <MdPhoneIphone />
-                      </InputGroup.Text>
-                    </InputGroup.Prepend>
-                    <Form.Control
-                      type="text"
-                      name="Phone"
-                      aria-describedby="inputGroupPrepend"
-                      placeholder="Your Phone / Votre Telephone"
-                      id="Phone"
-                    />
-                  </InputGroup>
-                </Form.Group>
-                <Form.Group>
-                  <InputGroup>
-                    <InputGroup.Prepend>
-                      <InputGroup.Text id="inputGroupPrepend">
-                        <FaEnvelopeOpenText />
-                      </InputGroup.Text>
-                    </InputGroup.Prepend>
-                    <Form.Control
-                      as="textarea"
-                      name="message"
-                      rows="4"
-                      placeholder="Your Message / Votre message"
-                      id="message"
-                    />
-                  </InputGroup>
-                </Form.Group>
-
-                <p>
-                  <Button variant="primary" type="submit">
-                    Send / Envoyer
-                  </Button>
-                </p>
-              </form>
+             
               <p>Merci votre message a été correctement envoyé.</p>
             </LeftCol>
           </Col>
@@ -159,8 +79,8 @@ const Contact = () => {
             <RCol>
               <h3>Phone /Téléphone</h3>
               <p>+33 4 93 93 93 93</p>
-              <h3>Adress / Adresse</h3>
-              Gallerie122
+              <h3>Address / Adresse</h3>
+              Gallerie 122
               <br />
               122 Rue d'Antibes
               <br />

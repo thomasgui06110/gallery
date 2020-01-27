@@ -30,6 +30,7 @@ const LeftCol = styled.div`
     border-bottom-left-radius: 0px;
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
+    background-color: #fff;
   }
 `;
 const RCol = styled.div`
@@ -158,8 +159,8 @@ const Contact = () => {
             <RCol>
               <h3>Phone /Téléphone</h3>
               <p>+33 4 93 93 93 93</p>
-              <h3>Adress / Adresse</h3>
-              Gallerie122
+              <h3>Address / Adresse</h3>
+              Gallerie 122
               <br />
               122 Rue d'Antibes
               <br />
