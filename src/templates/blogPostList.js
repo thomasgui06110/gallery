@@ -94,6 +94,7 @@ const Next = styled.span`
     color: #fff;
     border: 2px solid #b4b4b4;
     transition: 0.5s;
+    text-decoration: none !important;
   }
 `;
 const NextWrap = styled.div`

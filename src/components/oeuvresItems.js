@@ -3,7 +3,6 @@ import { graphql, StaticQuery } from "gatsby";
 import { Col, Row } from "react-bootstrap";
 import styled from "styled-components";
 import Img from "gatsby-image";
-import SEO from "./SEO";
 const StyledFlexBox = styled.div`
   
   {'' /* border: 12px solid #fff;
@@ -44,7 +43,6 @@ const StyledTexte = styled.div`
   text-align: justify;
   border-radius: 10px;
   line-height: 20px;
-
   -webkit-transition: 500ms;
   transition: 500ms;
 
@@ -60,11 +58,13 @@ const Article = styled.article`
     font-size: 1rem;
   }
 `;
+const Para = styled.p`
+  line-height: 1.6;
+`;
 const StyledImg = styled.div`
   border-radius: 20px;
   transition: opacity 0.3s ease-in-out, transform 0.5s ease-in-out,
     -webkit-transform 0.5s ease-in-out;
-
   &:hover {
     transform: scale(1.3) rotate(5deg);
     opacity: 0.9;
@@ -103,7 +103,6 @@ const OuevresItems = () => {
       render={props =>
         props.allWordpressWpPortfolio2.edges.map(ArtistsItem => (
           <>
-            <SEO title="Nos expositions | Gallerie 122" />
             <Row
               className="mt-3 mb-5 mr-1 ml-1 pb-4 pt-4 rowExpo"
               key={ArtistsItem.node.id}
@@ -132,12 +131,12 @@ const OuevresItems = () => {
                     dangerouslySetInnerHTML={{ __html: ArtistsItem.node.title }}
                   />
                   <Article>
-                    <p
+                    <Para
                       className="mt-3"
                       dangerouslySetInnerHTML={{
                         __html: ArtistsItem.node.content
                       }}
-                    ></p>
+                    ></Para>
                   </Article>
                 </StyledTexte>
               </Col>

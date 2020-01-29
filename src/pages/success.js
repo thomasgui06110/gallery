@@ -1,10 +1,9 @@
 import React from "react";
-import { Col, Row, Form, InputGroup, Button } from "react-bootstrap";
+import { Col, Row, Alert } from "react-bootstrap";
 import styled from "styled-components";
 import SEO from "../components/SEO";
 import GLayout from "../components/layout";
-import { FaUserCircle, FaEnvelopeOpenText } from "react-icons/fa";
-import { MdPhoneIphone } from "react-icons/md";
+
 const HeadlineCenter = styled.span`
   &::after {
     content: " ";
@@ -65,14 +64,18 @@ const Contact = () => {
           title="Message envoyé"
           description="Pour toute demande de renseignements, n'hésitez pas à contacter la Gallerie 122 à l'aide du formulaire. Nous vous répondrons très rapidement"
         />
-        <h1 mb="0">
+        <h1 mb="0" className="text-center">
           <HeadlineCenter className="display-4">Contactez nous</HeadlineCenter>
         </h1>
         <Row>
           <Col md="8" xs="12" className="mr-0 pr-0">
             <LeftCol>
-             
-              <p>Merci votre message a été correctement envoyé.</p>
+              <Alert variant="success">
+                <p>
+                  Thank you, your message has been sent successfully / Merci
+                  votre message a été correctement envoyé{" "}
+                </p>
+              </Alert>
             </LeftCol>
           </Col>
           <Col md="4" xs="12" className=" pl-0">

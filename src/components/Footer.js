@@ -14,6 +14,9 @@ const FooterMain = styled.footer`
   box-shadow: 5px 0.5rem 1.5rem 1px rgba(0, 0, 0, 0.3);
   text-align:center;
   color:#fff;
+  a {
+    color:#000   
+}
 `;
 const Font = styled.span`
 font-size:1.5rem;
@@ -23,17 +26,19 @@ transition:500ms;
     opacity:0.5
     cursor:pointer;
 }
-`;
+`
+const StyledLink = styled(Link)`
+  color: red;
+`
 
 const Footer = () => (
   <FooterMain>
     <p>
-    
-      © GALLERY 122 | 122 Rue d'Antibes 06400 Cannes - France | Tous droits réservés 
-      <Link to="/home"> Mention Légales</Link>
+      © GALLERY 122 | 122 Rue d'Antibes 06400 Cannes - France | Tous droits
+      réservés
+      <StyledLink to="/home"> Mention Légales</StyledLink>
     </p>
     <Font>
-      
       <FaInstagram /> <FaFacebookF />
     </Font>
   </FooterMain>

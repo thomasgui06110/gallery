@@ -18,13 +18,19 @@ const GlobalMenu = styled.div`
 
   box-shadow: 0px 15px 10px 5px #cfcfcf96;
   &:hover {
+    text-decoration: none;
   }
 `;
 
 const MenuItems = styled(Link)`
   display: block;
   padding: 0.5rem 2rem;
-
+  text-decoration: none;
+  color: #333333;
+  &:hover {
+    text-decoration: none;
+    color:#000;
+  }
   @media screen and (min-width: 1341px) {
     &:not(:first-child) > &:before {
       position: absolute;
@@ -36,6 +42,7 @@ const MenuItems = styled(Link)`
       opacity: 0.5;
       content: " ";
       transition: background-color 0.3s;
+      text-decoration: none;
     }
   }
 `;
@@ -46,10 +53,11 @@ const Contact = styled(Link)`
   text-transform: uppercase;
   font-weight: bold;
   transition: 0.5s;
+  color: #333333;
   &:hover {
     transition: 0.5s;
     color: white;
-    
+
     background-color: #333333;
   }
 `;
@@ -84,8 +92,7 @@ const MainMenu = () => {
               aria-controls="responsive-navbar-nav"
             />
             <Navbar.Collapse id="responsive-navbar-nav">
-            
-            <Nav className="mr-auto">
+              <Nav className="mr-auto">
                 {props.allWordpressWpApiMenusMenusItems.edges[0].node.items.map(
                   item => (
                     <MenuItems

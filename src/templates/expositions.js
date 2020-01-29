@@ -15,12 +15,12 @@ const HeadlineCenter = styled.span`
 `;
 export default ({ data }) => (
   <>
-  <SEO title="hhh" 
+  <GLayout>
+  <SEO title="Nos expositions" 
   description="ff"
   keywords="fr"
   image="ffef"
 />
-  <GLayout>
     <Row>
       <Col className="text-center" mt="0" md="12">
         <h1 mb="0">

@@ -10,7 +10,7 @@ const HeaderMain = styled.header`
   {'' /* width:1140px; */}
   width:100%;
   padding:1rem 0rem 2rem 0rem;
-  background-color: rgba(245,242,240,0);
+  
   display: block;
   justify-content: space-between;
   position: relative;

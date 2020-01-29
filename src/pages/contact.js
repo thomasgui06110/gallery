@@ -34,7 +34,7 @@ const LeftCol = styled.div`
   }
 `;
 const RCol = styled.div`
-  background-color: #333333;
+  background-color: rgba(31, 31, 31, 0.9);
   padding: 2rem 5rem 2rem 5rem;
   border-bottom-right-radius: 10px;
   border-top-right-radius: 10px;
@@ -58,6 +58,37 @@ const RCol = styled.div`
   }
 `;
 
+const Submit = styled.button`
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: rgba(31, 31, 31, 0.9);
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 7px #999;
+  transition-duration: 0.5s;
+  &:hover {
+    background-color: #131313;
+    transition-duration: 0.5s;
+    outline: none;
+  }
+  &:active {
+    background-color: #333333;
+    transition-duration: 0.5s;
+    box-shadow: 0 4px #666;
+    transform: translateY(4px);
+    outline: none;
+    &:visited {
+      outline: none;
+    }
+  }
+`;
+
 const Contact = () => {
   return (
     <div>
@@ -66,13 +97,16 @@ const Contact = () => {
           title="Contacter la Gallerie 122 Cannes"
           description="Pour toute demande de renseignements, n'hésitez pas à contacter la Gallerie 122 à l'aide du formulaire. Nous vous répondrons très rapidement"
         />
-        <h1 mb="0">
+        <h1 mb="0" className="text-center">
           <HeadlineCenter className="display-4">Contactez nous</HeadlineCenter>
         </h1>
         <Row>
           <Col md="8" xs="12" className="mr-0 pr-0">
             <LeftCol>
-              <h3 className="mb-4">Envoyez-nous un message !</h3>
+              <h3 className="mb-4">
+                Send us a message ! / Envoyez-nous un message !
+              </h3>
+
               <form
                 name="contact"
                 method="post"
@@ -108,6 +142,7 @@ const Contact = () => {
                     <Form.Control
                       type="email"
                       name="email"
+                      required
                       aria-describedby="inputGroupPrepend"
                       placeholder="Mail"
                       id="email"
@@ -148,9 +183,7 @@ const Contact = () => {
                 </Form.Group>
 
                 <p>
-                  <Button variant="primary" type="submit">
-                    Send / Envoyer
-                  </Button>
+                  <Submit type="submit">Send / Envoyer</Submit>
                 </p>
               </form>
             </LeftCol>
