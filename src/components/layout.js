@@ -15,14 +15,17 @@ import { Container} from "react-bootstrap";
 
 
 const Space = styled.div`
-  padding: 1vh 10vw 1vw 10vw;
+  padding: 1vh 7vw 1vw 7vw;
 
   @media (max-width: 1000px) {
     padding: 1vh 2vw 1vw 2vw;
   }
 `;
 const Section = styled.section`
-  margin: 1rem auto 2rem auto;
+  margin: 1rem auto 1rem auto;
+  background-color: #fff;
+  padding: 2% 2% 5% 2%;
+  border-radius:10px;
 `;
 // const Wrapper = styled.div`
 //   background-color: rgba(210, 210, 210, 0.5);

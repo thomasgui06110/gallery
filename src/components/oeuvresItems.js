@@ -107,7 +107,7 @@ const OuevresItems = () => {
               className="mt-3 mb-5 mr-1 ml-1 pb-4 pt-4 rowExpo"
               key={ArtistsItem.node.id}
             >
-              <Col md="6">
+              <Col md="6" >
                 <StyledFlexBox>
                   <StyledFlexBoxArtist className="cadre">
                     <StyledImg className="mt-0">

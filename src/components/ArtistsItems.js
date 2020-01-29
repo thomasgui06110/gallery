@@ -8,7 +8,7 @@ import SEO from "./SEO";
 const StyledFlexBox = styled.div`
   border: 5px solid #fff;
   border-radius: 5px;
-  box-shadow: 1rem 1rem 30px -5px rgba(0, 0, 0, 0.3);
+  box-shadow: 10px 10px 15px 3px rgba(0, 0, 0, 0.4);
   transition: box-shadow 0.9s;
   will-change: transform;
   { /* overflow: hidden; */}

@@ -4,6 +4,8 @@ import styled from "styled-components";
 import { Row, Col } from "react-bootstrap";
 import artistes from "../styles/artistes.css";
 import SEO from "../components/SEO";
+import Newsletter from "../components/newsletter";
+
 const HeadlineCenter = styled.span`
   &::after {
     content: " ";
@@ -87,5 +89,10 @@ export default ({ pageContext }) => (
         </Col>
       </Row>
     </Wrap>
+    <Row>
+      <Col>
+        <Newsletter></Newsletter>
+      </Col>
+    </Row>
   </GLayout>
 );

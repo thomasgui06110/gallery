@@ -35,7 +35,7 @@ const StyledFlexBox = styled.div`
   display: inline-block;
   border: 12px solid #fff;
   border-radius: 5px;
-  box-shadow: 2rem 2rem 30px -5px rgba(0, 0, 0, 0.3);
+  box-shadow: 10px 10px 20px 2px rgba(0, 0, 0, 0.3);
   transition: box-shadow 0.9s;
   will-change: transform;
   { /* overflow: hidden; */}

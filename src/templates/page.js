@@ -4,6 +4,7 @@ import styled, { createGlobalStyle } from "styled-components";
 import { Row, Col, Media } from "react-bootstrap";
 import { graphql, StaticQuery } from "gatsby";
 import { Link } from "gatsby";
+import Newsletter from '../components/newsletter'
 
 const GlobalStyles = createGlobalStyle`
 figure {
@@ -14,7 +15,15 @@ h1 {
   text-align:center;
 }
 `;
-
+const HeadlineCenter = styled.span`
+  &::after {
+    content: " ";
+    display: block;
+    width: 100px;
+    margin: 15px auto;
+    border: 2px solid #4f5153;
+  }
+`;
 const Liens = styled.span`
   font-size: 1.8rem;
   color: #333333;
@@ -85,11 +94,7 @@ export default ({ pageContext }) => (
     `}
     render={data => (
       <GLayout>
-        {pageContext.title !== "HomePage" && (
-          <h1 dangerouslySetInnerHTML={{ __html: pageContext.title }}></h1>
-        )}
-        <GlobalStyles />
-        <div dangerouslySetInnerHTML={{ __html: pageContext.content }}></div>
+       
         <Row>
           <Col className="ml-0 mr-0">
             {pageContext.acf.Photo_principale !== null && (
@@ -102,6 +107,16 @@ export default ({ pageContext }) => (
                 />
               </Media>
             )}
+          </Col>
+          </Row>
+          <Row>
+          <Col>
+          {pageContext.title !== "HomePage" && (
+            <HeadlineCenter>
+          <h1 className="display-4" dangerouslySetInnerHTML={{ __html: pageContext.title }}></h1></HeadlineCenter>
+        )}
+        <GlobalStyles />
+        <div dangerouslySetInnerHTML={{ __html: pageContext.content }}></div>
           </Col>
         </Row>
         <Row>
@@ -138,6 +153,11 @@ export default ({ pageContext }) => (
             <Link to="/expositions">
               <Liens>Expositions</Liens>
             </Link>
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            <Newsletter></Newsletter>
           </Col>
         </Row>
       </GLayout>

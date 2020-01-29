@@ -20,8 +20,9 @@ const LeftCol = styled.div`
   padding: 2rem 5rem 2rem 5rem;
   border-bottom-left-radius: 10px;
   border-top-left-radius: 10px;
+  border:1px solid rgba(31,31,31,0.9);
   width: 100%;
-  height: auto;
+  height: 100%;
   margin: 0;
   @media (max-width: 1000px) {
     padding: 2rem 1rem 2rem 1rem;
