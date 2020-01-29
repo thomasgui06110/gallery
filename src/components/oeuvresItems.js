@@ -3,11 +3,11 @@ import { graphql, StaticQuery } from "gatsby";
 import { Col, Row } from "react-bootstrap";
 import styled from "styled-components";
 import Img from "gatsby-image";
+
 const StyledFlexBox = styled.div`
-  
+   box-shadow: 1rem 1rem 10px -5px rgba(0, 0, 0, 0.3);
   {'' /* border: 12px solid #fff;
   border-radius: 5px; */}
-  box-shadow: 1rem 1rem 30px -5px rgba(0, 0, 0, 0.3);
   transition: box-shadow 0.9s;
   will-change: transform;
   { /* overflow: hidden; */}

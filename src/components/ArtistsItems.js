@@ -18,7 +18,7 @@ const StyledFlexBox = styled.div`
     box-shadow: -1em -2em 20px 2px rgba(0,0,0,0.3)
     transition: opacity 0.3s ease-in-out, transform 0.6s ease-in-out,
       -webkit-transform 0.6s ease-in-out;
-    }
+   
 `;
 
 const StyledFlexBoxArtist = styled.div`

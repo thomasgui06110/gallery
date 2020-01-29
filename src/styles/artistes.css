@@ -1,26 +1,29 @@
-.cadre:hover .texte{
-    opacity:1;
-    transition:800ms;
-    background-color: #e5e5e5;
-
-   
+.cadre:hover .texte {
+  opacity: 1;
+  transition: 800ms;
+  background-color: #e5e5e5;
 }
 @media (max-width: 1000px) {
-    .cadre:hover .texte{
-        opacity:1;
-        transition:500ms;
-        transform: translateY(0%);
-    }
+  .cadre:hover .texte {
+    opacity: 1;
+    transition: 500ms;
+    transform: translateY(0%);
   }
-
+}
 
 .texte {
-    transform: scale(1) rotate(0deg);
+  transform: scale(1) rotate(0deg);
 }
 .photo {
-    border-radius: 20px;
+  border-radius: 20px;
 }
 
 .rowExpo {
-    background-color: #fff;
+  background-color: #fff;
+  box-shadow: 2rem 2rem 30px -5px rgba(0, 0, 0, 0.3);
+}
+@media (max-width: 1000px) {
+  .rowExpo {
+    box-shadow: 1rem 1rem 20px -5px rgba(0, 0, 0, 0.3);
+  }
 }

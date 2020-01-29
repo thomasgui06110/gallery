@@ -160,7 +160,7 @@ const Contact = () => {
                       type="text"
                       name="Phone"
                       aria-describedby="inputGroupPrepend"
-                      placeholder="Your Phone / Votre Telephone"
+                      placeholder="Your Phone / Votre Téléphone"
                       id="Phone"
                     />
                   </InputGroup>
@@ -190,20 +190,22 @@ const Contact = () => {
           </Col>
           <Col md="4" xs="12" className=" pl-0">
             <RCol>
-              <h3>Phone /Téléphone</h3>
-              <p>+33 4 93 93 93 93</p>
+              <h3>Phone / Téléphone</h3>
+              <p>+33 4 93 93 93 93</p> <HeadlineCenter />
               <h3>Address / Adresse</h3>
               Gallerie 122
               <br />
               122 Rue d'Antibes
               <br />
               06400 Cannes - France <p></p>
+              <HeadlineCenter />
               <h3>Mail</h3>
               <p>
                 <a href="mailto:contact@gallerie122.com">
                   contact@gallerie122.com
                 </a>
-              </p>
+              </p>{" "}
+              <HeadlineCenter />
               <h3> Horaires</h3>
               <p>De 10h à 12h et 14h à 18h</p>
             </RCol>

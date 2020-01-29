@@ -5,7 +5,8 @@ import { Navbar, Nav } from "react-bootstrap";
 import menu from "../styles/menu.css";
 
 const GlobalMenu = styled.div`
-  background-color: rgba(255, 255, 255, 1);
+  ${'' /* background-color: rgba(255, 255, 255, 1); */}
+  background-color: rgba(31, 31, 31, 0.9);
   marin: 0 auto 0 auto;
 
   text-align: center;
@@ -26,39 +27,40 @@ const MenuItems = styled(Link)`
   display: block;
   padding: 0.5rem 2rem;
   text-decoration: none;
-  color: #333333;
+  color: #fff;
   &:hover {
     text-decoration: none;
-    color:#000;
+    color:#fff;
   }
   @media screen and (min-width: 1341px) {
     &:not(:first-child) > &:before {
       position: absolute;
+      color:#fff;
       top: 12px;
       left: 0;
-      width: 2px;
+      width: 3px;
       height: calc(100% - 23px);
-      /* background: #fff;*/
-      opacity: 0.5;
+      background: #fff;
+      opacity: 0.9;
       content: " ";
-      transition: background-color 0.3s;
+      transition: background-color 0.6s;
       text-decoration: none;
     }
   }
 `;
 const Contact = styled(Link)`
-  border: 1px solid #333333;
+  border: 1px solid #fff;
   border-radius: 60px;
   padding: 0 10px 0 10px;
   text-transform: uppercase;
   font-weight: bold;
   transition: 0.5s;
-  color: #333333;
+  color: #fff;
   &:hover {
     transition: 0.5s;
-    color: white;
-
-    background-color: #333333;
+    color: #333333;
+    text-decoration: none;
+    background-color: #fff;
   }
 `;
 

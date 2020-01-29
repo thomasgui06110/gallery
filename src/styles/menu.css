@@ -29,7 +29,7 @@
   width: 1px;
   height: calc(100% - 28px);
  
-  opacity: 0.5;
+  opacity: 0.9;
   content: " |";
   transition:  0.8s;
 }
@@ -40,7 +40,7 @@
   width: 100%;
  
   margin: 0 auto;
-  border-bottom: 2px solid #534f50;
+  border-bottom: 2px solid #fff;
 }
 @media (max-width: 900px) 
 {
@@ -57,10 +57,11 @@
     left: 0;
     width: 2px;
     height: calc(100% - 23px);
-    /* background: #fff;*/
-    opacity: 0.5;
+    background: #fff;
+    opacity: 0.9;
     content: " ";
     transition: background-color 0.3s;
+    color:#fff;
   }
 }
 
@@ -69,10 +70,11 @@
     position: absolute;
     top: 12px;
     left: 0;
-    width: 2px;
+    width: 12px;
     height: calc(100% - 23px);
-    /* background: #fff;*/
-    opacity: 0.5;
+     background: #fff;
+     color:#fff;
+    opacity: 0.9;
     content: " ";
     transition: background-color 0.3s;
   }

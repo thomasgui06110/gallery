@@ -33,6 +33,7 @@ const ImgHover = styled.div`
   border-radius: 10px;
   width:100%;
   heigth:100%;
+  box-shadow: 2rem 1rem 30px -5px rgba(0, 0, 0, 0.3);
   &:hover {
     transition: 0.5s;
     opacity: 0.5;
