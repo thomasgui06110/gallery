@@ -28,7 +28,7 @@ const TopLogo = styled.div`
 const Header = ({ siteTitle }) => (
   <HeaderMain>
     <TopLogo>
-      <ImageH />
+      <ImageH alt="Expo du 22 novembre"/>
     </TopLogo>
     <Sticky enabled={true} top={0} bottomBoundary={1200}>
       <MainMenu />

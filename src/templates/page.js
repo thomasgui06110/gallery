@@ -4,7 +4,7 @@ import styled, { createGlobalStyle } from "styled-components";
 import { Row, Col, Media } from "react-bootstrap";
 import { graphql, StaticQuery } from "gatsby";
 import { Link } from "gatsby";
-import Newsletter from '../components/newsletter'
+import Newsletter from "../components/newsletter";
 
 const GlobalStyles = createGlobalStyle`
 figure {
@@ -28,8 +28,6 @@ const Liens = styled.span`
   font-size: 1.8rem;
   color: #333333;
 
-
-
   &:hover {
     cursor: pointor;
     font-weight: bold;
@@ -40,8 +38,8 @@ const ImgHover = styled.div`
   transition: 0.5s;
   border: 10px solid white;
   border-radius: 10px;
-  width:100%;
-  heigth:100%;
+  width: 100%;
+  heigth: 100%;
   box-shadow: 2rem 1rem 30px -5px rgba(0, 0, 0, 0.3);
   &:hover {
     transition: 0.5s;
@@ -54,39 +52,11 @@ export default ({ pageContext }) => (
   <StaticQuery
     query={graphql`
       query {
-        allWordpressPage(filter: { slug: { eq: "home" } }) {
+        allWordpressPage {
           edges {
             node {
               id
               slug
-              title
-              content
-              featured_media {
-                alt_text
-                source_url
-                localFile {
-                  childImageSharp {
-                    fluid(maxWidth: 500, quality: 100) {
-                      ...GatsbyImageSharpFluid
-                      presentationWidth
-                    }
-                  }
-                }
-              }
-              acf {
-                photo_artiste {
-                  path
-                  source_url
-                }
-                expositions {
-                  path
-                  source_url
-                }
-                Photo_principale {
-                  path
-                  source_url
-                }
-              }
             }
           }
         }
@@ -94,7 +64,6 @@ export default ({ pageContext }) => (
     `}
     render={data => (
       <GLayout>
-       
         <Row>
           <Col className="ml-0 mr-0">
             {pageContext.acf.Photo_principale !== null && (
@@ -103,20 +72,26 @@ export default ({ pageContext }) => (
                   width="100%"
                   className="mt-3 mb-5"
                   src={pageContext.acf.Photo_principale.source_url}
-                  alt="Gallery 122"
+                  alt={pageContext.acf.texte_alternatif}
                 />
               </Media>
             )}
           </Col>
-          </Row>
-          <Row>
+        </Row>
+        <Row>
           <Col>
-          {pageContext.title !== "HomePage" && (
-            <HeadlineCenter>
-          <h1 className="display-4" dangerouslySetInnerHTML={{ __html: pageContext.title }}></h1></HeadlineCenter>
-        )}
-        <GlobalStyles />
-        <div dangerouslySetInnerHTML={{ __html: pageContext.content }}></div>
+            {pageContext.title !== "HomePage" && (
+              <HeadlineCenter>
+                <h1
+                  className="display-4"
+                  dangerouslySetInnerHTML={{ __html: pageContext.title }}
+                ></h1>
+              </HeadlineCenter>
+            )}
+            <GlobalStyles />
+            <div
+              dangerouslySetInnerHTML={{ __html: pageContext.content }}
+            ></div>
           </Col>
         </Row>
         <Row>

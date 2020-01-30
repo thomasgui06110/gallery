@@ -84,10 +84,7 @@ const StyledH2 = styled.h2`
   font-weight: bold;
   transition-duration: 0.8s;
   @media (max-width: 900px) {
-    
     height: 50px;
-    
-  
   }
 `;
 

@@ -26,6 +26,9 @@ const Section = styled.section`
   background-color: #fff;
   padding: 2% 2% 5% 2%;
   border-radius:10px;
+  @media (max-width: 1000px) {
+    padding: 1vh 1vw 1vw 1vw;
+  }
 `;
 // const Wrapper = styled.div`
 //   background-color: rgba(210, 210, 210, 0.5);

@@ -15,7 +15,7 @@ const Input = styled.input`
   margin: 0.5em;
   background-color: rgba(31, 31, 31, 0.9);
   border: none;
-  width: 275px !important;
+  width: 260px !important;
   height: 45px;
   border-radius: 7px;
   color: white;
@@ -29,9 +29,10 @@ const Input = styled.input`
 `;
 
 const Button = styled.button`
-  width: 240px !important;
+  width: 260px !important;
+  margin: 0.5em;
   background-color: rgba(31, 31, 31, 0.9);
-  height: 45px;
+  height: 43px;
   outline: none;
   cursor: pointer;
   text-align: center;

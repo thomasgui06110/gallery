@@ -97,7 +97,7 @@ export default ({ pageContext }) => (
               <GlobalStyles />
               <Row>
                 <Col >
-                  <img
+                  {/* <img
                     width="20%"
                     
                     className="mt-0"
@@ -106,7 +106,7 @@ export default ({ pageContext }) => (
                         .src
                     }
                     alt={pageContext.title}
-                  />
+                  /> */}
                   <Article
                     dangerouslySetInnerHTML={{ __html: pageContext.content }}
                   />

@@ -1,10 +1,10 @@
 import React from "react";
-import Layout from "../components/layout";
+import GLayout from "../components/layout";
 import { Link } from "gatsby";
 import styled from "styled-components";
 import moment from "moment";
 import { Row, Col } from "react-bootstrap";
-
+import SEO from "../components/SEO";
 
 const Pagination = styled.div`
   display: flex;
@@ -115,9 +115,10 @@ const HeadlineCenter = styled.span`
     border: 2px solid #4f5153;
   }
 `;
-export default ({ pageContext, data }) => (
+export default ({ pageContext, fluid }) => (
   
-  <Layout>
+  <GLayout>
+    <SEO title="Le blog de la Gallery 122" />
     <Row>
       <Col className="text-center" mt="0" md="12">
         <h1 mb="0">
@@ -130,6 +131,7 @@ export default ({ pageContext, data }) => (
     </Row>
     <Wrap>
       {pageContext.posts.map(post => (
+      
         <Col md="6" key={post.node.wordpress_id}>
          
           <StyledFlexBox>
@@ -143,6 +145,7 @@ export default ({ pageContext, data }) => (
                       src={post.node.featured_media.localFile.childImageSharp.fluid.src}
                       alt={post.node.title}
                     />
+                     
                   </Link>
                 </StyledImg>
               </Picture>
@@ -153,6 +156,7 @@ export default ({ pageContext, data }) => (
               <Small className="pl-2">
                 le {moment(post.node.date).format("DD MMMM YYYY")}
               </Small>
+
               <p
                 className="pl-2 pr-2 mt-2"
                 dangerouslySetInnerHTML={{ __html: post.node.excerpt }}
@@ -179,6 +183,6 @@ export default ({ pageContext, data }) => (
         </PageNumberWrapper>
       ))}
     </Pagination>
-  </Layout>
+  </GLayout>
 );
 

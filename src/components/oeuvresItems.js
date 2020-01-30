@@ -49,6 +49,7 @@ const StyledTexte = styled.div`
   @media (max-width: 1000px) {
     opacity: 1;
     transition: 800ms;
+    padding: 10px 0px 10px 0px;
   }
 `;
 const Article = styled.article`

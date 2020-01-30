@@ -26,6 +26,10 @@ const Wrap = styled.div`
   background-color: #fff;
   padding: 1rem 2rem;
   border-radius: 10px;
+  @media (max-width: 1000px) {
+    font-size: 1rem;
+    padding: 1rem 2px;
+  }
 `;
 
 export default ({ pageContext }) => (
