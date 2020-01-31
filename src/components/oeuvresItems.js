@@ -89,7 +89,7 @@ const OuevresItems = () => {
                   source_url
                   localFile {
                     childImageSharp {
-                      fluid(maxWidth: 500) {
+                      fluid(maxWidth: 600) {
                         ...GatsbyImageSharpFluid
                         src
                       }

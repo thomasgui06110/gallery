@@ -27,16 +27,18 @@ transition:500ms;
     cursor:pointer;
 }
 `
-const StyledLink = styled(Link)`
-  color: red;
-`
+const styledLink = {
+
+  color: '#f1f1f1'
+}
+
 
 const Footer = () => (
   <FooterMain>
     <p>
       © GALLERY 122 | 122 Rue d'Antibes 06400 Cannes - France | Tous droits
-      réservés
-      <StyledLink to="/home"> Mention Légales</StyledLink>
+      réservés | 
+      <Link to="/home" style={styledLink}><em><small> Mention Légales</small></em></Link>
     </p>
     <Font>
       <FaInstagram /> <FaFacebookF />

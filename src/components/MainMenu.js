@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { graphql, StaticQuery, Link } from "gatsby";
+import { graphql, StaticQuery, Link, activeStyle } from "gatsby";
 import { Navbar, Nav } from "react-bootstrap";
 import menu from "../styles/menu.css";
 
@@ -63,7 +63,10 @@ const Contact = styled(Link)`
     background-color: #fff;
   }
 `;
-
+const activeStyles = {
+  
+  "border-bottom": '2px solid #fff'
+}
 const MainMenu = () => {
   return (
     <StaticQuery
@@ -100,6 +103,7 @@ const MainMenu = () => {
                     <MenuItems
                       className="menu"
                       variant="bold"
+                      activeStyle={activeStyles}
                       to={"/" + item.object_slug}
                       key={item.object_id}
                     >

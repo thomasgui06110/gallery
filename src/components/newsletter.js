@@ -79,9 +79,9 @@ const Newsletter = () => {
         <input type="hidden" name="bot-field" />
         <input type="hidden" name="form-name" value="contact" />
 
-        <Input type="text" placeholder="Firstname / Prénom" name="Nom" />
+        <Input type="text" placeholder="First Name / Prénom" name="Prenom" />
         <Input type="text" placeholder="Name / Nom" name="Nom" />
-        <Input type="mail" placeholder="Mail" name="mail" />
+        <Input type="mail" placeholder="Mail" name="Mail" />
 
         <Button type="submit">S'ABONNER</Button>
       </form>

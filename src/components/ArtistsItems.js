@@ -8,7 +8,7 @@ import SEO from "./SEO";
 const StyledFlexBox = styled.div`
   border: 5px solid #fff;
   border-radius: 5px;
-  box-shadow: 10px 10px 15px 3px rgba(0, 0, 0, 0.4);
+  box-shadow: 2px 2px 1px 3px rgba(0, 0, 0, 0.0);
   transition: box-shadow 0.9s;
   will-change: transform;
   { /* overflow: hidden; */}
@@ -25,8 +25,10 @@ const StyledFlexBoxArtist = styled.div`
    {
     /* width: 380px; */
   }
-  max-height: 10rem;
-  border-radius: 5px;
+  max-height: 20rem;
+  height:18rem;
+  width:18rem;
+  border-radius: 50%;
   overflow: hidden;
   margin: 0px 0px;
   background-size: cover;
@@ -58,13 +60,17 @@ const StyledTexte = styled.div`
   }
 `;
 
+const linkStyles = {
+  color:'grey'
+}
+
 const StyledImg = styled.div`
   transition: opacity 0.3s ease-in-out, transform 0.5s ease-in-out,
     -webkit-transform 0.5s ease-in-out;
 
   &:hover {
     transform: scale(1.3) rotate(5deg);
-    opacity: 0.9;
+    opacity: 0.5;
   }
 `;
 
@@ -137,7 +143,7 @@ const ArtistsItems = () => {
                     </Link>
                 </StyledImg>
                 <StyledTexte className="texte">
-                  <StyledH2>{ArtistsItem.node.title}</StyledH2>
+                  <StyledH2> <Link to={`/artiste/${ArtistsItem.node.slug}`} style={linkStyles} >{ArtistsItem.node.title} </Link></StyledH2>
                 </StyledTexte>
               </StyledFlexBoxArtist>
             </StyledFlexBox>

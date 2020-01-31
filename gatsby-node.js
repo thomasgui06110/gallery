@@ -126,7 +126,7 @@ exports.createPages = ({ graphql, actions }) => {
                         alt_text
                         localFile {
                           childImageSharp {
-                            fluid(maxWidth: 400) {
+                            fluid(maxWidth: 600) {
                               src
                             }
                           }

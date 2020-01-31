@@ -17,6 +17,7 @@ h3 {
 
 a:hover {
   text-decoration: none !important;
+  color:black;
 }
 p {
   font-size: 1.3rem;
