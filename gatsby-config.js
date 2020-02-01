@@ -25,7 +25,7 @@ module.exports = {
     {
       resolve: `gatsby-wordpress-inline-images`,
       options: {
-        baseUrl: `gallery.planethoster.world/gallery`,
+        baseUrl: `admin.122galerievieceli.com/gallery`,
         protocol: `https`,
         maxWidth: 1050
       }
