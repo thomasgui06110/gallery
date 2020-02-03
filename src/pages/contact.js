@@ -1,5 +1,5 @@
 import React from "react";
-import { Col, Row, Form, InputGroup, Button } from "react-bootstrap";
+import { Col, Row, Form, InputGroup } from "react-bootstrap";
 import styled from "styled-components";
 import SEO from "../components/SEO";
 import GLayout from "../components/layout";
@@ -215,6 +215,7 @@ const Contact = () => {
         <Row className="mt-3">
           <Col>
             <iframe
+            title="Plan Galerie 122 Cannes France"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2891.6199390697197!2d7.024202915720587!3d43.55196376698875!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12ce8195c5ea6603%3A0x9caff7af986269d7!2s122%20Rue%20d&#39;Antibes%2C%2006400%20Cannes!5e0!3m2!1sfr!2sfr!4v1580144183896!5m2!1sfr!2sfr"
               width="100%"
               height="500px"

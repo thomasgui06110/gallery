@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { graphql, StaticQuery, Link, activeStyle } from "gatsby";
+import { graphql, StaticQuery, Link } from "gatsby";
 import { Navbar, Nav } from "react-bootstrap";
 import menu from "../styles/menu.css";
 

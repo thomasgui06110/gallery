@@ -71,8 +71,8 @@ export default ({ pageContext }) => (
                 <img
                   width="100%"
                   className="mt-3 mb-5"
-                  src={pageContext.acf.Photo_principale.source_url}
-                  alt={pageContext.acf.texte_alternatif}
+                  src={pageContext.acf.Photo_principale.localFile.childImageSharp.fluid.src}
+                  alt={pageContext.title}
                 />
               </Media>
             )}
@@ -100,8 +100,8 @@ export default ({ pageContext }) => (
               <Link to="/artistes">
                 <ImgHover>
                   <img
-                    src={pageContext.acf.expositions.source_url}
-                    alt="Artistes"
+                    src={pageContext.acf.photo_artiste.localFile.childImageSharp.fluid.src}
+                    alt="Nos Artistes"
                     width="100%"
                     className="mb-0"
                   />
@@ -117,8 +117,8 @@ export default ({ pageContext }) => (
               <ImgHover>
                 <Link to="/expositions">
                   <img
-                    src={pageContext.acf.photo_artiste.source_url}
-                    alt="Artistes"
+                    src={pageContext.acf.expositions.localFile.childImageSharp.fluid.src}
+                    alt="Nos expositions"
                     width="100%"
                     className="mb-0"
                   />

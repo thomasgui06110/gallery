@@ -36,15 +36,7 @@ exports.createPages = ({ graphql, actions }) => {
                 content
                 featured_media {
                   alt_text
-                  source_url
-                  localFile {
-                    childImageSharp {
-                      fluid(maxWidth: 500) {
-                        src
-                        originalImg
-                      }
-                    }
-                  }
+                 
                 }
                 acf {
                   expositions {
@@ -60,14 +52,35 @@ exports.createPages = ({ graphql, actions }) => {
                   photo_artiste {
                     path
                     source_url
+                    localFile {
+                      childImageSharp {
+                        fluid(maxWidth: 638) {
+                          src
+                        }
+                      }
+                    }
                   }
                   expositions {
                     path
                     source_url
+                    localFile {
+                      childImageSharp {
+                        fluid(maxWidth: 636) {
+                          src
+                        }
+                      }
+                    }
                   }
                   Photo_principale {
                     path
                     source_url
+                    localFile {
+                      childImageSharp {
+                        fluid(maxWidth: 1350) {
+                          src
+                        }
+                      }
+                    }
                   }
                   texte_alternatif
                 }
@@ -248,21 +261,13 @@ exports.createPages = ({ graphql, actions }) => {
                     source_url
                     localFile {
                       childImageSharp {
-                        fluid(maxWidth: 500) {
+                        fluid(maxWidth: 582) {
                           src
                         }
                       }
                     }
                   }
-                  acf {
-                    photo_principale {
-                      alt_text
-                      source_url
-                      localFile {
-                        base
-                      }
-                    }
-                  }
+                 
                   categories {
                     description
                     slug
