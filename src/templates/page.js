@@ -71,7 +71,10 @@ export default ({ pageContext }) => (
                 <img
                   width="100%"
                   className="mt-3 mb-5"
-                  src={pageContext.acf.Photo_principale.localFile.childImageSharp.fluid.src}
+                  src={
+                    pageContext.acf.Photo_principale.localFile.childImageSharp
+                      .fluid.src
+                  }
                   alt={pageContext.title}
                 />
               </Media>
@@ -100,7 +103,10 @@ export default ({ pageContext }) => (
               <Link to="/artistes">
                 <ImgHover>
                   <img
-                    src={pageContext.acf.photo_artiste.localFile.childImageSharp.fluid.src}
+                    src={
+                      pageContext.acf.photo_artiste.localFile.childImageSharp
+                        .fluid.src
+                    }
                     alt="Nos Artistes"
                     width="100%"
                     className="mb-0"
@@ -108,16 +114,21 @@ export default ({ pageContext }) => (
                 </ImgHover>
               </Link>
             )}
-            <Link to="/artistes">
-              <Liens>Artistes</Liens>
-            </Link>
+            {pageContext.slug === "home" && (
+              <Link to="/artistes">
+                <Liens>Artistes</Liens>
+              </Link>
+            )}
           </Col>
           <Col md="6" className="text-center  mt-3">
             {pageContext.acf.photo_artiste !== null && (
               <ImgHover>
                 <Link to="/expositions">
                   <img
-                    src={pageContext.acf.expositions.localFile.childImageSharp.fluid.src}
+                    src={
+                      pageContext.acf.expositions.localFile.childImageSharp
+                        .fluid.src
+                    }
                     alt="Nos expositions"
                     width="100%"
                     className="mb-0"
@@ -125,9 +136,11 @@ export default ({ pageContext }) => (
                 </Link>
               </ImgHover>
             )}
-            <Link to="/expositions">
-              <Liens>Expositions</Liens>
-            </Link>
+            {pageContext.slug == "home" && (
+              <Link to="/expositions">
+                <Liens>Expositions</Liens>
+              </Link>
+            )}
           </Col>
         </Row>
         <Row>

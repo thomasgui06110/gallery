@@ -54,7 +54,7 @@ exports.createPages = ({ graphql, actions }) => {
                     source_url
                     localFile {
                       childImageSharp {
-                        fluid(maxWidth: 638) {
+                        fluid(maxWidth: 636) {
                           src
                         }
                       }
@@ -283,7 +283,7 @@ exports.createPages = ({ graphql, actions }) => {
             reject(result.erros);
           }
           const posts = result.data.allWordpressPost.edges;
-          const postsPerPage = 4;
+          const postsPerPage = 6;
           const numberOfPages = Math.ceil(posts.length / postsPerPage);
           const blogPostListTemplate = path.resolve(
             "./src/templates/blogPostList.js"
