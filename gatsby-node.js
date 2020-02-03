@@ -39,16 +39,7 @@ exports.createPages = ({ graphql, actions }) => {
                  
                 }
                 acf {
-                  expositions {
-                    id
-                    localFile {
-                      childImageSharp {
-                        fixed(width: 125, height: 125) {
-                          src
-                        }
-                      }
-                    }
-                  }
+                 
                   photo_artiste {
                     path
                     source_url

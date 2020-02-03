@@ -136,7 +136,7 @@ export default ({ pageContext }) => (
                 </Link>
               </ImgHover>
             )}
-            {pageContext.slug == "home" && (
+            {pageContext.slug === "home" && (
               <Link to="/expositions">
                 <Liens>Expositions</Liens>
               </Link>

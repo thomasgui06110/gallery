@@ -65,7 +65,7 @@ const Contact = styled(Link)`
 `;
 const activeStyles = {
   
-  "border-bottom": '2px solid #fff'
+  "borderBottom": '2px solid #fff'
 }
 const MainMenu = () => {
   return (
