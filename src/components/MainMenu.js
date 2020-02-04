@@ -63,6 +63,7 @@ const Contact = styled(Link)`
     background-color: #fff;
   }
 `;
+
 const activeStyles = {
   
   "borderBottom": '2px solid #fff'
@@ -90,10 +91,10 @@ const MainMenu = () => {
       `}
       render={props => (
         <GlobalMenu>
-          <Navbar collapseOnSelect expand="lg">
+          <Navbar collapseOnSelect expand="lg" variant="dark">
             {/* <Navbar.Brand href="#home">Gallery 122</Navbar.Brand> */}
             <Navbar.Toggle
-              className="navbar"
+              className={menu.navbar}
               aria-controls="responsive-navbar-nav"
             />
             <Navbar.Collapse id="responsive-navbar-nav">

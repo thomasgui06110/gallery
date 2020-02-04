@@ -48,7 +48,18 @@
     content: "";
   }
 }
-
+.navbar-dark .navbar-toggler {
+  color: rgba(255,255,255,1);
+  border-color: rgba(255,255,255,.8);
+}
+.navbar {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: .5rem 1rem;
+}
 
 @media screen and (min-width: 1341px) {
   a:not(:first-child) > a:before {
