@@ -43,7 +43,7 @@ const RCol = styled.div`
   height: 100%;
   margin: 0;
   color: #fff;
-  &:a {
+  a {
     color: white;
   }
   @media (max-width: 1000px) {
@@ -99,7 +99,7 @@ const Contact = () => {
           description="Pour toute demande de renseignements, n'hésitez pas à contacter la Gallerie 122 à l'aide du formulaire. Nous vous répondrons très rapidement"
         />
         <h1 mb="0" className="text-center">
-          <HeadlineCenter className="display-4">Contactez nous</HeadlineCenter>
+          <HeadlineCenter className="display-4">Contact us / Contactez nous</HeadlineCenter>
         </h1>
         <Row>
           <Col md="8" xs="12" className="mr-0 pr-0">
@@ -191,23 +191,23 @@ const Contact = () => {
           </Col>
           <Col md="4" xs="12" className=" pl-0">
             <RCol>
-              <h3>Phone / Téléphone</h3>
+              <h3 className="text-center">Phone / Téléphone</h3>
               <p>+33 4 93 93 93 93</p> <HeadlineCenter />
-              <h3>Address / Adresse</h3>
+              <h3 className="text-center">Address / Adresse</h3>
               Gallerie 122
               <br />
               122 Rue d'Antibes
               <br />
               06400 Cannes - France <p></p>
               <HeadlineCenter />
-              <h3>Mail</h3>
+              <h3 className="text-center">Mail</h3>
               <p>
-                <a href="mailto:contact@gallerie122.com">
-                  contact@gallerie122.com
+                <a href="mailto:contact@122gallerievieceli.com">
+                contact@122gallerievieceli.com
                 </a>
-              </p>{" "}
+              </p>
               <HeadlineCenter />
-              <h3> Horaires</h3>
+              <h3 className="text-center"> Horaires</h3>
               <p>De 10h à 12h et 14h à 18h</p>
             </RCol>
           </Col>

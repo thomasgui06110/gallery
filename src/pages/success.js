@@ -90,8 +90,8 @@ const Contact = () => {
               06400 Cannes - France <p></p>
               <h3>Mail</h3>
               <p>
-                <a href="mailto:contact@gallerie122.com">
-                  contact@gallerie122.com
+                <a href="mailto:contact@122gallerievieceli.com">
+                contact@122gallerievieceli.com
                 </a>
               </p>
               <h3> Horaires</h3>
