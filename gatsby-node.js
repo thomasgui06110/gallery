@@ -36,7 +36,6 @@ exports.createPages = ({ graphql, actions }) => {
                 content
                 featured_media {
                   alt_text
-                 
                 }
                 acf {
                   titre_anglais
@@ -162,6 +161,8 @@ exports.createPages = ({ graphql, actions }) => {
                         }
                       }
                       dates
+                      titre_anglais
+                      texte_anglais
                     }
                   }
                 }
@@ -209,6 +210,10 @@ exports.createPages = ({ graphql, actions }) => {
                   title
                   featured_media {
                     source_url
+                  }
+                  acf {
+                    texte_anglais
+                    titre_anglais
                   }
                 }
               }
@@ -259,7 +264,7 @@ exports.createPages = ({ graphql, actions }) => {
                       }
                     }
                   }
-                 
+
                   categories {
                     description
                     slug

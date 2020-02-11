@@ -76,26 +76,25 @@ export default ({ pageContext }) => (
       return (
         <div>
           <GLayout>
-            <SEO title={pageContext.title} description={pageContext.excerpt} />
+            {intl.formatMessage({ id: "title" }) !== "Gatsby English" ? (
+              <SEO
+                title={pageContext.title}
+                description={pageContext.excerpt}
+              />
+            ) : (
+              <SEO
+                title={pageContext.acf.titre_anglais}
+                description={pageContext.acf.extrait_anglais}
+              />
+            )}
             <Wrap>
               <Row>
                 <Col>
                   {pageContext.title !== "HomePage" && (
                     <h1>
-                      {intl.formatMessage({ id: "title" }) !==
-                      "Gatsby English" ? (
-                        <div
-                          dangerouslySetInnerHTML={{
-                            __html: pageContext.title
-                          }}
-                        />
-                      ) : (
-                        <div
-                          dangerouslySetInnerHTML={{
-                            __html: pageContext.acf.titre_anglais
-                          }}
-                        />
-                      )}
+                      {intl.formatMessage({ id: "title" }) !== "Gatsby English"
+                        ? pageContext.title
+                        : pageContext.acf.titre_anglais}
                     </h1>
                   )}
                 </Col>
