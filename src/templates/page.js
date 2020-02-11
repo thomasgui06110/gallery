@@ -5,7 +5,7 @@ import { Row, Col, Media } from "react-bootstrap";
 import { graphql, StaticQuery } from "gatsby";
 import {} from "gatsby";
 import Newsletter from "../components/newsletter";
-import { useIntl, Link, formatMessage } from "gatsby-plugin-intl";
+import { useIntl, Link, formatMessage, FormattedMessage } from "gatsby-plugin-intl";
 
 const GlobalStyles = createGlobalStyle`
 figure {
@@ -64,6 +64,7 @@ export default ({ pageContext }) => (
     `}
     render={data => {
       const intl = useIntl();
+      const textEn = pageContext.acf.contenu_anglais
       return (
         <GLayout>
           <Row>
@@ -100,11 +101,12 @@ export default ({ pageContext }) => (
                 {intl.formatMessage({ id: "title" }) == "Gatsby English" ? 
                   (<p
                     dangerouslySetInnerHTML={{
-                      __html: pageContext.acf.contenu_anglais
+                      __html: `<div> ${textEn}</div>`
                     }}
                   /> )
                 : 
-                  pageContext.content
+                 pageContext.content
+                 
                   
                 }
               </div>
