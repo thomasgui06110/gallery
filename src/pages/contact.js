@@ -5,8 +5,7 @@ import SEO from "../components/SEO";
 import GLayout from "../components/layout";
 import { FaUserCircle, FaEnvelopeOpenText } from "react-icons/fa";
 import { MdPhoneIphone } from "react-icons/md";
-import { injectIntl, Link, FormattedMessage } from "gatsby-plugin-intl"
-
+import { injectIntl, Link, FormattedMessage } from "gatsby-plugin-intl";
 
 const HeadlineCenter = styled.span`
   &::after {
@@ -23,7 +22,7 @@ const LeftCol = styled.div`
   padding: 2rem 5rem 2rem 5rem;
   border-bottom-left-radius: 10px;
   border-top-left-radius: 10px;
-  border:1px solid rgba(31,31,31,0.9);
+  border: 1px solid rgba(31, 31, 31, 0.9);
   width: 100%;
   height: 100%;
   margin: 0;
@@ -93,7 +92,7 @@ const Submit = styled.button`
   }
 `;
 
-const Contact = () => {
+const Contact = ({ intl }) => {
   return (
     <div>
       <GLayout>
@@ -102,13 +101,15 @@ const Contact = () => {
           description="Pour toute demande de renseignements, n'hésitez pas à contacter la Gallerie 122 à l'aide du formulaire. Nous vous répondrons très rapidement"
         />
         <h1 mb="0" className="text-center">
-          <HeadlineCenter className="display-4">Contact us / Contactez nous</HeadlineCenter>
+          <HeadlineCenter className="display-4">
+            {intl.formatMessage({ id: "title_contact" })}
+          </HeadlineCenter>
         </h1>
         <Row>
           <Col md="8" xs="12" className="mr-0 pr-0">
             <LeftCol>
               <h3 className="mb-4">
-                Send us a message ! / Envoyez-nous un message !
+              {intl.formatMessage({ id: "title_form" })}
               </h3>
 
               <form
@@ -194,9 +195,9 @@ const Contact = () => {
           </Col>
           <Col md="4" xs="12" className=" pl-0">
             <RCol>
-              <h3 className="text-center">Phone / Téléphone</h3>
+              <h3 className="text-center"> {intl.formatMessage({ id: "phone_contact" })}</h3>
               <p>+33 4 93 93 93 93</p> <HeadlineCenter />
-              <h3 className="text-center">Address / Adresse</h3>
+              <h3 className="text-center"> {intl.formatMessage({ id: "adresse_contact" })}</h3>
               Gallerie 122
               <br />
               122 Rue d'Antibes
@@ -206,11 +207,11 @@ const Contact = () => {
               <h3 className="text-center">Mail</h3>
               <p>
                 <a href="mailto:contact@122gallerievieceli.com">
-                contact@122gallerievieceli.com
+                  contact@122gallerievieceli.com
                 </a>
               </p>
               <HeadlineCenter />
-              <h3 className="text-center"> Horaires</h3>
+              <h3 className="text-center">  {intl.formatMessage({ id: "horaires_contact" })}</h3>
               <p>De 10h à 12h et 14h à 18h</p>
             </RCol>
           </Col>
@@ -218,7 +219,7 @@ const Contact = () => {
         <Row className="mt-3">
           <Col>
             <iframe
-            title="Plan Galerie 122 Cannes France"
+              title="Plan Galerie 122 Cannes France"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2891.6199390697197!2d7.024202915720587!3d43.55196376698875!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12ce8195c5ea6603%3A0x9caff7af986269d7!2s122%20Rue%20d&#39;Antibes%2C%2006400%20Cannes!5e0!3m2!1sfr!2sfr!4v1580144183896!5m2!1sfr!2sfr"
               width="100%"
               height="500px"
@@ -231,4 +232,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default injectIntl(Contact);
