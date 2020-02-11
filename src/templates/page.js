@@ -99,10 +99,10 @@ export default ({ pageContext }) => (
               <GlobalStyles />
               <div> 
                 {intl.formatMessage({ id: "title" }) == "Gatsby English" ? 
-                  (<p
+                  (<div
                     dangerouslySetInnerHTML={{
-                      __html: converter.makeHtml(textEn)
-                    }}
+                      __html: pageContext.acf.contenu_anglais }}
+                    
                   /> )
                   
                 : 
