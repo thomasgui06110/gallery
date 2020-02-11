@@ -5,7 +5,12 @@ import { Row, Col, Media } from "react-bootstrap";
 import { graphql, StaticQuery } from "gatsby";
 import {} from "gatsby";
 import Newsletter from "../components/newsletter";
-import { useIntl, Link, formatMessage, FormattedMessage } from "gatsby-plugin-intl";
+import {
+  useIntl,
+  Link,
+  formatMessage,
+  FormattedMessage
+} from "gatsby-plugin-intl";
 
 const GlobalStyles = createGlobalStyle`
 figure {
@@ -64,7 +69,7 @@ export default ({ pageContext }) => (
     `}
     render={data => {
       const intl = useIntl();
-      const textEn = pageContext.acf.contenu_anglais
+      const textEn = pageContext.acf.contenu_anglais;
       return (
         <GLayout>
           <Row>
@@ -89,7 +94,6 @@ export default ({ pageContext }) => (
               {pageContext.slug === "home" && (
                 <HeadlineCenter>
                   <h1 className="display-4">
-                   
                     {intl.formatMessage({ id: "title" }) == "Gatsby English"
                       ? pageContext.acf.titre_anglais
                       : pageContext.title}
@@ -97,19 +101,20 @@ export default ({ pageContext }) => (
                 </HeadlineCenter>
               )}
               <GlobalStyles />
-              <div> 
-                {intl.formatMessage({ id: "title" }) == "Gatsby English" ? 
-                  (<div
+              <div>
+                {intl.formatMessage({ id: "title" }) == "Gatsby English" ? (
+                  <div
                     dangerouslySetInnerHTML={{
-                      __html: pageContext.acf.contenu_anglais }}
-                    
-                  /> )
-                  
-                : 
-                 pageContext.content
-                 
-                  
-                }
+                      __html: pageContext.acf.contenu_anglais
+                    }}
+                  />
+                ) : (
+                  <div
+                    dangerouslySetInnerHTML={{
+                      __html: pageContext.content
+                    }}
+                  />
+                )}
               </div>
             </Col>
           </Row>
