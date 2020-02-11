@@ -21,9 +21,9 @@ module.exports = {
         // supported language
         languages: [`en`, `fr`],
         // language file path
-       
+        defaultLanguage: `fr`,
         // option to redirect to `/ko` when connecting `/`
-       
+        redirect: true,
       },
     },
     `gatsby-plugin-transition-link`,
