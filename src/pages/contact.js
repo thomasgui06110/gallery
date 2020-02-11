@@ -5,6 +5,9 @@ import SEO from "../components/SEO";
 import GLayout from "../components/layout";
 import { FaUserCircle, FaEnvelopeOpenText } from "react-icons/fa";
 import { MdPhoneIphone } from "react-icons/md";
+import { injectIntl, Link, FormattedMessage } from "gatsby-plugin-intl"
+
+
 const HeadlineCenter = styled.span`
   &::after {
     content: " ";
