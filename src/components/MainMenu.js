@@ -1,11 +1,17 @@
 import React from "react";
 import styled from "styled-components";
-import { graphql, StaticQuery, Link } from "gatsby";
+import { graphql, StaticQuery } from "gatsby";
 import { Navbar, Nav } from "react-bootstrap";
 import menu from "../styles/menu.css";
+import {
+  useIntl,
+  Link,
+  formatMessage,
+  FormattedMessage
+} from "gatsby-plugin-intl";
 
 const GlobalMenu = styled.div`
-  ${'' /* background-color: rgba(255, 255, 255, 1); */}
+  ${"" /* background-color: rgba(255, 255, 255, 1); */}
   background-color: rgba(31, 31, 31, 0.9);
   marin: 0 auto 0 auto;
 
@@ -30,12 +36,12 @@ const MenuItems = styled(Link)`
   color: #fff;
   &:hover {
     text-decoration: none;
-    color:#fff;
+    color: #fff;
   }
   @media screen and (min-width: 1341px) {
     &:not(:first-child) > &:before {
       position: absolute;
-      color:#fff;
+      color: #fff;
       top: 12px;
       left: 0;
       width: 3px;
@@ -65,9 +71,8 @@ const Contact = styled(Link)`
 `;
 
 const activeStyles = {
-  
-  "borderBottom": '2px solid #fff'
-}
+  borderBottom: "2px solid #fff"
+};
 const MainMenu = () => {
   return (
     <StaticQuery
