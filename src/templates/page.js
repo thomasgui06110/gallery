@@ -96,7 +96,11 @@ export default ({ pageContext }) => (
                 </HeadlineCenter>
               )}
               <GlobalStyles />
-              <div>
+              <div> <p
+                    dangerouslySetInnerHTML={{
+                      __html: pageContext.acf.contenu_anglais
+                    }}
+                  ></p>
                 {intl.formatMessage({ id: "title" }) == "Gatsby English" ? (
                   <p
                     dangerouslySetInnerHTML={{
