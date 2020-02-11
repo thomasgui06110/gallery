@@ -5,7 +5,7 @@ import SEO from "../components/SEO";
 import GLayout from "../components/layout";
 import { FaUserCircle, FaEnvelopeOpenText } from "react-icons/fa";
 import { MdPhoneIphone } from "react-icons/md";
-import { useIntl } from "gatsby-plugin-intl";
+
 
 const HeadlineCenter = styled.span`
   &::after {
@@ -93,7 +93,6 @@ const Submit = styled.button`
 `;
 
 const Contact = () => {
-  const intl = useIntl()
   return (
     <div>
       <GLayout>
@@ -103,14 +102,14 @@ const Contact = () => {
         />
         <h1 mb="0" className="text-center">
           <HeadlineCenter className="display-4">
-            {intl.formatMessage({ id: "title_contact" })}
+           Contactez nous
           </HeadlineCenter>
         </h1>
         <Row>
           <Col md="8" xs="12" className="mr-0 pr-0">
             <LeftCol>
               <h3 className="mb-4">
-              {intl.formatMessage({ id: "title_form" })}
+              Envoyez nous un message !
               </h3>
 
               <form
@@ -196,9 +195,9 @@ const Contact = () => {
           </Col>
           <Col md="4" xs="12" className=" pl-0">
             <RCol>
-              <h3 className="text-center"> {intl.formatMessage({ id: "phone_contact" })}</h3>
+              <h3 className="text-center"> Téléphone</h3>
               <p>+33 4 93 93 93 93</p> <HeadlineCenter />
-              <h3 className="text-center"> {intl.formatMessage({ id: "adresse_contact" })}</h3>
+              <h3 className="text-center"> Adresse</h3>
               Gallerie 122
               <br />
               122 Rue d'Antibes
@@ -212,7 +211,7 @@ const Contact = () => {
                 </a>
               </p>
               <HeadlineCenter />
-              <h3 className="text-center">  {intl.formatMessage({ id: "horaires_contact" })}</h3>
+              <h3 className="text-center">  Horaires de la galerie</h3>
               <p>De 10h à 12h et 14h à 18h</p>
             </RCol>
           </Col>
@@ -233,4 +232,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default (Contact);

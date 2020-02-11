@@ -5,7 +5,7 @@ import { Row, Col, Media } from "react-bootstrap";
 import { graphql, StaticQuery } from "gatsby";
 import { Link } from "gatsby";
 import Newsletter from "../components/newsletter";
-import { injectIntl } from "gatsby-plugin-intl";
+
 
 const GlobalStyles = createGlobalStyle`
 figure {
