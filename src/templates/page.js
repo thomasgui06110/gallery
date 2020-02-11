@@ -48,7 +48,6 @@ const ImgHover = styled.div`
     overflow: hidden;
   }
 `;
-
 export default ({ pageContext }) => (
   <StaticQuery
     query={graphql`
