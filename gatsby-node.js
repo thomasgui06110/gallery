@@ -12,7 +12,7 @@ const slash = require(`slash`);
 exports.createPages = ({ graphql, actions }) => {
   const { createPage, createRedirect } = actions;
   createRedirect({
-    fromPath: "/",
+    fromPath: "fr/",
     toPath: "/home",
     redirectInBrowser: true,
     isPermanent: true
