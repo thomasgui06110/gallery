@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { useIntl, Link } from "gatsby-plugin-intl";
 
 const HeadlineCenter = styled.span`
   &::after {
@@ -61,11 +62,12 @@ const Button = styled.button`
   }
 `;
 const Newsletter = () => {
+  const intl = useIntl()
   return (
     <div>
       <h2 mt="4" mb="0" className="text-center mt-4">
         <HeadlineCenter className="display-5">
-          Abonnez-vous à notre newsletter
+        {intl.formatMessage({ id: "abo" })}
         </HeadlineCenter>
       </h2>
       <form
@@ -82,7 +84,7 @@ const Newsletter = () => {
         <Input type="text" placeholder="Name / Nom" name="Nom" />
         <Input type="mail" placeholder="Mail" name="Mail" />
 
-        <Button type="submit">S'ABONNER</Button>
+        <Button type="submit"> {intl.formatMessage({ id: "aboButton" })}</Button>
       </form>
     </div>
   );
