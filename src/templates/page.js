@@ -101,9 +101,10 @@ export default ({ pageContext }) => (
                 {intl.formatMessage({ id: "title" }) == "Gatsby English" ? 
                   (<p
                     dangerouslySetInnerHTML={{
-                      __html: `<div> ${textEn}</div>`
+                      __html: converter.makeHtml(textEn)
                     }}
                   /> )
+                  
                 : 
                  pageContext.content
                  
