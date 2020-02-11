@@ -64,7 +64,6 @@ export default ({ pageContext }) => (
     `}
     render={data => {
       const intl = useIntl();
-      const textEn = pageContext.acf.contenu_anglais;
       return (
         <GLayout>
           <Row>

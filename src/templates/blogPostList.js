@@ -4,7 +4,7 @@ import styled from "styled-components";
 import moment from "moment";
 import { Row, Col } from "react-bootstrap";
 import SEO from "../components/SEO";
-import { useIntl, Link } from "gatsby-plugin-intl";
+import { injectIntl, Link } from "gatsby-plugin-intl"
 
 const Pagination = styled.div`
   display: flex;
@@ -26,7 +26,7 @@ const Wrap = styled.div`
   color: #71818c !important;
   @media (max-width: 1000px) {
     column-count: 1;
-    padding-left:0;
+    padding-left: 0;
     margin-left: -15px;
   }
 `;
@@ -57,7 +57,7 @@ const StyledFlexBoxArtist = styled.div`
   border-radius: 5px;
   overflow: hidden;
   margin: 0px 0px;
-  background-color:#fff;
+  background-color: #fff;
   background-size: cover;
   background-position: center center;
   @media (max-width: 1000px) {
@@ -115,74 +115,79 @@ const HeadlineCenter = styled.span`
     border: 2px solid #4f5153;
   }
 `;
-export default ({ pageContext, fluid }) => (
-  
-  <GLayout>
-    <SEO title="Le blog de la Gallery 122" />
-    <Row>
-      <Col className="text-center" mt="0" md="12">
-        <h1 mb="0">
-          <HeadlineCenter className="display-4">
-            Le Blog Gallery 122
-          </HeadlineCenter>
-        </h1>
-        <p className="font-italic">Suivez notre actu !</p>
-      </Col>
-    </Row>
-    <Wrap>
-      {pageContext.posts.map(post => (
-      
-        <Col md="6" key={post.node.wordpress_id}>
-         
-          <StyledFlexBox>
-            <StyledFlexBoxArtist className="cadre">
-              <Picture>
-                <StyledImg>
-                  <Link to={`/post/${post.node.slug}`}>
-                    <img
-                      width="100%"
-                      className="mt-0"
-                      src={post.node.featured_media.localFile.childImageSharp.fluid.src}
-                      alt={post.node.title}
-                    />
-                     
-                  </Link>
-                </StyledImg>
-              </Picture>
-              <h2
-                className="pl-2"
-                dangerouslySetInnerHTML={{ __html: post.node.title }}
-              />
-              <Small className="pl-2">
-                le {moment(post.node.date).format("DD MMMM YYYY")}
-              </Small>
-
-              <p
-                className="pl-2 pr-2 mt-2"
-                dangerouslySetInnerHTML={{ __html: post.node.excerpt }}
-              ></p>
-              <NextWrap>
-                <Link to={`/post/${post.node.slug}`}>
-                  <Next>Lire la suite </Next>
-                </Link>
-              </NextWrap>
-            </StyledFlexBoxArtist>
-          </StyledFlexBox>
+const blogPostList = ({ pageContext, fluid, intl }) => {
+ 
+  return (
+    <GLayout>
+      <SEO title={intl.formatMessage({ id: "blogTitle" })} />
+      <Row>
+        <Col className="text-center" mt="0" md="12">
+          <h1 mb="0">
+            <HeadlineCenter   className="display-4">
+            {intl.formatMessage({ id: "blogTitle" })}
+            </HeadlineCenter>
+          </h1>
+          <p className="font-italic">{intl.formatMessage({ id: "blogActu" })}</p>
         </Col>
-      ))}
-    </Wrap>
-    <Pagination>
-      {Array.from({ length: pageContext.numberOfPages }).map((page, index) => (
-        <PageNumberWrapper
-          key={index}
-          isCurrentPage={index + 1 === pageContext.currentPage}
-        >
-          <PageNumber to={index === 0 ? `/blog` : `/blog/${index + 1}`}>
-            {index + 1}
-          </PageNumber>
-        </PageNumberWrapper>
-      ))}
-    </Pagination>
-  </GLayout>
-);
+      </Row>
+      <Wrap>
+        {pageContext.posts.map(post => (
+          <Col md="6" key={post.node.wordpress_id}>
+            <StyledFlexBox>
+              <StyledFlexBoxArtist className="cadre">
+                <Picture>
+                  <StyledImg>
+                    <Link to={`/blog/${post.node.slug}`}>
+                      <img
+                        width="100%"
+                        className="mt-0"
+                        src={
+                          post.node.featured_media.localFile.childImageSharp
+                            .fluid.src
+                        }
+                        alt={post.node.title}
+                      />
+                    </Link>
+                  </StyledImg>
+                </Picture>
+                <h2
+                  className="pl-2"
+                  dangerouslySetInnerHTML={{ __html: post.node.title }}
+                />
+                <Small className="pl-2">
+                  le {moment(post.node.date).format("DD MMMM YYYY")}
+                </Small>
 
+                <p
+                  className="pl-2 pr-2 mt-2"
+                  dangerouslySetInnerHTML={{ __html: post.node.excerpt }}
+                ></p>
+                <NextWrap>
+                  <Link to={`/blog/${post.node.slug}`}>
+                    <Next>{intl.formatMessage({ id: "blogSuite" })} </Next>
+                  </Link>
+                </NextWrap>
+              </StyledFlexBoxArtist>
+            </StyledFlexBox>
+          </Col>
+        ))}
+      </Wrap>
+      <Pagination>
+        {Array.from({ length: pageContext.numberOfPages }).map(
+          (page, index) => (
+            <PageNumberWrapper
+              key={index}
+              isCurrentPage={index + 1 === pageContext.currentPage}
+            >
+              <PageNumber to={index === 0 ? `/blog` : `/blog/${index + 1}`}>
+                {index + 1}
+              </PageNumber>
+            </PageNumberWrapper>
+          )
+        )}
+      </Pagination>
+    </GLayout>
+  );
+};
+
+export default injectIntl(blogPostList);

@@ -18,6 +18,12 @@
     "build": "Artists",
     "welcome_page2": "Welcome to page 2",
     "go_back": "Go back to the homepage",
+    "blogTitle": "News of Galery 122",
+    "blogActu": "Follow our News",
+    "blogSuite": "Read more ...",
+    "expoTitre": "Exhibitions",
+    "expodesc": "Galerie 122 regularly organizes exhibitions of contemporary artists. The promotion and defense of artists are the watchwords to ensure their visibility through publications and exhibitions. ",
+    "expoArtistes": "The Artists",
     "notfound": {
       "header": "NOT FOUND",
       "description": "You just hit a route that doesn't exist... the sadness."

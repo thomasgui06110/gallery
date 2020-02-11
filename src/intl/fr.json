@@ -18,6 +18,12 @@
     "build": "Artistes",
     "welcome_page2": "Welcome to page 2",
     "go_back": "Go back to the homepage",
+    "blogTitle": "Le blog de la galerie 122",
+    "blogActu": "Suivez notre actu !",
+    "blogSuite": "Lire la suite",
+    "expoTitre": "Nos Expositions",
+    "expodesc": "La galerie 122 organise régulièrement des expositions d'artistes contemporains. La promotion et la défense des artistes sont les mots d’ordres afin de leur assurer une visibilité à travers des publications et des expositions. ",
+    "expoArtistes": "Les Artistes exposés",
     "notfound": {
       "header": "NOT FOUND",
       "description": "You just hit a route that doesn't exist... the sadness."

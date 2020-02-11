@@ -4,6 +4,8 @@ import styled from "styled-components";
 import OuevresItems from "../components/oeuvresItems";
 import { Row, Col } from "react-bootstrap";
 import SEO from "../components/SEO";
+import { injectIntl } from "gatsby-plugin-intl"
+
 const HeadlineCenter = styled.span`
   &::after {
     content: " ";
@@ -13,23 +15,27 @@ const HeadlineCenter = styled.span`
     border: 2px solid #4f5153;
   }
 `;
-export default ({ data }) => (
-  <>
+const expositions = ({ data, intl }) => {
+  return(
+  
   <GLayout>
-  <SEO title="Nos expositions" 
-  description="ff"
+  <SEO title={intl.formatMessage({ id: "expoTitre" })}
+  description={intl.formatMessage({ id: "expodesc" })}
   keywords="fr"
-  image="ffef"
+  
 />
     <Row>
       <Col className="text-center" mt="0" md="12">
         <h1 mb="0">
-          <HeadlineCenter className="display-4">Les Expositions</HeadlineCenter>
+          <HeadlineCenter className="display-4">{intl.formatMessage({ id: "expoTitre" })}</HeadlineCenter>
         </h1>
       </Col>
     </Row>
 
     <OuevresItems />
   </GLayout>
-  </>
-);
+  
+)
+  }
+
+export default injectIntl(expositions)
