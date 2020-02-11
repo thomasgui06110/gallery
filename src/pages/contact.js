@@ -5,7 +5,7 @@ import SEO from "../components/SEO";
 import GLayout from "../components/layout";
 import { FaUserCircle, FaEnvelopeOpenText } from "react-icons/fa";
 import { MdPhoneIphone } from "react-icons/md";
-import { injectIntl, Link, FormattedMessage } from "gatsby-plugin-intl";
+import { useIntl } from "gatsby-plugin-intl";
 
 const HeadlineCenter = styled.span`
   &::after {
@@ -92,7 +92,8 @@ const Submit = styled.button`
   }
 `;
 
-const Contact = ({ intl }) => {
+const Contact = () => {
+  const intl = useIntl()
   return (
     <div>
       <GLayout>
@@ -232,4 +233,4 @@ const Contact = ({ intl }) => {
   );
 };
 
-export default injectIntl(Contact);
+export default Contact;
