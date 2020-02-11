@@ -3,9 +3,9 @@ import GLayout from "../components/layout";
 import styled, { createGlobalStyle } from "styled-components";
 import { Row, Col, Media } from "react-bootstrap";
 import { graphql, StaticQuery } from "gatsby";
-import { Link } from "gatsby";
+import {  } from "gatsby";
 import Newsletter from "../components/newsletter";
-
+import { useIntl, Link, FormattedMessage } from "gatsby-plugin-intl"
 
 const GlobalStyles = createGlobalStyle`
 figure {
@@ -62,7 +62,11 @@ export default ({ pageContext }) => (
         }
       }
     `}
-    render={data => (
+    render={data => {
+      const intl = useIntl()
+      return (
+
+     
       <GLayout>
         <Row>
           <Col className="ml-0 mr-0">
@@ -82,10 +86,12 @@ export default ({ pageContext }) => (
           </Col>
         </Row>
         <Row>
-          <Col>
+          <Col>{intl.formatMessage({ id : "title"})}
             {pageContext.title !== "HomePage" && (
               <HeadlineCenter>
+              
                 <h1
+
                   className="display-4"
                   dangerouslySetInnerHTML={{ __html: pageContext.title }}
                 ></h1>
@@ -149,6 +155,7 @@ export default ({ pageContext }) => (
           </Col>
         </Row>
       </GLayout>
-    )}
+      
+    )}}
   />
 );
