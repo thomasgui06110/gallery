@@ -3,9 +3,9 @@ import GLayout from "../components/layout";
 import styled, { createGlobalStyle } from "styled-components";
 import { Row, Col, Media } from "react-bootstrap";
 import { graphql, StaticQuery } from "gatsby";
-import {  } from "gatsby";
+import {} from "gatsby";
 import Newsletter from "../components/newsletter";
-import { useIntl, Link, FormattedMessage } from "gatsby-plugin-intl"
+import { useIntl, Link, formatMessage } from "gatsby-plugin-intl";
 
 const GlobalStyles = createGlobalStyle`
 figure {
@@ -63,99 +63,107 @@ export default ({ pageContext }) => (
       }
     `}
     render={data => {
-      const intl = useIntl()
+      const intl = useIntl();
       return (
-
-     
-      <GLayout>
-        <Row>
-          <Col className="ml-0 mr-0">
-            {pageContext.acf.Photo_principale !== null && (
-              <Media>
-                <img
-                  width="100%"
-                  className="mt-3 mb-5"
-                  src={
-                    pageContext.acf.Photo_principale.localFile.childImageSharp
-                      .fluid.src
-                  }
-                  alt={pageContext.title}
-                />
-              </Media>
-            )}
-          </Col>
-        </Row>
-        <Row>
-          <Col>{intl.formatMessage({ id : "title"})}
-            {pageContext.title !== "HomePage" && (
-              <HeadlineCenter>
-              
-                <h1
-
-                  className="display-4"
-                  dangerouslySetInnerHTML={{ __html: pageContext.title }}
-                ></h1>
-              </HeadlineCenter>
-            )}
-            <GlobalStyles />
-            <div
-              dangerouslySetInnerHTML={{ __html: pageContext.content }}
-            ></div>
-          </Col>
-        </Row>
-        <Row>
-          <Col md="6" className="text-center mt-3">
-            {pageContext.acf.expositions !== null && (
-              <Link to="/artistes">
-                <ImgHover>
+        <GLayout>
+          <Row>
+            <Col className="ml-0 mr-0">
+              {pageContext.acf.Photo_principale !== null && (
+                <Media>
                   <img
+                    width="100%"
+                    className="mt-3 mb-5"
                     src={
-                      pageContext.acf.photo_artiste.localFile.childImageSharp
+                      pageContext.acf.Photo_principale.localFile.childImageSharp
                         .fluid.src
                     }
-                    alt="Nos Artistes"
-                    width="100%"
-                    className="mb-0"
+                    alt={pageContext.title}
                   />
-                </ImgHover>
-              </Link>
-            )}
-            {pageContext.slug === "home" && (
-              <Link to="/artistes">
-                <Liens>Artistes</Liens>
-              </Link>
-            )}
-          </Col>
-          <Col md="6" className="text-center  mt-3">
-            {pageContext.acf.photo_artiste !== null && (
-              <ImgHover>
-                <Link to="/expositions">
-                  <img
-                    src={
-                      pageContext.acf.expositions.localFile.childImageSharp
-                        .fluid.src
-                    }
-                    alt="Nos expositions"
-                    width="100%"
-                    className="mb-0"
-                  />
+                </Media>
+              )}
+            </Col>
+          </Row>
+          <Row>
+            <Col>
+              {pageContext.slug === "home" && (
+                <HeadlineCenter>
+                  <h1 className="display-4">
+                    {" "}
+                    {intl.formatMessage({ id: "title" }) == "Gatsby English"
+                      ? pageContext.acf.titre_anglais
+                      : pageContext.title}
+                  </h1>
+                </HeadlineCenter>
+              )}
+              <GlobalStyles />
+              <div>
+                {intl.formatMessage({ id: "title" }) == "Gatsby English" ? (
+                  <p
+                    dangerouslySetInnerHTML={{
+                      __html: pageContext.acf.contenu_anglais
+                    }}
+                  ></p>
+                ) : (
+                  <p
+                    dangerouslySetInnerHTML={{ __html: pageContext.content }}
+                  ></p>
+                )}
+              </div>
+            </Col>
+          </Row>
+          <Row>
+            <Col md="6" className="text-center mt-3">
+              {pageContext.acf.expositions !== null && (
+                <Link to="/artistes">
+                  <ImgHover>
+                    <img
+                      src={
+                        pageContext.acf.photo_artiste.localFile.childImageSharp
+                          .fluid.src
+                      }
+                      alt="Nos Artistes"
+                      width="100%"
+                      className="mb-0"
+                    />
+                  </ImgHover>
                 </Link>
-              </ImgHover>
-            )}
-            {pageContext.slug === "home" && (
-              <Link to="/expositions">
-                <Liens>Expositions</Liens>
-              </Link>
-            )}
-          </Col>
-        </Row>
-        <Row>
-          <Col>
-            <Newsletter></Newsletter>
-          </Col>
-        </Row>
-      </GLayout>
-      
-    )}}
+              )}
+              {pageContext.slug === "home" && (
+                <Link to="/artistes">
+                  <Liens>{intl.formatMessage({ id: "build" })}</Liens>
+                </Link>
+              )}
+            </Col>
+            <Col md="6" className="text-center  mt-3">
+              {pageContext.acf.photo_artiste !== null && (
+                <ImgHover>
+                  <Link to="/expositions">
+                    <img
+                      src={
+                        pageContext.acf.expositions.localFile.childImageSharp
+                          .fluid.src
+                      }
+                      alt="Nos expositions"
+                      width="100%"
+                      className="mb-0"
+                    />
+                  </Link>
+                </ImgHover>
+              )}
+              {pageContext.slug === "home" && (
+                <Link to="/expositions">
+                  <Liens>{intl.formatMessage({ id: "go_page2" })}</Liens>
+                </Link>
+              )}
+            </Col>
+          </Row>
+          <Row>
+            <Col>
+              <Newsletter></Newsletter>
+            </Col>
+          </Row>
+        </GLayout>
+      );
+    }}
   />
 );

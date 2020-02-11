@@ -39,7 +39,8 @@ exports.createPages = ({ graphql, actions }) => {
                  
                 }
                 acf {
-                 
+                  titre_anglais
+                  contenu_anglais
                   photo_artiste {
                     path
                     source_url
