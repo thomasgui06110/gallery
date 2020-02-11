@@ -5,6 +5,8 @@ import { graphql, StaticQuery } from "gatsby";
 import moment from "moment";
 import SEO from "../components/SEO";
 import { Row, Col } from "react-bootstrap";
+import { useIntl, Link } from "gatsby-plugin-intl";
+
 const GlobalStyles = createGlobalStyle`
 figure {
   text-align:center:
@@ -70,6 +72,7 @@ export default ({ pageContext }) => (
       }
     `}
     render={data => {
+      const intl = useIntl();
       return (
         <div>
           <GLayout>
@@ -78,14 +81,27 @@ export default ({ pageContext }) => (
               <Row>
                 <Col>
                   {pageContext.title !== "HomePage" && (
-                    <h1
-                      dangerouslySetInnerHTML={{ __html: pageContext.title }}
-                    ></h1>
+                    <h1>
+                      {intl.formatMessage({ id: "title" }) !==
+                      "Gatsby English" ? (
+                        <div
+                          dangerouslySetInnerHTML={{
+                            __html: pageContext.title
+                          }}
+                        />
+                      ) : (
+                        <div
+                          dangerouslySetInnerHTML={{
+                            __html: pageContext.acf.titre_anglais
+                          }}
+                        />
+                      )}
+                    </h1>
                   )}
                 </Col>
               </Row>
-              <Row >
-                <Col >
+              <Row>
+                <Col>
                   {pageContext.title !== "HomePage" && (
                     <Small>
                       le {moment(pageContext.date).format("DD MMMM YYYY")}
@@ -96,27 +112,28 @@ export default ({ pageContext }) => (
 
               <GlobalStyles />
               <Row>
-                <Col >
-                  {/* <img
-                    width="20%"
-                    
-                    className="mt-0"
-                    src={
-                      pageContext.featured_media.localFile.childImageSharp.fluid
-                        .src
-                    }
-                    alt={pageContext.title}
-                  /> */}
-                  <Article
-                    dangerouslySetInnerHTML={{ __html: pageContext.content }}
-                  />
+                <Col>
+                  <Article>
+                    {intl.formatMessage({ id: "title" }) !==
+                    "Gatsby English" ? (
+                      <div
+                        dangerouslySetInnerHTML={{
+                          __html: pageContext.content
+                        }}
+                      />
+                    ) : (
+                      <div
+                        dangerouslySetInnerHTML={{
+                          __html: pageContext.acf.titre_anglais
+                        }}
+                      />
+                    )}
+                  </Article>
                 </Col>
               </Row>
 
               <Row>
-                <Col>
-                  
-                </Col>
+                <Col></Col>
               </Row>
             </Wrap>
           </GLayout>

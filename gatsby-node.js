@@ -265,6 +265,11 @@ exports.createPages = ({ graphql, actions }) => {
                     slug
                     name
                   }
+                  acf {
+                    texte_anglais
+                    titre_anglais
+                    extrait_anglais
+                  }
                 }
               }
             }

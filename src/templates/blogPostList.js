@@ -4,7 +4,7 @@ import styled from "styled-components";
 import moment from "moment";
 import { Row, Col } from "react-bootstrap";
 import SEO from "../components/SEO";
-import { injectIntl, Link } from "gatsby-plugin-intl"
+import { injectIntl, Link } from "gatsby-plugin-intl";
 
 const Pagination = styled.div`
   display: flex;
@@ -116,18 +116,19 @@ const HeadlineCenter = styled.span`
   }
 `;
 const blogPostList = ({ pageContext, fluid, intl }) => {
- 
   return (
     <GLayout>
       <SEO title={intl.formatMessage({ id: "blogTitle" })} />
       <Row>
         <Col className="text-center" mt="0" md="12">
           <h1 mb="0">
-            <HeadlineCenter   className="display-4">
-            {intl.formatMessage({ id: "blogTitle" })}
+            <HeadlineCenter className="display-4">
+              {intl.formatMessage({ id: "blogTitle" })}
             </HeadlineCenter>
           </h1>
-          <p className="font-italic">{intl.formatMessage({ id: "blogActu" })}</p>
+          <p className="font-italic">
+            {intl.formatMessage({ id: "blogActu" })}
+          </p>
         </Col>
       </Row>
       <Wrap>
@@ -150,18 +151,46 @@ const blogPostList = ({ pageContext, fluid, intl }) => {
                     </Link>
                   </StyledImg>
                 </Picture>
-                <h2
+                <h2>
+                  {intl.formatMessage({ id: "title" }) !== "Gatsby English" ? (
+                    <div
+                      dangerouslySetInnerHTML={{
+                        __html: post.node.title
+                      }}
+                    />
+                  ) : (
+                    <div
+                      dangerouslySetInnerHTML={{
+                        __html: post.node.acf.titre_anglais
+                      }}
+                    />
+                  )}
+                </h2>
+
+                {/* <h2
                   className="pl-2"
                   dangerouslySetInnerHTML={{ __html: post.node.title }}
-                />
+                /> */}
                 <Small className="pl-2">
                   le {moment(post.node.date).format("DD MMMM YYYY")}
                 </Small>
 
                 <p
                   className="pl-2 pr-2 mt-2"
-                  dangerouslySetInnerHTML={{ __html: post.node.excerpt }}
-                ></p>
+                 
+                > {intl.formatMessage({ id: "title" }) !== "Gatsby English" ? (
+                    <div
+                      dangerouslySetInnerHTML={{
+                        __html: post.node.excerpt
+                      }}
+                    />
+                  ) : (
+                    <div
+                      dangerouslySetInnerHTML={{
+                        __html: post.node.acf.extrait_anglais
+                      }}
+                    />
+                  )}</p>
                 <NextWrap>
                   <Link to={`/blog/${post.node.slug}`}>
                     <Next>{intl.formatMessage({ id: "blogSuite" })} </Next>
