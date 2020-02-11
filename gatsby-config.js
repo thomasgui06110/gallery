@@ -4,12 +4,13 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: `Galerie d’art contemporain à Cannes - Galerie 122`,
-    description: `Galerie d’art à Paris et à Cannes, la galerie Vieceli expose artistes, peintres, sculpteurs et oeuvres d’art contemporain, moderne et abstrait`,
-    author: `@Gallery122`,
-    keywords: `gallerie, art contemporain, sculpteurs`,
+    title: `Galerie d’art contemporain - urbain - Galerie 122 Vieceli`,
+    description: `Fondée en 2006 sur Cannes puis Paris, la Galerie Vieceli s’oriente avec le 122 sur un style très urbain. La promotion et la défense des artistes sont les mots d’ordres afin de leur assurer une visibilité à travers des publications et des expositions.
+122 GALERIE VIECELI c’est avant tout une ligne artistique indépendante reposant sur un équilibre entre artistes établis et talents de demain.`,
+    author: `@122Galleryvieceli`,
+    keywords: `gallerie, art contemporain, sculpteurs, art urbain`,
     image: '/static/gallerie_icon.png',
-    url: 'https://www.gatsbyjs.org'
+    url: 'https://www.122gallerievieceli.com'
   },
   plugins: [
     `gatsby-plugin-transition-link`,
@@ -146,6 +147,19 @@ module.exports = {
           return entities;
         }
       }
+    },
+    {
+      resolve: `gatsby-plugin-intl`,
+      options: {
+        // language JSON resource path
+        path: `${__dirname}/src/intl`,
+        // supported language
+        languages: [`en`, `fr`],
+        // language file path
+        defaultLanguage: `fr`,
+        // option to redirect to `/ko` when connecting `/`
+        redirect: true,
+      },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
