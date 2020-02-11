@@ -1,10 +1,10 @@
 import React from "react";
 import GLayout from "../components/layout";
-import { Link } from "gatsby";
 import styled from "styled-components";
 import moment from "moment";
 import { Row, Col } from "react-bootstrap";
 import SEO from "../components/SEO";
+import { useIntl, Link } from "gatsby-plugin-intl";
 
 const Pagination = styled.div`
   display: flex;

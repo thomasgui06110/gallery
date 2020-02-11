@@ -1,9 +1,11 @@
 import React from "react";
-import { graphql, StaticQuery, Link } from "gatsby";
+import { graphql, StaticQuery } from "gatsby";
 import { Col } from "react-bootstrap";
 import styled from "styled-components";
 import Img from "gatsby-image";
 import SEO from "./SEO";
+import { useIntl, Link } from "gatsby-plugin-intl";
+
 
 const StyledFlexBox = styled.div`
   border: 5px solid #fff;
