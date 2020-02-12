@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { graphql, StaticQuery } from "gatsby";
 import { Navbar, Nav } from "react-bootstrap";
 import menu from "../styles/menu.css";
-import { injectIntl, FormattedMessage, Link, navigate } from "gatsby-plugin-intl"
+import { injectIntl, Link } from "gatsby-plugin-intl"
 
 const GlobalMenu = styled.div`
   ${"" /* background-color: rgba(255, 255, 255, 1); */}
