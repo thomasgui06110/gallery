@@ -3,12 +3,7 @@ import styled from "styled-components";
 import { graphql, StaticQuery } from "gatsby";
 import { Navbar, Nav } from "react-bootstrap";
 import menu from "../styles/menu.css";
-import {
-  useIntl,
-  Link,
-  formatMessage,
-  FormattedMessage
-} from "gatsby-plugin-intl";
+import { injectIntl, FormattedMessage, Link, navigate } from "gatsby-plugin-intl"
 
 const GlobalMenu = styled.div`
   ${"" /* background-color: rgba(255, 255, 255, 1); */}
@@ -73,14 +68,13 @@ const Contact = styled(Link)`
 const activeStyles = {
   borderBottom: "2px solid #fff"
 };
-const MainMenu = () => {
+let men
+const MainMenu = ({intl}) => {
   return (
     <StaticQuery
       query={graphql`
         {
-          allWordpressWpApiMenusMenusItems(
-            filter: { name: { eq: "main Menu" } }
-          ) {
+          allWordpressWpApiMenusMenusItems {
             edges {
               node {
                 name
@@ -88,6 +82,7 @@ const MainMenu = () => {
                   title
                   object_id
                   object_slug
+                  url
                 }
               }
             }
@@ -104,13 +99,14 @@ const MainMenu = () => {
             />
             <Navbar.Collapse id="responsive-navbar-nav">
               <Nav className="mr-auto">
-                {props.allWordpressWpApiMenusMenusItems.edges[0].node.items.map(
+              {intl.formatMessage({ id: "title" }) !== "Gatsby English" ? men=1 : men = 2}
+                {props.allWordpressWpApiMenusMenusItems.edges[men].node.items.map(
                   item => (
                     <MenuItems
                       className="menu"
                       variant="bold"
                       activeStyle={activeStyles}
-                      to={"/" + item.object_slug}
+                      to={"/" + item.url}
                       key={item.object_id}
                     >
                       {item.title}
@@ -136,4 +132,4 @@ const MainMenu = () => {
   );
 };
 
-export default MainMenu;
+export default injectIntl(MainMenu);

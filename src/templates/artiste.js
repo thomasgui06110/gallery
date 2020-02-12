@@ -5,6 +5,7 @@ import { Row, Col } from "react-bootstrap";
 import artistes from "../styles/artistes.css";
 import SEO from "../components/SEO";
 import Newsletter from "../components/newsletter";
+import { injectIntl } from "gatsby-plugin-intl";
 
 const HeadlineCenter = styled.span`
   &::after {
@@ -32,71 +33,91 @@ const Wrap = styled.div`
   }
 `;
 
-export default ({ pageContext }) => (
-  <GLayout>
-    <Wrap>
-      <SEO title={pageContext.title} description={pageContext.title} />
-      <Row>
-        <Col className="text-center" mt="0" md="12">
-          <HeadlineCenter>
-            <h1
-              className="display-4"
-              dangerouslySetInnerHTML={{ __html: pageContext.title }}
-            ></h1>
-            {pageContext.acf.dates !== null && (
-              <p>
-                <em>{pageContext.acf.dates}</em>
-              </p>
-            )}
-          </HeadlineCenter>
-        </Col>
-      </Row>
+const artiste = ({ pageContext, intl }) => {
+  return (
+    <GLayout>
+      <Wrap>
+        <SEO title={pageContext.title} description={pageContext.content} />
+        <Row>
+          <Col className="text-center" mt="0" md="12">
+            <HeadlineCenter>
+              <h1 className="display-4">
+                {intl.formatMessage({ id: "title" }) !== "Gatsby English"
+                  ? pageContext.title
+                  : pageContext.acf.titre_anglais}
+              </h1>
+              {pageContext.acf.dates !== null && (
+                <p>
+                  <em>{pageContext.acf.dates}</em>
+                </p>
+              )}
+            </HeadlineCenter>
+          </Col>
+        </Row>
 
+        <Row>
+          <Col>
+            <Article>
+              {intl.formatMessage({ id: "title" }) !== "Gatsby English" ? (
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: pageContext.content
+                  }}
+                />
+              ) : (
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: pageContext.acf.texte_anglais
+                  }}
+                />
+              )}
+            </Article>
+          </Col>
+        </Row>
+        <Row>
+          <Col md="4">
+            {pageContext.acf.photo_1 !== null && (
+              <img
+                src={
+                  pageContext.acf.photo_1.localFile.childImageSharp.fluid.src
+                }
+                alt={pageContext.acf.photo_1.alt_text}
+                width="100%"
+              />
+            )}
+          </Col>
+          <Col md="4">
+            {pageContext.acf.wordpress_2eme_photo !== null && (
+              <img
+                src={
+                  pageContext.acf.wordpress_2eme_photo.localFile.childImageSharp
+                    .fluid.src
+                }
+                alt={pageContext.acf.wordpress_2eme_photo.alt_text}
+                width="100%"
+              />
+            )}
+          </Col>
+          <Col md="4">
+            {pageContext.acf.wordpress_3eme_photo !== null && (
+              <img
+                src={
+                  pageContext.acf.wordpress_3eme_photo.localFile.childImageSharp
+                    .fluid.src
+                }
+                alt={pageContext.acf.wordpress_3eme_photo.alt_text}
+                width="100%"
+              />
+            )}
+          </Col>
+        </Row>
+      </Wrap>
       <Row>
         <Col>
-          <Article dangerouslySetInnerHTML={{ __html: pageContext.content }} />
+          <Newsletter></Newsletter>
         </Col>
       </Row>
-      <Row>
-        <Col md="4">
-          {pageContext.acf.photo_1 !== null && (
-            <img
-              src={pageContext.acf.photo_1.localFile.childImageSharp.fluid.src}
-              alt={pageContext.acf.photo_1.alt_text}
-              width="100%"
-            />
-          )}
-        </Col>
-        <Col md="4">
-          {pageContext.acf.wordpress_2eme_photo !== null && (
-            <img
-              src={
-                pageContext.acf.wordpress_2eme_photo.localFile.childImageSharp
-                  .fluid.src
-              }
-              alt={pageContext.acf.wordpress_2eme_photo.alt_text}
-              width="100%"
-            />
-          )}
-        </Col>
-        <Col md="4">
-          {pageContext.acf.wordpress_3eme_photo !== null && (
-            <img
-              src={
-                pageContext.acf.wordpress_3eme_photo.localFile.childImageSharp
-                  .fluid.src
-              }
-              alt={pageContext.acf.wordpress_3eme_photo.alt_text}
-              width="100%"
-            />
-          )}
-        </Col>
-      </Row>
-    </Wrap>
-    <Row>
-      <Col>
-        <Newsletter></Newsletter>
-      </Col>
-    </Row>
-  </GLayout>
-);
+    </GLayout>
+  );
+};
+export default injectIntl(artiste);
