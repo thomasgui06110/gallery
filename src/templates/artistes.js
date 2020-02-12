@@ -6,7 +6,7 @@ import { Row, Col } from "react-bootstrap";
 import Artistes from "../styles/artistes.css";
 import SEO from "../components/SEO";
 import Newsletter from "../components/newsletter";
-import { injectIntl, Link } from "gatsby-plugin-intl"
+import { injectIntl } from "gatsby-plugin-intl"
 
 const HeadlineCenter = styled.span`
   &::after {

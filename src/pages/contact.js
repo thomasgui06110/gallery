@@ -97,8 +97,8 @@ const Contact = ({intl}) => {
     <div>
       <GLayout>
         <SEO
-          title="Contacter la Gallerie 122 Cannes"
-          description="Pour toute demande de renseignements, n'hésitez pas à contacter la Gallerie 122 à l'aide du formulaire. Nous vous répondrons très rapidement"
+          title= {intl.formatMessage({ id: "title_contact" })}
+          description={intl.formatMessage({ id: "desc_contact" })}
         />
         <h1 mb="0" className="text-center">
           <HeadlineCenter className="display-4">

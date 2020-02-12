@@ -6,6 +6,7 @@ import { graphql, StaticQuery } from "gatsby";
 import {} from "gatsby";
 import Newsletter from "../components/newsletter";
 import { useIntl, Link } from "gatsby-plugin-intl";
+import SEO from "../components/SEO";
 
 const GlobalStyles = createGlobalStyle`
 figure {
@@ -66,6 +67,10 @@ export default ({ pageContext }) => (
       const intl = useIntl();
       return (
         <GLayout>
+         <SEO
+          title= {intl.formatMessage({ id: "title_home" })}
+          description={intl.formatMessage({ id: "description" })}
+        />
           <Row>
             <Col className="ml-0 mr-0">
               {pageContext.acf.Photo_principale !== null && (
