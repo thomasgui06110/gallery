@@ -99,8 +99,8 @@ const MainMenu = ({intl}) => {
             />
             <Navbar.Collapse id="responsive-navbar-nav">
               <Nav className="mr-auto">
-              {intl.formatMessage({ id: "title" }) !== "Gatsby English" ? men=1 : men = 2}
-                {props.allWordpressWpApiMenusMenusItems.edges[men].node.items.map(
+              
+                {props.allWordpressWpApiMenusMenusItems.edges[1].node.items.map(
                   item => (
                     <MenuItems
                       className="menu"
