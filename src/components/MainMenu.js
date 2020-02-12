@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { graphql, StaticQuery } from "gatsby";
 import { Navbar, Nav } from "react-bootstrap";
 import menu from "../styles/menu.css";
-import { injectIntl, Link } from "gatsby-plugin-intl"
+import { injectIntl, Link } from "gatsby-plugin-intl";
 
 const GlobalMenu = styled.div`
   ${"" /* background-color: rgba(255, 255, 255, 1); */}
@@ -68,8 +68,13 @@ const Contact = styled(Link)`
 const activeStyles = {
   borderBottom: "2px solid #fff"
 };
-let men
-const MainMenu = ({intl}) => {
+let men = 1;
+const MainMenu = ({ intl }) => {
+  {
+    intl.formatMessage({ id: "title" }) !== "Gatsby English"
+      ? (men = 1)
+      : (men = 2);
+  }
   return (
     <StaticQuery
       query={graphql`
@@ -99,20 +104,19 @@ const MainMenu = ({intl}) => {
             />
             <Navbar.Collapse id="responsive-navbar-nav">
               <Nav className="mr-auto">
-              
-                {props.allWordpressWpApiMenusMenusItems.edges[1].node.items.map(
-                  item => (
-                    <MenuItems
-                      className="menu"
-                      variant="bold"
-                      activeStyle={activeStyles}
-                      to={"/" + item.url}
-                      key={item.object_id}
-                    >
-                      {item.title}
-                    </MenuItems>
-                  )
-                )}
+                {props.allWordpressWpApiMenusMenusItems.edges[
+                  men
+                ].node.items.map(item => (
+                  <MenuItems
+                    className="menu"
+                    variant="bold"
+                    activeStyle={activeStyles}
+                    to={"/" + item.url}
+                    key={item.object_id}
+                  >
+                    {item.title}
+                  </MenuItems>
+                ))}
                 <Contact
                   to="/contact"
                   className="mb-0 mt-0 pt-2 pb-2 pr-4 pl-4"
