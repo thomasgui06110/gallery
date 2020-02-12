@@ -123,7 +123,7 @@ export default ({ pageContext }) => (
                     ) : (
                       <div
                         dangerouslySetInnerHTML={{
-                          __html: pageContext.acf.titre_anglais
+                          __html: pageContext.acf.texte_anglais
                         }}
                       />
                     )}
