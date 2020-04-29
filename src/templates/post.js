@@ -5,7 +5,7 @@ import { graphql, StaticQuery } from "gatsby";
 import moment from "moment";
 import SEO from "../components/SEO";
 import { Row, Col } from "react-bootstrap";
-import { useIntl, Link } from "gatsby-plugin-intl";
+import { useIntl } from "gatsby-plugin-intl";
 
 const GlobalStyles = createGlobalStyle`
 figure {

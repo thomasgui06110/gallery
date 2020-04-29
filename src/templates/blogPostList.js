@@ -145,6 +145,9 @@ const blogPostList = ({ pageContext, fluid, intl }) => {
                         src={
                           post.node.featured_media.localFile.childImageSharp
                             .fluid.src
+                            ? post.node.featured_media.localFile.childImageSharp
+                                .fluid.src
+                            : `https://galerie122.netlify.com/static/1ffcafad5d568f42d0295c958fae683d/714f4/b34d9_Guy_Denning_Profil.jpg`
                         }
                         alt={post.node.title}
                       />
@@ -175,10 +178,9 @@ const blogPostList = ({ pageContext, fluid, intl }) => {
                   le {moment(post.node.date).format("DD MMMM YYYY")}
                 </Small>
 
-                <p
-                  className="pl-2 pr-2 mt-2"
-                 
-                > {intl.formatMessage({ id: "title" }) !== "Gatsby English" ? (
+                <div className="pl-2 pr-2 mt-2">
+                  
+                  {intl.formatMessage({ id: "title" }) !== "Gatsby English" ? (
                     <div
                       dangerouslySetInnerHTML={{
                         __html: post.node.excerpt
@@ -190,7 +192,8 @@ const blogPostList = ({ pageContext, fluid, intl }) => {
                         __html: post.node.acf.extrait_anglais
                       }}
                     />
-                  )}</p>
+                  )}
+                </div>
                 <NextWrap>
                   <Link to={`/blog/${post.node.slug}`}>
                     <Next>{intl.formatMessage({ id: "blogSuite" })} </Next>

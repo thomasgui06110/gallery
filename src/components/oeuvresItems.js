@@ -60,7 +60,7 @@ const Article = styled.article`
     font-size: 1rem;
   }
 `;
-const Para = styled.p`
+const Para = styled.div`
   line-height: 1.6;
 `;
 const StyledImg = styled.div`
@@ -143,16 +143,18 @@ const OuevresItems = () => {
                       {intl.formatMessage({ id: "title" }) !==
                       "Gatsby English" ? (
                         <div
-                          dangerouslySetInnerHTML={{
+                          dangerouslySetInnerHTML=
+                          {{
                             __html: ArtistsItem.node.content
-                          }}
-                        />
+                          }}>
+                        </div>
                       ) : (
                         <div
-                          dangerouslySetInnerHTML={{
+                          dangerouslySetInnerHTML=
+                          {{
                             __html: ArtistsItem.node.acf.texte_anglais
-                          }}
-                        />
+                          }}>
+                        </div>
                       )}
                     </Para>
                   </Article>

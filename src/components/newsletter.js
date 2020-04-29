@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { useIntl, Link } from "gatsby-plugin-intl";
+import { useIntl } from "gatsby-plugin-intl";
 
 const HeadlineCenter = styled.span`
   &::after {

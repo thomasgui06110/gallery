@@ -6,22 +6,25 @@ import menu from "../styles/menu.css";
 import { injectIntl, Link } from "gatsby-plugin-intl";
 
 const GlobalMenu = styled.div`
-  ${"" /* background-color: rgba(255, 255, 255, 1); */}
-  background-color: rgba(31, 31, 31, 0.9);
+  background-color: black;
   marin: 0 auto 0 auto;
-
+  border-radius: 5px;
   text-align: center;
-
   display: flex;
   justify-content: center;
   font-size: 1.2rem;
   font-weight: 600;
   border-bottom: 1px solid #eeeeee;
-
+  margin-right: 20px;
   box-shadow: 0px 15px 10px 5px #cfcfcf96;
   &:hover {
     text-decoration: none;
   }
+  @media screen and (max-width: 995px) {
+   margin-left:20px;
+   margin-top:5px;
+  }
+
 `;
 
 const MenuItems = styled(Link)`
@@ -41,7 +44,7 @@ const MenuItems = styled(Link)`
       left: 0;
       width: 3px;
       height: calc(100% - 23px);
-      background: #fff;
+      background: #eee;
       opacity: 0.9;
       content: " ";
       transition: background-color 0.6s;
@@ -61,12 +64,13 @@ const Contact = styled(Link)`
     transition: 0.5s;
     color: #333333;
     text-decoration: none;
-    background-color: #fff;
+  
   }
 `;
 
 const activeStyles = {
-  borderBottom: "2px solid #fff"
+  border: 'white',
+  color: '#707B7C'
 };
 let men = 1;
 const MainMenu = ({ intl }) => {

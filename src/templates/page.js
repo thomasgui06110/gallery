@@ -93,7 +93,7 @@ export default ({ pageContext }) => (
               {pageContext.slug === "home" && (
                 <HeadlineCenter>
                   <h1 className="display-4">
-                    {intl.formatMessage({ id: "title" }) == "Gatsby English"
+                    {intl.formatMessage({ id: "title" }) === "Gatsby English"
                       ? pageContext.acf.titre_anglais
                       : pageContext.title}
                   </h1>
@@ -101,7 +101,7 @@ export default ({ pageContext }) => (
               )}
               <GlobalStyles />
               <div>
-                {intl.formatMessage({ id: "title" }) == "Gatsby English" ? (
+                {intl.formatMessage({ id: "title" }) === "Gatsby English" ? (
                   <div
                     dangerouslySetInnerHTML={{
                       __html: pageContext.acf.contenu_anglais

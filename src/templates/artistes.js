@@ -3,7 +3,6 @@ import GLayout from "../components/layout";
 import styled from "styled-components";
 import ArtistsItems from "../components/ArtistsItems";
 import { Row, Col } from "react-bootstrap";
-import Artistes from "../styles/artistes.css";
 import SEO from "../components/SEO";
 import Newsletter from "../components/newsletter";
 import { injectIntl } from "gatsby-plugin-intl"

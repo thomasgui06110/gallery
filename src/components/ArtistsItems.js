@@ -4,7 +4,8 @@ import { Col } from "react-bootstrap";
 import styled from "styled-components";
 import Img from "gatsby-image";
 import SEO from "./SEO";
-import { useIntl, Link } from "gatsby-plugin-intl";
+import { Link } from "gatsby-plugin-intl";
+require( '../styles/artistes.css');
 
 
 const StyledFlexBox = styled.div`
@@ -36,6 +37,7 @@ const StyledFlexBoxArtist = styled.div`
   background-position: center center;
   @media (max-width: 1000px) {
     max-height: 27rem;
+    margin: auto;
   }
 `;
 
@@ -59,6 +61,7 @@ const StyledTexte = styled.div`
     transition: 800ms;
     background-color: #e5e5e5;
   }
+ 
 `;
 
 const linkStyles = {

@@ -2,7 +2,6 @@ import React from "react";
 import GLayout from "../components/layout";
 import styled from "styled-components";
 import { Row, Col } from "react-bootstrap";
-import artistes from "../styles/artistes.css";
 import SEO from "../components/SEO";
 import Newsletter from "../components/newsletter";
 import { injectIntl } from "gatsby-plugin-intl";
@@ -83,6 +82,7 @@ const artiste = ({ pageContext, intl }) => {
                 }
                 alt={pageContext.acf.photo_1.alt_text}
                 width="100%"
+                className="mb-3"
               />
             )}
           </Col>
@@ -95,6 +95,7 @@ const artiste = ({ pageContext, intl }) => {
                 }
                 alt={pageContext.acf.wordpress_2eme_photo.alt_text}
                 width="100%"
+                className="mb-3"
               />
             )}
           </Col>
@@ -107,6 +108,7 @@ const artiste = ({ pageContext, intl }) => {
                 }
                 alt={pageContext.acf.wordpress_3eme_photo.alt_text}
                 width="100%"
+                className="mb-3"
               />
             )}
           </Col>

@@ -11,17 +11,19 @@ import Footer from "./Footer";
 import SEO from "./SEO";
 import styled from "styled-components";
 import { Container } from "react-bootstrap";
-import CookieConsent, { Cookies } from "react-cookie-consent";
+import CookieConsent from "react-cookie-consent";
 
 const Space = styled.div`
   padding: 1vh 7vw 1vw 7vw;
+  margin-top:30px;
 
-  @media (max-width: 1000px) {
+  @media (max-width: 995px) {
     padding: 1vh 2vw 1vw 2vw;
+    margin-top:85px;
   }
 `;
 const Section = styled.section`
-  margin: 1rem auto 1rem auto;
+  margin: 5rem auto 1rem auto;
   background-color: #fff;
   padding: 2% 2% 5% 2%;
   border-radius: 10px;
