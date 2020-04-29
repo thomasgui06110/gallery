@@ -8,17 +8,16 @@ import styled from "styled-components";
 const HeaderMain = styled.header`
   top: 0px;
   width:100%;
-  padding:1rem 0rem 2rem 0rem;
+  padding:1rem 0rem 0.5rem 0rem;
   align-items:center;
   display: flex;
   justify-content: space-between;
   position: fixed;
-  
-
-background:rgba(255,255,255,0.99);
+  background:rgba(0,0,0,0.99);
   z-index: 10;
   @media screen and (max-width: 995px) {
     display:block;
+    background:rgba(255,255,255,0.99);
   }
 `;
 

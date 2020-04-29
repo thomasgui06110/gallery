@@ -14,9 +14,9 @@ const GlobalMenu = styled.div`
   justify-content: center;
   font-size: 1.2rem;
   font-weight: 600;
-  border-bottom: 1px solid #eeeeee;
+  ${'' /* border-bottom: 1px solid #eeeeee; */}
   margin-right: 20px;
-  box-shadow: 0px 15px 10px 5px #cfcfcf96;
+  ${'' /* box-shadow: 0px 15px 10px 5px #cfcfcf96; */}
   &:hover {
     text-decoration: none;
   }
