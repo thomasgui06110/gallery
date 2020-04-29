@@ -8,7 +8,7 @@ const FooterMain = styled.footer`
   {'' /* width:1140px; */}
   width:100%;
   padding:2rem 2rem 1rem 2rem;
-  background-color: rgba(31, 31, 31, 0.9);
+  background-color: rgba(0, 0, 0, 1);
   justify-content: space-between;
   border-bottom: 1px solid #eeeeee;
   box-shadow: 5px 0.5rem 1.5rem 1px rgba(0, 0, 0, 0.3);
