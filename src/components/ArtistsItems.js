@@ -132,7 +132,7 @@ const ArtistsItems = () => {
         props.allWordpressWpPortfolio.edges.map(ArtistsItem => (
           <>
           <SEO title= "Artistes exposés" />
-          <Col md="3" key={ArtistsItem.node.id}>
+          <Col d-flex justify-content-center key={ArtistsItem.node.id}>
             <StyledFlexBox>
               <StyledFlexBoxArtist className="cadre">
                 <StyledImg className="photo">
