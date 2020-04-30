@@ -9,7 +9,7 @@ require( '../styles/artistes.css');
 
 
 const StyledFlexBox = styled.div`
-  border: 5px solid #fff;
+ 
   border-radius: 5px;
   box-shadow: 2px 2px 1px 3px rgba(0, 0, 0, 0.0);
   transition: box-shadow 0.9s;

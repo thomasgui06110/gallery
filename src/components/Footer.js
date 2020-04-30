@@ -41,7 +41,7 @@ const Footer = () => (
       réservés |
       <Link to="/politique-de-confidentialite" style={styledLink}>
         <em>
-          <small> Mention Légales</small>
+          <small> Mentions Légales</small>
         </em>
       </Link>
     </p>
