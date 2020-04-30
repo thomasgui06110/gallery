@@ -28,7 +28,7 @@ const HeadlineCenter = styled.span`
 `;
 const Liens = styled.span`
   font-size: 1.8rem;
-  color: #333333;
+  color: #fff;
 
   &:hover {
     cursor: pointor;
