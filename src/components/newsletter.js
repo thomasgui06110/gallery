@@ -8,18 +8,18 @@ const HeadlineCenter = styled.span`
     display: block;
     width: 100px;
     margin: 15px auto;
-    border: 2px solid #4f5153;
+    border: 2px solid #fff;
   }
 `;
 const Input = styled.input`
   padding: 0.5em;
   margin: 0.5em;
-  background-color: rgba(31, 31, 31, 0.9);
+  background-color: rgba(255, 255, 255, 1);
   border: none;
   width: 260px !important;
   height: 45px;
   border-radius: 7px;
-  color: white;
+  color: black;
   padding: 0 0 0 15px;
   outline: none;
   box-shadow: 5px 6px 10px 3px rgba(0, 0, 0, 0.3);
@@ -27,6 +27,10 @@ const Input = styled.input`
     color: rgba(245, 245, 245, 0.7);
     font-size: 1em;
   }
+  ::placeholder {
+  color: black;
+  
+}
 `;
 
 const Button = styled.button`

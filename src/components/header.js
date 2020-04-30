@@ -1,6 +1,5 @@
 import PropTypes from "prop-types";
 import React from "react";
-import ImageH from "./imageHome";
 import MainMenu from "./MainMenu";
 import styled from "styled-components";
 // import Sticky from "react-stickynode";
