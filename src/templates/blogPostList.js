@@ -33,7 +33,7 @@ const Wrap = styled.div`
 
 const StyledFlexBox = styled.div`
   display: inline-block;
-  border: 12px solid #fff;
+  border: 2px solid #fff;
   border-radius: 5px;
   box-shadow: 10px 10px 20px 2px rgba(0, 0, 0, 0.3);
   transition: box-shadow 0.9s;
@@ -57,7 +57,8 @@ const StyledFlexBoxArtist = styled.div`
   border-radius: 5px;
   overflow: hidden;
   margin: 0px 0px;
-  background-color: #fff;
+  padding: 0px;
+  color:white;
   background-size: cover;
   background-position: center center;
   @media (max-width: 1000px) {
@@ -112,23 +113,26 @@ const HeadlineCenter = styled.span`
     display: block;
     width: 100px;
     margin: 15px auto;
-    border: 2px solid #4f5153;
+    border: 2px solid #fff;
   }
 `;
+const BlogText = styled.p`
+margin: 0 10px 0 10px;
+`
 const blogPostList = ({ pageContext, fluid, intl }) => {
   return (
     <GLayout>
       <SEO title={intl.formatMessage({ id: "blogTitle" })} />
       <Row>
         <Col className="text-center" mt="0" md="12">
-          <h1 mb="0">
+          <h1 style={{marginLeft: '5px'}} className="ml-3" ml="5" mb="0">
             <HeadlineCenter className="display-4">
               {intl.formatMessage({ id: "blogTitle" })}
             </HeadlineCenter>
           </h1>
-          <p className="font-italic">
+          <BlogText className="font-italic">
             {intl.formatMessage({ id: "blogActu" })}
-          </p>
+          </BlogText>
         </Col>
       </Row>
       <Wrap>

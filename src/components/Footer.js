@@ -37,7 +37,7 @@ const styledLink = {
 const Footer = () => (
   <FooterMain>
     <p>
-      © GALLERY 122 | 122 Rue d'Antibes 06400 Cannes - France | Tous droits
+      © GALERIE 122 | 122 Rue d'Antibes 06400 Cannes - France | Tous droits
       réservés |
       <Link to="/politique-de-confidentialite" style={styledLink}>
         <em>

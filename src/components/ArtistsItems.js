@@ -32,7 +32,7 @@ const StyledFlexBoxArtist = styled.div`
   width:18rem;
   border-radius: 50%;
   overflow: hidden;
-  margin: 0px 0px;
+  margin: 8px auto;
   background-size: cover;
   background-position: center center;
   @media (max-width: 1000px) {

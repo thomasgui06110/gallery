@@ -4,7 +4,7 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: `Galerie d’art contemporain - urbain - Galerie 122 Vieceli`,
+    title: `Galerie d’art contemporain - urbain`,
     description: `Fondée en 2006 sur Cannes puis Paris, la Galerie Vieceli s’oriente avec le 122 sur un style très urbain. La promotion et la défense des artistes sont les mots d’ordres afin de leur assurer une visibilité à travers des publications et des expositions.
 122 GALERIE VIECELI c’est avant tout une ligne artistique indépendante reposant sur un équilibre entre artistes établis et talents de demain.`,
     author: `@122Galleryvieceli`,

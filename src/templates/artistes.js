@@ -15,7 +15,7 @@ const HeadlineCenter = styled.span`
 
     margin: 15px auto;
 
-    border: 2px solid #4f5153;
+    border: 2px solid #fff;
   }
 `;
 

@@ -12,7 +12,7 @@ const HeadlineCenter = styled.span`
     display: block;
     width: 100px;
     margin: 15px auto;
-    border: 2px solid #4f5153;
+    border: 2px solid #fff;
   }
 `;
 const expositions = ({ data, intl }) => {

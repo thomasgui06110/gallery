@@ -10,19 +10,19 @@ const HeaderMain = styled.header`
   width:100%;
   padding:1rem 0rem 0.5rem 0rem;
   align-items:center;
-  display: flex;
+  display: bloc;
   justify-content: space-between;
   position: fixed;
   background:rgba(0,0,0,0.99);
   z-index: 10;
   @media screen and (max-width: 995px) {
     display:block;
-    background:rgba(255,255,255,0.99);
+    background:rgba(0,0,0,0.99);
   }
 `;
 
 const TopLogo = styled.div`
-  width: 400px;
+  width: auto;
   border-radius: 5px;
   height: auto;
   margin: 0 0 0px 20px;
@@ -32,11 +32,20 @@ const TopLogo = styled.div`
     margin-left:20px;
   }
 `;
+const Titlelogo = styled.h1`
+
+text-align: center;
+color:white;
+font-weight: 700;
+letter-spacing:0.5rem;
+
+`
 
 const Header = ({ siteTitle }) => (
   <HeaderMain>
     <TopLogo>
-      <ImageH alt="Logo Galerie 122 Cannes" />
+      {/* <ImageH alt="Logo Galerie 122 Cannes" /> */}
+      <Titlelogo>Galerie 122 Vieceli</Titlelogo>
     </TopLogo>
     {/* <Sticky enabled={true} top={0} bottomBoundary={1200}> */}
       <MainMenu />

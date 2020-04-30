@@ -29,9 +29,10 @@ const Article = styled.article`
   }
 `;
 const Wrap = styled.div`
-  background-color: #fff;
+  background-color: #000;
   padding: 1rem 2rem;
-  border-radius: 10px;
+  border-radius: 5px;
+  border: 2px solid white;
 `;
 export default ({ pageContext }) => (
   <StaticQuery

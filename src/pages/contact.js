@@ -13,13 +13,14 @@ const HeadlineCenter = styled.span`
     display: block;
     width: 100px;
     margin: 15px auto;
-    border: 2px solid #4f5153;
+    border: 2px solid #fff;
   }
 `;
 
 const LeftCol = styled.div`
   background-color: #fff;
   padding: 2rem 5rem 2rem 5rem;
+  
   border-bottom-left-radius: 10px;
   border-top-left-radius: 10px;
   border: 1px solid rgba(31, 31, 31, 0.9);
@@ -37,10 +38,13 @@ const LeftCol = styled.div`
   }
 `;
 const RCol = styled.div`
-  background-color: rgba(31, 31, 31, 0.9);
+  background-color: rgba(0, 0, 0, 0.9);
   padding: 2rem 5rem 2rem 5rem;
   border-bottom-right-radius: 10px;
   border-top-right-radius: 10px;
+  border-top: 2px solid white;
+  border-right: 2px solid white;
+  border-bottom: 2px solid white;
   width: 100%;
   height: 100%;
   margin: 0;
@@ -92,24 +96,24 @@ const Submit = styled.button`
   }
 `;
 
-const Contact = ({intl}) => {
+const Contact = ({ intl }) => {
   return (
     <div>
       <GLayout>
         <SEO
-          title= {intl.formatMessage({ id: "title_contact" })}
+          title={intl.formatMessage({ id: "title_contact" })}
           description={intl.formatMessage({ id: "desc_contact" })}
         />
         <h1 mb="0" className="text-center">
           <HeadlineCenter className="display-4">
-          {intl.formatMessage({ id: "title_contact" })}
+            {intl.formatMessage({ id: "title_contact" })}
           </HeadlineCenter>
         </h1>
         <Row>
           <Col md="8" xs="12" className="mr-0 pr-0">
             <LeftCol>
               <h3 className="mb-4">
-              {intl.formatMessage({ id: "title_form" })}
+                {intl.formatMessage({ id: "title_form" })}
               </h3>
 
               <form
@@ -195,10 +199,16 @@ const Contact = ({intl}) => {
           </Col>
           <Col md="4" xs="12" className=" pl-0">
             <RCol>
-              <h3 className="text-center"> {intl.formatMessage({ id: "phone_contact" })}</h3>
-              <p>+33 4 93 93 93 93</p> <HeadlineCenter />
-              <h3 className="text-center"> {intl.formatMessage({ id: "adresse_contact" })}</h3>
-              Gallerie 122
+              <h3 className="text-center">
+                {" "}
+                {intl.formatMessage({ id: "phone_contact" })}
+              </h3>
+              <p>(+33) 4 93 45 86 41</p> <HeadlineCenter />
+              <h3 className="text-center">
+                {" "}
+                {intl.formatMessage({ id: "adresse_contact" })}
+              </h3>
+              Galerie 122
               <br />
               122 Rue d'Antibes
               <br />
@@ -207,12 +217,15 @@ const Contact = ({intl}) => {
               <h3 className="text-center">Mail</h3>
               <p>
                 <a href="mailto:contact@122gallerievieceli.com">
-                  contact@122gallerievieceli.com
+                  contact@122galerievieceli.com
                 </a>
               </p>
               <HeadlineCenter />
-              <h3 className="text-center">  {intl.formatMessage({ id: "horaires_contact" })}</h3>
-              <p>De 10h à 12h et 14h à 18h</p>
+              <h3 className="text-center">
+                {" "}
+                {intl.formatMessage({ id: "horaires_contact" })}
+              </h3>
+              <p>De 10h à 13h et de 15h à 19h</p>
             </RCol>
           </Col>
         </Row>

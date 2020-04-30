@@ -12,7 +12,7 @@ const HeadlineCenter = styled.span`
     display: block;
     width: 100px;
     margin: 15px auto;
-    border: 2px solid #4f5153;
+    border: 2px solid #fff;
   }
 `;
 const Article = styled.article`
@@ -23,7 +23,8 @@ const Article = styled.article`
   }
 `;
 const Wrap = styled.div`
-  background-color: #fff;
+  background-color: #000;
+  border: 2px solid white;
   padding: 1rem 2rem;
   border-radius: 10px;
   @media (max-width: 1000px) {

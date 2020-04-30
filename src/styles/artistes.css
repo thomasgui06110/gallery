@@ -19,7 +19,10 @@
 }
 
 .rowExpo {
-  background-color: #fff;
+  /* background-color: #fff; */
+  background: black;
+  border: 2px solid white;
+  border-radius: 5px;
   box-shadow: 10px 15px 20px -5px rgba(0, 0, 0, 0.4);
 }
 @media (max-width: 1000px) {
