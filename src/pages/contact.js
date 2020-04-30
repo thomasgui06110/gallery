@@ -39,7 +39,7 @@ const LeftCol = styled.div`
 `;
 const RCol = styled.div`
   background-color: rgba(0, 0, 0, 0.9);
-  padding: 2rem 5rem 2rem 5rem;
+  padding: 2rem 1rem 2rem 1rem;
   border-bottom-right-radius: 10px;
   border-top-right-radius: 10px;
   border-top: 2px solid white;
@@ -48,6 +48,7 @@ const RCol = styled.div`
   width: 100%;
   height: 100%;
   margin: 0;
+  text-align:center;
   color: #fff;
   a {
     color: white;
@@ -197,15 +198,15 @@ const Contact = ({ intl }) => {
               </form>
             </LeftCol>
           </Col>
-          <Col md="4" xs="12" className=" pl-0">
+          <Col md="4" xs="12" className=" center pl-0">
             <RCol>
               <h3 className="text-center">
-                {" "}
+               
                 {intl.formatMessage({ id: "phone_contact" })}
               </h3>
               <p>(+33) 4 93 45 86 41</p> <HeadlineCenter />
               <h3 className="text-center">
-                {" "}
+              
                 {intl.formatMessage({ id: "adresse_contact" })}
               </h3>
               Galerie 122
