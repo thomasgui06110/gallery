@@ -209,7 +209,7 @@ const Contact = ({ intl }) => {
               
                 {intl.formatMessage({ id: "adresse_contact" })}
               </h3>
-              Galerie 122
+              122 Galerie Vieceli
               <br />
               122 Rue d'Antibes
               <br />

@@ -37,7 +37,7 @@ const styledLink = {
 const Footer = () => (
   <FooterMain>
     <p>
-      © GALERIE 122 | 122 Rue d'Antibes 06400 Cannes - France | Tous droits
+      © 122 Galerie Vieceli | 122 Rue d'Antibes 06400 Cannes - France | Tous droits
       réservés |
       <Link to="/politique-de-confidentialite" style={styledLink}>
         <em>

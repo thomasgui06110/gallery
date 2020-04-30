@@ -44,7 +44,7 @@ const Header = ({ siteTitle }) => (
   <HeaderMain>
     <TopLogo>
       {/* <ImageH alt="Logo Galerie 122 Cannes" /> */}
-      <Titlelogo>Galerie 122 Vieceli</Titlelogo>
+      <Titlelogo>122 Galerie Vieceli</Titlelogo>
     </TopLogo>
     {/* <Sticky enabled={true} top={0} bottomBoundary={1200}> */}
       <MainMenu />

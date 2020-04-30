@@ -12,7 +12,7 @@ const Pagination = styled.div`
 `;
 const PageNumberWrapper = styled.div`
   border: 1px solid #eee;
-  background: ${props => (props.isCurrentPage ? "#eee" : "white")};
+  background: ${(props) => (props.isCurrentPage ? "#eee" : "white")};
 `;
 
 const PageNumber = styled(Link)`
@@ -20,8 +20,10 @@ const PageNumber = styled(Link)`
   padding: 8px 16px;
 `;
 const Wrap = styled.div`
-  column-count: 2;
-  column-gap: 10px;
+  ${"" /* column-count: 2;
+  column-gap: 10px; */}
+  display: flex;
+  flex-direction: column;
 
   color: #71818c !important;
   @media (max-width: 1000px) {
@@ -41,7 +43,7 @@ const StyledFlexBox = styled.div`
   { /* overflow: hidden; */}
   margin: 1rem 0.5rem;
   transition-duration: 1s;
-  width:200%;
+  width:100%;
   @media (max-width: 1000px) {
     width:100%;
   }
@@ -58,7 +60,7 @@ const StyledFlexBoxArtist = styled.div`
   overflow: hidden;
   margin: 0px 0px;
   padding: 0px;
-  color:white;
+  color: white;
   background-size: cover;
   background-position: center center;
   @media (max-width: 1000px) {
@@ -116,16 +118,21 @@ const HeadlineCenter = styled.span`
     border: 2px solid #fff;
   }
 `;
+const ColBlog = styled.div`
+    {'' /* flex: 0 0 51%;
+    max-width: 100%; */}
+ 
+`;
 const BlogText = styled.p`
-margin: 0 10px 0 10px;
-`
+  margin: 0 10px 0 10px;
+`;
 const blogPostList = ({ pageContext, fluid, intl }) => {
   return (
     <GLayout>
       <SEO title={intl.formatMessage({ id: "blogTitle" })} />
       <Row>
         <Col className="text-center" mt="0" md="12">
-          <h1 style={{marginLeft: '5px'}} className="ml-3" ml="5" mb="0">
+          <h1 style={{ marginLeft: "5px" }} className="ml-3" ml="5" mb="0">
             <HeadlineCenter className="display-4">
               {intl.formatMessage({ id: "blogTitle" })}
             </HeadlineCenter>
@@ -135,8 +142,9 @@ const blogPostList = ({ pageContext, fluid, intl }) => {
           </BlogText>
         </Col>
       </Row>
-      <Wrap>
-        {pageContext.posts.map(post => (
+
+      <Row>
+        {pageContext.posts.map((post) => (
           <Col md="6" key={post.node.wordpress_id}>
             <StyledFlexBox>
               <StyledFlexBoxArtist className="cadre">
@@ -162,13 +170,13 @@ const blogPostList = ({ pageContext, fluid, intl }) => {
                   {intl.formatMessage({ id: "title" }) !== "Gatsby English" ? (
                     <div
                       dangerouslySetInnerHTML={{
-                        __html: post.node.title
+                        __html: post.node.title,
                       }}
                     />
                   ) : (
                     <div
                       dangerouslySetInnerHTML={{
-                        __html: post.node.acf.titre_anglais
+                        __html: post.node.acf.titre_anglais,
                       }}
                     />
                   )}
@@ -183,17 +191,16 @@ const blogPostList = ({ pageContext, fluid, intl }) => {
                 </Small>
 
                 <div className="pl-2 pr-2 mt-2">
-                  
                   {intl.formatMessage({ id: "title" }) !== "Gatsby English" ? (
                     <div
                       dangerouslySetInnerHTML={{
-                        __html: post.node.excerpt
+                        __html: post.node.excerpt,
                       }}
                     />
                   ) : (
                     <div
                       dangerouslySetInnerHTML={{
-                        __html: post.node.acf.extrait_anglais
+                        __html: post.node.acf.extrait_anglais,
                       }}
                     />
                   )}
@@ -207,7 +214,8 @@ const blogPostList = ({ pageContext, fluid, intl }) => {
             </StyledFlexBox>
           </Col>
         ))}
-      </Wrap>
+      </Row>
+
       <Pagination>
         {Array.from({ length: pageContext.numberOfPages }).map(
           (page, index) => (
