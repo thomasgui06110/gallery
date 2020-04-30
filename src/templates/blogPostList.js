@@ -85,16 +85,17 @@ const StyledImg = styled.div`
 `;
 const Next = styled.span`
   border: 2px solid #e9eff5;
-  color: #71818c !important;
+  color: #000 !important;
   width: 30%;
   text-transform: uppercase;
   border-radius: 60px;
-  background-color: #f7f9fb;
+  background-color: #fff;
   padding: 0.6rem 2rem;
   text-align: center;
   transition: 0.5s;
   &:hover {
-    color: #fff;
+    color: #fff !important;
+    background-color: #000;
     border: 2px solid #b4b4b4;
     transition: 0.5s;
     text-decoration: none !important;
