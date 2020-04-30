@@ -55,7 +55,7 @@ const artiste = ({ pageContext, intl }) => {
           </Col>
         </Row>
 
-        <Row>
+        <Row >
           <Col>
             <Article>
               {intl.formatMessage({ id: "title" }) !== "Gatsby English" ? (
@@ -74,7 +74,7 @@ const artiste = ({ pageContext, intl }) => {
             </Article>
           </Col>
         </Row>
-        <Row>
+        <Row className="justify-content-md-center align-items-center">
           <Col md="4">
             {pageContext.acf.photo_1 !== null && (
               <img
