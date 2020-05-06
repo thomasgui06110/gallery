@@ -9,19 +9,24 @@ const DetailOeuvre = ({
   description,
   alt,
   photo,
+  technique
 }) => {
   return (
     <div>
     
       <Row>
         <Col className="text-center" md="6" xs="12">
-          <img width={400} src={photo} alt={alt} />
+          <img max-width={620} min-height={700} width='93%'   src={photo} alt={alt} />
         </Col>
         <Col md="6" xs="12">
-         <p> Nom de l'oeuvre : {title} </p>
+         <p style={{fontSize: "2rem"}}>{title} </p>
           <p>
             Dimensions :
             <span dangerouslySetInnerHTML={{ __html: dimension.replace(/<p>/, ' ') }}></span>
+          </p>
+          <p>
+              Technique { ` : `} 
+              <span dangerouslySetInnerHTML={{ __html: technique }}></span>
           </p>
           <br />
           <p>Description{ ` : `} 

@@ -125,6 +125,11 @@ exports.createPages = ({ graphql, actions }) => {
                     excerpt
                     acf {
                       titre_photo_1
+                      technique_photo_1
+                      technique_photo_2
+                      technique_photo_3
+                      descriptif_photo_3
+                      descriptif_photo_2
                       photo_1 {
                         path
                         source_url
@@ -142,6 +147,8 @@ exports.createPages = ({ graphql, actions }) => {
                       wordpress_2eme_photo {
                         path
                         source_url
+                        title
+                        caption
                         alt_text
                         localFile {
                           childImageSharp {
@@ -155,6 +162,8 @@ exports.createPages = ({ graphql, actions }) => {
                         path
                         source_url
                         alt_text
+                        caption
+                        title
                         localFile {
                           childImageSharp {
                             fluid(maxWidth: 400) {

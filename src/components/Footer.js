@@ -49,7 +49,7 @@ const Footer = () => (
         </em>
       </Link>
     </p>
-    <Font>
+    <Font style={{fontSize: '2.5rem'}}>
       <a
         href="https://instagram.com/galerievieceli?igshid=1vgijnannwbqf"
         target="_blanck"

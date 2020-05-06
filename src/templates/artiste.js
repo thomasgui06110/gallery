@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import GLayout from "../components/layout";
 import styled from "styled-components";
 import { Row, Col, Button } from "react-bootstrap";
@@ -35,47 +35,51 @@ const Wrap = styled.div`
   }
 `;
 const Images = styled.img`
-&:hover {
-  cursor:pointer;
-}
-`
+  &:hover {
+    cursor: pointer;
+  }
+`;
 
 class artiste extends React.Component {
-  state={
-    detail: true
-  }
+  state = {
+    detail1:false,
+    detail: true,
+    detail2: false,
+    detail3: false
+  };
 
-  render(){
-    const { pageContext, intl}  = this.props
-    const {detail} = this.state
-    console.log(this.state)
+  render() {
+    const { pageContext, intl } = this.props;
+    const { detail,detail2, detail3, detail1 } = this.state;
+    
     return (
       <GLayout>
         <Wrap>
           <SEO title={pageContext.title} description={pageContext.content} />
-        
-              <Row>
-                <Col className="text-center" mt="0" md="12">
-                  <HeadlineCenter>
-                    <h1 className="display-5">
-                      {intl.formatMessage({ id: "title" }) !== "Gatsby English"
-                        ? pageContext.title
-                        : pageContext.acf.titre_anglais}
-                    </h1>
-                    {pageContext.acf.dates !== null && (
-                      <p>
-                        <em>{pageContext.acf.dates}</em>
-                      </p>
-                    )}
-                  </HeadlineCenter>
-                </Col>
-              </Row>
-              {detail && (
+
+          <Row>
+            <Col className="text-center" mt="0" md="12">
+              <HeadlineCenter>
+                <h1 className="display-5">
+                  {intl.formatMessage({ id: "title" }) !== "Gatsby English"
+                    ? pageContext.title
+                    : pageContext.acf.titre_anglais}
+                </h1>
+                {pageContext.acf.dates !== null && (
+                  <p>
+                    <em>{pageContext.acf.dates}</em>
+                  </p>
+                )}
+              </HeadlineCenter>
+            </Col>
+          </Row>
+          {(detail && !detail1 && !detail2 && !detail3) && (
             <>
               <Row>
                 <Col>
                   <Article>
-                    {intl.formatMessage({ id: "title" }) !== "Gatsby English" ? (
+                    {intl.formatMessage({ id: "title" }) !==
+                    "Gatsby English" ? (
                       <div
                         dangerouslySetInnerHTML={{
                           __html: pageContext.content,
@@ -92,12 +96,12 @@ class artiste extends React.Component {
                 </Col>
               </Row>
               <Row className="justify-content-md-center align-items-center">
-              
                 <Col md="4">
                   {pageContext.acf.photo_1 !== null && (
                     <Images
-                   
-                    onClick={(event) => {this.setState({detail:false})}}
+                      onClick={(event) => {
+                        this.setState({ detail1: true });
+                      }}
                       src={
                         pageContext.acf.photo_1.localFile.childImageSharp.fluid
                           .src
@@ -110,7 +114,10 @@ class artiste extends React.Component {
                 </Col>
                 <Col md="4">
                   {pageContext.acf.wordpress_2eme_photo !== null && (
-                    <img
+                    <Images
+                      onClick={(event) => {
+                        this.setState({ detail2: true });
+                      }}
                       src={
                         pageContext.acf.wordpress_2eme_photo.localFile
                           .childImageSharp.fluid.src
@@ -122,8 +129,13 @@ class artiste extends React.Component {
                   )}
                 </Col>
                 <Col md="4">
+                
                   {pageContext.acf.wordpress_3eme_photo !== null && (
-                    <img
+                    
+                    <Images
+                      onClick={(event) => {
+                        this.setState({ detail3: true });
+                      }}
                       src={
                         pageContext.acf.wordpress_3eme_photo.localFile
                           .childImageSharp.fluid.src
@@ -137,22 +149,80 @@ class artiste extends React.Component {
               </Row>
             </>
           )}
-  
-          {!detail && (
+
+          {detail1 && (
             <Row>
               <Col>
-              <Button className="md-5" variant="secondary" size="lg"  onClick={(e) => this.setState({detail: true})}>Retour</Button>
+                <Button
+                  className="mb-5"
+                  variant="secondary"
+                  size="lg"
+                  onClick={(e) => this.setState({ detail1: false })}
+                >
+                  Retour
+                </Button>
                 <DetailOeuvre
-               
                   title={pageContext.acf.photo_1.title}
                   description={pageContext.acf.titre_photo_1}
                   dimension={pageContext.acf.photo_1.caption}
+                  technique={pageContext.acf.technique_photo_1}
                   artiste={pageContext.title}
                   photo={
-                        pageContext.acf.photo_1.localFile.childImageSharp.fluid
-                          .src
-                      }
-                      alt={pageContext.acf.wordpress_3eme_photo.alt_text}
+                    pageContext.acf.photo_1.localFile.childImageSharp.fluid.src
+                  }
+                  alt={pageContext.acf.photo_1.alt_text}
+                />
+              </Col>
+            </Row>
+          )}
+          {detail2 && (
+            <Row>
+              <Col>
+                <Button
+                  className="mb-5"
+                  variant="secondary"
+                  size="lg"
+                  onClick={(e) => this.setState({ detail2: false })}
+                >
+                  Retour
+                </Button>
+                <DetailOeuvre
+                  title={pageContext.acf.wordpress_2eme_photo.title}
+                  description={pageContext.acf.descriptif_photo_2}
+                  dimension={pageContext.acf.wordpress_2eme_photo.caption}
+                  technique={pageContext.acf.technique_photo_2}
+                  artiste={pageContext.title}
+                  photo={
+                    pageContext.acf.wordpress_2eme_photo.localFile
+                          .childImageSharp.fluid.src
+                  }
+                  alt={pageContext.acf.wordpress_2eme_photo.alt_text}
+                />
+              </Col>
+            </Row>
+          )}
+          {detail3 && (
+            <Row>
+              <Col>
+                <Button
+                  className="mb-5"
+                  variant="secondary"
+                  size="lg"
+                  onClick={(e) => this.setState({ detail3: false })}
+                >
+                  Retour
+                </Button>
+                <DetailOeuvre
+                  title={pageContext.acf.wordpress_3eme_photo.title}
+                  description={pageContext.acf.descriptif_photo_3}
+                  dimension={pageContext.acf.wordpress_3eme_photo.caption}
+                  technique={pageContext.acf.technique_photo_3}
+                  artiste={pageContext.title}
+                  photo={
+                    pageContext.acf.wordpress_3eme_photo.localFile
+                          .childImageSharp.fluid.src
+                  }
+                  alt={pageContext.acf.wordpress_3eme_photo.alt_text}
                 />
               </Col>
             </Row>
@@ -161,5 +231,5 @@ class artiste extends React.Component {
       </GLayout>
     );
   }
-} 
+}
 export default injectIntl(artiste);

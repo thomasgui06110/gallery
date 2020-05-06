@@ -120,31 +120,10 @@ const Formulaire = ({ title, artiste }) => {
         </Col>
       </Row>
 
-      <Form.Group>
-        <InputGroup>
-          <InputGroup.Prepend>
-            <InputGroup.Text id="inputGroupPrepend">
-              <FaUserCircle />
-            </InputGroup.Text>
-          </InputGroup.Prepend>
-          <Form.Control type="text" name="title " value={title} id={title} />
-        </InputGroup>
-      </Form.Group>
-      <Form.Group>
-        <InputGroup>
-          <InputGroup.Prepend>
-            <InputGroup.Text id="inputGroupPrepend">
-              <FaUserCircle />
-            </InputGroup.Text>
-          </InputGroup.Prepend>
-          <Form.Control
-            type="text"
-            name="artiste"
-            value={artiste}
-            id={artiste}
-          />
-        </InputGroup>
-      </Form.Group>
+      <Form.Control type="hidden" name="title " value={title} id={title} />
+
+      <Form.Control type="hidden" name="artiste" value={artiste} id={artiste} />
+
       <Form.Group>
         <InputGroup>
           <InputGroup.Prepend>
