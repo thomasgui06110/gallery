@@ -15,7 +15,7 @@ exports.createPages = ({ graphql, actions }) => {
     fromPath: "/",
     toPath: "/fr/home",
     redirectInBrowser: true,
-    isPermanent: true
+    isPermanent: true,
   });
   return new Promise((resolve, reject) => {
     // The “graphql” function allows us to run arbitrary
@@ -81,7 +81,7 @@ exports.createPages = ({ graphql, actions }) => {
         }
       `
     )
-      .then(result => {
+      .then((result) => {
         if (result.errors) {
           console.log(result.errors);
           reject(result.errors);
@@ -92,7 +92,7 @@ exports.createPages = ({ graphql, actions }) => {
         // We want to create a detailed page for each
         // page node. We'll just use the WordPress Slug for the slug.
         // The Page ID is prefixed with 'PAGE_'
-        _.each(result.data.allWordpressPage.edges, edge => {
+        _.each(result.data.allWordpressPage.edges, (edge) => {
           // Gatsby uses Redux to manage its internal state.
           // Plugins and sites can use functions like "createPage"
           // to interact with Gatsby.
@@ -104,7 +104,7 @@ exports.createPages = ({ graphql, actions }) => {
             // can query data specific to each page.
             path: `/${edge.node.slug}/`,
             component: slash(pageTemplate),
-            context: edge.node
+            context: edge.node,
           });
         });
       })
@@ -124,10 +124,13 @@ exports.createPages = ({ graphql, actions }) => {
                     content
                     excerpt
                     acf {
+                      titre_photo_1
                       photo_1 {
                         path
                         source_url
                         alt_text
+                        caption
+                        title
                         localFile {
                           childImageSharp {
                             fluid(maxWidth: 600) {
@@ -169,7 +172,7 @@ exports.createPages = ({ graphql, actions }) => {
               }
             }
           `
-        ).then(result => {
+        ).then((result) => {
           if (result.errors) {
             console.log(result.errors);
             reject(result.errors);
@@ -180,19 +183,19 @@ exports.createPages = ({ graphql, actions }) => {
           // We want to create a detailed page for each
           // post node. We'll just use the WordPress Slug for the slug.
           // The Post ID is prefixed with 'POST_'
-          _.each(result.data.allWordpressWpPortfolio.edges, edge => {
+          _.each(result.data.allWordpressWpPortfolio.edges, (edge) => {
             createPage({
               path: `/artistes`,
               component: slash(ArtistsTemplateList),
-              context: edge.node
+              context: edge.node,
             });
           });
           const ArtistsTemplate = path.resolve("./src/templates/artiste.js");
-          _.each(result.data.allWordpressWpPortfolio.edges, edge => {
+          _.each(result.data.allWordpressWpPortfolio.edges, (edge) => {
             createPage({
               path: `/artiste/${edge.node.slug}`,
               component: slash(ArtistsTemplate),
-              context: edge.node
+              context: edge.node,
             });
           });
         });
@@ -219,7 +222,7 @@ exports.createPages = ({ graphql, actions }) => {
               }
             }
           }
-        `).then(result => {
+        `).then((result) => {
           if (result.errors) {
             console.log(result.errors);
             reject(result.errors);
@@ -230,11 +233,11 @@ exports.createPages = ({ graphql, actions }) => {
           // We want to create a detailed page for each
           // post node. We'll just use the WordPress Slug for the slug.
           // The Post ID is prefixed with 'POST_'
-          _.each(result.data.allWordpressWpPortfolio2.edges, edge => {
+          _.each(result.data.allWordpressWpPortfolio2.edges, (edge) => {
             createPage({
               path: `/expositions`,
               component: slash(ArtistsTemplate),
-              context: edge.node
+              context: edge.node,
             });
           });
         });
@@ -279,7 +282,7 @@ exports.createPages = ({ graphql, actions }) => {
               }
             }
           }
-        `).then(result => {
+        `).then((result) => {
           if (result.errors) {
             console.log(result.errors);
             reject(result.erros);
@@ -301,16 +304,16 @@ exports.createPages = ({ graphql, actions }) => {
                   index * postsPerPage + postsPerPage
                 ),
                 numberOfPages,
-                currentPage: index + 1
-              }
+                currentPage: index + 1,
+              },
             });
           });
           const postTemplate = path.resolve("./src/templates/post.js");
-          _.each(posts, post => {
+          _.each(posts, (post) => {
             createPage({
               path: `/blog/${post.node.slug}`,
               component: slash(postTemplate),
-              context: post.node
+              context: post.node,
             });
           });
           resolve();

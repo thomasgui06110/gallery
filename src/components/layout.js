@@ -11,6 +11,7 @@ import Footer from "./Footer";
 import SEO from "./SEO";
 import styled from "styled-components";
 import CookieConsent from "react-cookie-consent";
+import { useState } from "react";
 
 const Space = styled.div`
   padding: 1vh 7vw 1vw 7vw;
@@ -42,13 +43,15 @@ const ContainerFluid = styled.div`
 //   background-color: rgba(210, 210, 210, 0.5);
 // `;
 const GLayout = ({ children, title, description }) => {
+
+
   return (
     <>
       <SEO title={title} description={description} />
       <Header />
       <ContainerFluid>
         <Space>
-          <Section> {children}</Section>
+          <Section > {children}</Section>
         </Space>
       </ContainerFluid>
       <Footer />
