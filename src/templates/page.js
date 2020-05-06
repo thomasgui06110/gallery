@@ -38,10 +38,11 @@ const Liens = styled.span`
 `;
 const ImgHover = styled.div`
   transition: 0.5s;
-  border: 10px solid white;
+  border: 6px solid white;
   border-radius: 10px;
   width: 100%;
   heigth: 100%;
+  margin-bottom: 5px;
   box-shadow: 2rem 1rem 30px -5px rgba(0, 0, 0, 0.3);
   &:hover {
     transition: 0.5s;

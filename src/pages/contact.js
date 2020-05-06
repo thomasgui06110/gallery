@@ -20,7 +20,7 @@ const HeadlineCenter = styled.span`
 const LeftCol = styled.div`
   background-color: #fff;
   padding: 2rem 5rem 2rem 5rem;
-  
+
   border-bottom-left-radius: 10px;
   border-top-left-radius: 10px;
   border: 1px solid rgba(31, 31, 31, 0.9);
@@ -48,7 +48,7 @@ const RCol = styled.div`
   width: 100%;
   height: 100%;
   margin: 0;
-  text-align:center;
+  text-align: center;
   color: #fff;
   a {
     color: white;
@@ -61,7 +61,7 @@ const RCol = styled.div`
     border-top-right-radius: 0px;
     border-top-left-radius: 0px;
     margin-left: 1rem;
-    background-color: #333333;
+    background-color: #000;
     color: #fff;
   }
 `;
@@ -95,6 +95,11 @@ const Submit = styled.button`
       outline: none;
     }
   }
+`;
+
+const H4soustitre = styled.h4`
+  font-size: 1.3rem;
+  margin-bottom: 5px;
 `;
 
 const Contact = ({ intl }) => {
@@ -201,40 +206,51 @@ const Contact = ({ intl }) => {
           <Col md="4" xs="12" className=" center pl-0">
             <RCol>
               <h3 className="text-center">
-               
-                {intl.formatMessage({ id: "phone_contact" })}
+                {/* {intl.formatMessage({ id: "adresse_contact" })} */}
+                Cannes
               </h3>
-              <p>(+33) 4 93 45 86 41</p> <HeadlineCenter />
-              <h3 className="text-center">
-              
-                {intl.formatMessage({ id: "adresse_contact" })}
-              </h3>
-              122 Galerie Vieceli
-              <br />
+              <H4soustitre>122 GALERIE VIECELI</H4soustitre>
               122 Rue d'Antibes
               <br />
-              06400 Cannes - France <p></p>
+              06400 Cannes - France <br />
+              +33 (0)4 93 45 86 41
+              <HeadlineCenter />
+              <h3 className="text-center">
+                {/* {intl.formatMessage({ id: "adresse_contact" })} */}
+                Paris
+              </h3>
+              <H4soustitre>GALERIE VIECELI</H4soustitre>
+              5 rue du Pas des Vosges
+              <br />
+              75004 Paris - France <br />
+              +33 (0)1 42 74 80 54
               <HeadlineCenter />
               <h3 className="text-center">Mail</h3>
               <p>
-                <a href="mailto:contact@122gallerievieceli.com">
+                <a href="mailto:contact@122galerievieceli.com">
                   contact@122galerievieceli.com
                 </a>
               </p>
               <HeadlineCenter />
-              <h3 className="text-center">
-                {" "}
-                {intl.formatMessage({ id: "horaires_contact" })}
-              </h3>
+              <H4soustitre>Ouvert du mardi au samedi</H4soustitre>
               <p>De 10h à 13h et de 15h à 19h</p>
             </RCol>
           </Col>
         </Row>
         <Row className="mt-3">
-          <Col>
+          <Col md="6" xs="12" className="mr-0 pr-0">
             <iframe
-              title="Plan Galerie 122 Cannes France"
+              title="Plan Galerie 122 Vieceli Cannes France"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2891.6199390697197!2d7.024202915720587!3d43.55196376698875!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12ce8195c5ea6603%3A0x9caff7af986269d7!2s122%20Rue%20d&#39;Antibes%2C%2006400%20Cannes!5e0!3m2!1sfr!2sfr!4v1580144183896!5m2!1sfr!2sfr"
+              width="100%"
+              height="500px"
+              allowFullScreen=""
+            ></iframe>
+          </Col>
+          <Col md="6" xs="12" className="mr-0 ml-0 pr-0">
+            <iframe
+              title="Plan Galerie Vieceli Paris France"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2625.124777832179!2d2.3658895809352156!3d48.85583096794352!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66dfff79097e3%3A0xcbc16ddc72407425!2sGalerie%20Vieceli%20Paris!5e0!3m2!1sfr!2sfr!4v1588752234156!5m2!1sfr!2sfr"
               width="100%"
               height="500px"
               allowFullScreen=""

@@ -19,19 +19,19 @@ const PageNumber = styled(Link)`
   display: block;
   padding: 8px 16px;
 `;
-const Wrap = styled.div`
-  ${"" /* column-count: 2;
-  column-gap: 10px; */}
-  display: flex;
-  flex-direction: column;
+// const Wrap = styled.div`
+//   ${"" /* column-count: 2;
+//   column-gap: 10px; */}
+//   display: flex;
+//   flex-direction: column;
 
-  color: #71818c !important;
-  @media (max-width: 1000px) {
-    column-count: 1;
-    padding-left: 0;
-    margin-left: -15px;
-  }
-`;
+//   color: #71818c !important;
+//   @media (max-width: 1000px) {
+//     column-count: 1;
+//     padding-left: 0;
+//     margin-left: -15px;
+//   }
+// `;
 
 const StyledFlexBox = styled.div`
   display: inline-block;
@@ -119,11 +119,11 @@ const HeadlineCenter = styled.span`
     border: 2px solid #fff;
   }
 `;
-const ColBlog = styled.div`
-    {'' /* flex: 0 0 51%;
-    max-width: 100%; */}
+// const ColBlog = styled.div`
+//     {'' /* flex: 0 0 51%;
+//     max-width: 100%; */}
  
-`;
+// `;
 const BlogText = styled.p`
   margin: 0 10px 0 10px;
 `;

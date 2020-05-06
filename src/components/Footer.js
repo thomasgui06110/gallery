@@ -31,25 +31,35 @@ a {
   }
 `;
 const styledLink = {
-  color: "#f1f1f1"
+  color: "#f1f1f1",
 };
 
 const Footer = () => (
   <FooterMain>
     <p>
-      © 122 Galerie Vieceli | 122 Rue d'Antibes 06400 Cannes - France | Tous droits
-      réservés |
+      © 122 Galerie Vieceli - 122 Rue d'Antibes 06400 Cannes - France 
+ <br />
+      © Galerie Vieceli - 5 rue du Pas des Vosges 75004 Paris - France 
+    </p>
+    <p>
       <Link to="/politique-de-confidentialite" style={styledLink}>
         <em>
-          <small> Mentions Légales</small>
+          <small>  Tous
+      droits réservés | Mentions Légales</small>
         </em>
       </Link>
     </p>
     <Font>
-      <a href="https://instagram.com/galerievieceli?igshid=1vgijnannwbqf" target="_blanck">
+      <a
+        href="https://instagram.com/galerievieceli?igshid=1vgijnannwbqf"
+        target="_blanck"
+      >
         <FaInstagram />
       </a>
-      <a href="https://www.facebook.com/Galerie-Vieceli-414384205380337" target="_blanck" >
+      <a
+        href="https://www.facebook.com/Galerie-Vieceli-414384205380337"
+        target="_blanck"
+      >
         <FaFacebookF />
       </a>
     </Font>

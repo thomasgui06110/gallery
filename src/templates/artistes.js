@@ -34,11 +34,7 @@ const artistes = ({ pageContext, intl }) => {
     <Row>
       <ArtistsItems />
     </Row>
-    <Row>
-      <Col>
-        <Newsletter></Newsletter>
-      </Col>
-    </Row>
+
   </GLayout>
 )}
 export default injectIntl(artistes)

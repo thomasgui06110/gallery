@@ -20,6 +20,7 @@ const Article = styled.article`
   font-size: 1.3rem;
   @media (max-width: 1000px) {
     font-size: 1rem;
+    padding:1rem;
   }
 `;
 const Wrap = styled.div`
@@ -29,7 +30,8 @@ const Wrap = styled.div`
   border-radius: 10px;
   @media (max-width: 1000px) {
     font-size: 1rem;
-    padding: 1rem 2px;
+    padding: 1rem 0px;
+    margin-top:1rem
   }
 `;
 
@@ -41,7 +43,7 @@ const artiste = ({ pageContext, intl }) => {
         <Row>
           <Col className="text-center" mt="0" md="12">
             <HeadlineCenter>
-              <h1 className="display-4">
+              <h1 className="display-5">
                 {intl.formatMessage({ id: "title" }) !== "Gatsby English"
                   ? pageContext.title
                   : pageContext.acf.titre_anglais}

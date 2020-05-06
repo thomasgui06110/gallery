@@ -10,28 +10,33 @@ import Header from "./header";
 import Footer from "./Footer";
 import SEO from "./SEO";
 import styled from "styled-components";
-import { Container } from "react-bootstrap";
 import CookieConsent from "react-cookie-consent";
 
 const Space = styled.div`
   padding: 1vh 7vw 1vw 7vw;
-  margin-top:30px;
+  margin-top: 30px;
 
   @media (max-width: 995px) {
     padding: 1vh 2vw 1vw 2vw;
-    margin-top:85px;
+    margin-top: 85px;
   }
 `;
 const Section = styled.section`
   margin: 5rem auto 1rem auto;
-  ${'' /* background-color: #fff; */}
+  ${"" /* background-color: #fff; */}
   background: black;
   color: white;
   padding: 2% 2% 5% 2%;
   border-radius: 10px;
   @media (max-width: 1000px) {
-    padding: 1vh 1vw 1vw 1vw;
+    padding: 1vh 0vw 1vw 0vw;
   }
+`;
+
+const ContainerFluid = styled.div`
+  max-width: 1750px;
+  width: 100%;
+  margin: 0 auto;
 `;
 // const Wrapper = styled.div`
 //   background-color: rgba(210, 210, 210, 0.5);
@@ -41,11 +46,11 @@ const GLayout = ({ children, title, description }) => {
     <>
       <SEO title={title} description={description} />
       <Header />
-      <Container fluid>
+      <ContainerFluid>
         <Space>
           <Section> {children}</Section>
         </Space>
-      </Container>
+      </ContainerFluid>
       <Footer />
       <CookieConsent
         acceptOnScroll={true}
@@ -58,7 +63,6 @@ const GLayout = ({ children, title, description }) => {
             alert("Accept was triggered by clicking the Accept button");
           }
         }}
-       
         flipButtons
         location="bottom"
         buttonText="OK, I accept"

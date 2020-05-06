@@ -103,7 +103,7 @@ const ArtistsItems = () => {
     <StaticQuery
       query={graphql`
         {
-          allWordpressWpPortfolio(sort: { fields: date, order: DESC }) {
+          allWordpressWpPortfolio(sort: { fields: title, order: ASC }) {
             edges {
               node {
                 excerpt
@@ -132,7 +132,7 @@ const ArtistsItems = () => {
         props.allWordpressWpPortfolio.edges.map(ArtistsItem => (
           <>
           <SEO title= "Artistes exposés" />
-          <Col d-flex justify-content-center key={ArtistsItem.node.id}>
+          <Col className='d-flex justify-content-center' key={ArtistsItem.node.id}>
             <StyledFlexBox>
               <StyledFlexBoxArtist className="cadre">
                 <StyledImg className="photo">
