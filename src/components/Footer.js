@@ -39,7 +39,7 @@ const Footer = () => (
     <p>
       © 122 Galerie Vieceli - 122 Rue d'Antibes 06400 Cannes - France 
  <br />
-      © Galerie Vieceli - 5 rue du Pas des Vosges 75004 Paris - France 
+      © Galerie Vieceli - 5 rue du Pas de la Mule Place des Vosges 75004 Paris - France 
     </p>
     <p>
       <Link to="/politique-de-confidentialite" style={styledLink}>

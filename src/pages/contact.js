@@ -220,7 +220,8 @@ const Contact = ({ intl }) => {
                 Paris
               </h3>
               <H4soustitre>GALERIE VIECELI</H4soustitre>
-              5 rue du Pas des Vosges
+              5 rue du Pas de la Mule <br />
+              Place des Vosges
               <br />
               75004 Paris - France <br />
               +33 (0)1 42 74 80 54
