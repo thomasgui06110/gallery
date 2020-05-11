@@ -83,7 +83,7 @@ const Newsletter = () => {
         data-netlify-honeypot="bot-field"
       >
         <input type="hidden" name="bot-field" />
-        <input type="hidden" name="form-name" value="contact" />
+        <input type="hidden" name="form-name" value="newsletter" />
         <Input type="text" placeholder="First Name / Prénom" name="Prenom" />
         <Input type="text" placeholder="Name / Nom" name="Nom" />
         <Input type="mail" placeholder="Mail" name="Mail" />

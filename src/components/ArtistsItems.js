@@ -46,9 +46,9 @@ const StyledTexte = styled.div`
   bottom: 8px;
   min-width: 40%;
   padding: 0px 10px 10px 10px;
-  height: 33px;
+  height: 54px;
   text-align: center;
-  border-radius: 60px;
+  border-radius: 20px;
   line-height: 20px;
   background-color: #e5e5e5ad;
   left: 6px;
@@ -97,6 +97,25 @@ const StyledH2 = styled.h2`
     height: 50px;
   }
 `;
+const StyledH3 = styled.h3`
+  opacity: 1;
+  width: 100%;
+  z-index: 5;
+  text-align: center;
+  left: 0px;
+  height: auto;
+  margin: 0 auto;
+  font-size: 18px;
+  line-height: 20px;
+  padding: 5px 0 0 0;
+
+  color: #000;
+ 
+  transition-duration: 0.8s;
+  @media (max-width: 900px) {
+    height: 50px;
+  }
+`;
 
 const ArtistsItems = () => {
   return (
@@ -110,7 +129,10 @@ const ArtistsItems = () => {
                 id
                 slug
                 content
-                title
+                title,
+                acf{
+                  Type_d_artiste
+                }
                 featured_media {
                   alt_text
                   source_url
@@ -147,7 +169,9 @@ const ArtistsItems = () => {
                     </Link>
                 </StyledImg>
                 <StyledTexte className="texte">
-                  <StyledH2> <Link to={`/artiste/${ArtistsItem.node.slug}`} style={linkStyles} >{ArtistsItem.node.title} </Link></StyledH2>
+                  <StyledH2> <Link to={`/artiste/${ArtistsItem.node.slug}`} style={linkStyles} >{ArtistsItem.node.title}  </Link></StyledH2>
+                  <StyledH3> <Link to={`/artiste/${ArtistsItem.node.slug}`} style={linkStyles} > {ArtistsItem.node.acf.Type_d_artiste} </Link></StyledH3>
+               
                 </StyledTexte>
               </StyledFlexBoxArtist>
             </StyledFlexBox>

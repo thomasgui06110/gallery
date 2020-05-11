@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { Col, Row, Form, InputGroup } from "react-bootstrap";
 import { FaUserCircle, FaEnvelopeOpenText } from "react-icons/fa";
 import { MdPhoneIphone } from "react-icons/md";
+import menuCss from "./menuCss.css";
 
 const Submit = styled.button`
   display: inline-block;
@@ -35,10 +36,10 @@ const Submit = styled.button`
   }
 `;
 
-const Formulaire = ({ title, artiste }) => {
+const Formulaire = ({ title, artiste, photo }) => {
   return (
     <form
-      name="contact"
+      name="artiste"
       method="post"
       action="/success"
       data-netlify="true"
@@ -119,6 +120,8 @@ const Formulaire = ({ title, artiste }) => {
           </Form.Group>
         </Col>
       </Row>
+
+      <Form.Control type="hidden" name="photo " value={photo} id={photo} />
 
       <Form.Control type="hidden" name="title " value={title} id={title} />
 

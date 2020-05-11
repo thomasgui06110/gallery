@@ -130,6 +130,7 @@ exports.createPages = ({ graphql, actions }) => {
                       technique_photo_3
                       descriptif_photo_3
                       descriptif_photo_2
+                      Type_d_artiste
                       photo_1 {
                         path
                         source_url

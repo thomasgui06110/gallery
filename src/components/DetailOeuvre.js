@@ -16,6 +16,7 @@ const DetailOeuvre = ({
     
       <Row>
         <Col className="text-center" md="6" xs="12">
+        
           <img max-width={620} min-height={700} width='93%'   src={photo} alt={alt} />
         </Col>
         <Col md="6" xs="12">
@@ -35,7 +36,7 @@ const DetailOeuvre = ({
       </Row>
       <Row className="justify-content-md-center mt-5">
         <Col md="8" mr="auto" ml="auto">
-          <Form title={title} artiste={artiste} />
+          <Form title={title} artiste={artiste} photo={photo} />
         </Col>
       </Row>
     </div>

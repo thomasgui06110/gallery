@@ -41,12 +41,17 @@ const Images = styled.img`
 `;
 
 class artiste extends React.Component {
-  state = {
-    detail1:false,
-    detail: true,
-    detail2: false,
-    detail3: false
-  };
+  constructor(props) {
+    super(props);
+   
+    this.state = {
+      detail1:false,
+      detail: true,
+      detail2: false,
+      detail3: false
+    };
+  }
+
 
   render() {
     const { pageContext, intl } = this.props;
@@ -61,6 +66,7 @@ class artiste extends React.Component {
             <Col className="text-center" mt="0" md="12">
               <HeadlineCenter>
                 <h1 className="display-5">
+             
                   {intl.formatMessage({ id: "title" }) !== "Gatsby English"
                     ? pageContext.title
                     : pageContext.acf.titre_anglais}
@@ -151,7 +157,7 @@ class artiste extends React.Component {
           )}
 
           {detail1 && (
-            <Row>
+            <Row style={{padding: "5px"}}>
               <Col>
                 <Button
                   className="mb-5"
@@ -176,7 +182,7 @@ class artiste extends React.Component {
             </Row>
           )}
           {detail2 && (
-            <Row>
+            <Row style={{padding: "5px"}}>
               <Col>
                 <Button
                   className="mb-5"
@@ -202,7 +208,7 @@ class artiste extends React.Component {
             </Row>
           )}
           {detail3 && (
-            <Row>
+            <Row style={{padding: "5px"}}>
               <Col>
                 <Button
                   className="mb-5"
