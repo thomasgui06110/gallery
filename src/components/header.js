@@ -37,18 +37,21 @@ text-align: center;
 color:white;
 font-weight: 700;
 letter-spacing:0.5rem;
+@media (max-width: 995px) {
+   font-size: 1.8rem;
+  }
 
 `
 
 const Header = ({ siteTitle }) => (
   <HeaderMain>
     <TopLogo>
-      {/* <ImageH alt="Logo Galerie 122 Cannes" /> */}
+    
       <Titlelogo>122 Galerie Vieceli</Titlelogo>
     </TopLogo>
-    {/* <Sticky enabled={true} top={0} bottomBoundary={1200}> */}
+  
       <MainMenu />
-    {/* </Sticky> */}
+  
   </HeaderMain>
 );
 

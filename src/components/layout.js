@@ -23,13 +23,13 @@ const Space = styled.div`
 `;
 const Section = styled.section`
   margin: 5rem auto 1rem auto;
-  ${"" /* background-color: #fff; */}
   background: black;
   color: white;
   padding: 2% 2% 5% 2%;
   border-radius: 10px;
-  @media (max-width: 1000px) {
+  @media (max-width: 995px) {
     padding: 1vh 0vw 1vw 0vw;
+    margin: 3rem auto 1rem auto;
   }
 `;
 
