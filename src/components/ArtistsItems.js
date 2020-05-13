@@ -5,8 +5,7 @@ import styled from "styled-components";
 import Img from "gatsby-image";
 import SEO from "./SEO";
 import { Link } from "gatsby-plugin-intl";
-require( '../styles/artistes.css');
-
+require("../styles/artistes.css");
 
 const StyledFlexBox = styled.div`
  
@@ -28,8 +27,8 @@ const StyledFlexBoxArtist = styled.div`
     /* width: 380px; */
   }
   max-height: 20rem;
-  height:18rem;
-  width:18rem;
+  height: 18rem;
+  width: 18rem;
   border-radius: 50%;
   overflow: hidden;
   margin: 8px auto;
@@ -61,12 +60,11 @@ const StyledTexte = styled.div`
     transition: 800ms;
     background-color: #e5e5e5;
   }
- 
 `;
 
 const linkStyles = {
-  color:'grey'
-}
+  color: "grey",
+};
 
 const StyledImg = styled.div`
   transition: opacity 0.3s ease-in-out, transform 0.5s ease-in-out,
@@ -110,7 +108,7 @@ const StyledH3 = styled.h3`
   padding: 5px 0 0 0;
 
   color: #000;
- 
+
   transition-duration: 0.8s;
   @media (max-width: 900px) {
     height: 50px;
@@ -129,8 +127,8 @@ const ArtistsItems = () => {
                 id
                 slug
                 content
-                title,
-                acf{
+                title
+                acf {
                   Type_d_artiste
                 }
                 featured_media {
@@ -150,32 +148,56 @@ const ArtistsItems = () => {
           }
         }
       `}
-      render={props =>
-        props.allWordpressWpPortfolio.edges.map(ArtistsItem => (
+      render={(props) =>
+        props.allWordpressWpPortfolio.edges.map((ArtistsItem) => (
           <>
-          <SEO title= "Artistes exposés" />
-          <Col className='d-flex justify-content-center' key={ArtistsItem.node.id}>
-            <StyledFlexBox>
-              <StyledFlexBoxArtist className="cadre">
-                <StyledImg className="photo">
-                <Link to={`/artiste/${ArtistsItem.node.slug}`}>
-                  <Img
-                    fluid={
-                      ArtistsItem.node.featured_media.localFile.childImageSharp
-                        .fluid
-                    }
-                    alt={ArtistsItem.node.title}
-                  />
+            <SEO title="Artistes exposés" />
+            <Col
+              className="d-flex justify-content-center"
+              key={ArtistsItem.node.id}
+            >
+              <StyledFlexBox>
+                <StyledFlexBoxArtist className="cadre">
+                  <StyledImg className="photo">
+                    <Link to={`/artiste/${ArtistsItem.node.slug}`}>
+                      <Img
+                        fluid={
+                          ArtistsItem.node.featured_media.localFile
+                            .childImageSharp.fluid
+                        }
+                        alt={ArtistsItem.node.title}
+                      />
                     </Link>
-                </StyledImg>
-                <StyledTexte className="texte">
-                  <StyledH2> <Link to={`/artiste/${ArtistsItem.node.slug}`} style={linkStyles} >{ArtistsItem.node.title}  </Link></StyledH2>
-                  <StyledH3> <Link to={`/artiste/${ArtistsItem.node.slug}`} style={linkStyles} > {ArtistsItem.node.acf.Type_d_artiste} </Link></StyledH3>
-               
-                </StyledTexte>
-              </StyledFlexBoxArtist>
-            </StyledFlexBox>
-          </Col></>
+                  </StyledImg>
+                  <StyledTexte className="texte">
+                    <StyledH2>
+                      {" "}
+                      <Link
+                        to={`/artiste/${ArtistsItem.node.slug}`}
+                        style={linkStyles}
+                      >
+                        {ArtistsItem.node.title}{" "}
+                      </Link>
+                    </StyledH2>
+                    <StyledH3>
+                      {" "}
+                      <Link
+                        to={`/artiste/${ArtistsItem.node.slug}`}
+                        style={linkStyles}
+                      >
+                        {" "}
+                        {ArtistsItem.node.acf.Type_d_artiste.map((type) => (
+                          <span key={type} style={{ marginRight: "4px" }}>
+                            {type}
+                          </span>
+                        ))}{" "}
+                      </Link>
+                    </StyledH3>
+                  </StyledTexte>
+                </StyledFlexBoxArtist>
+              </StyledFlexBox>
+            </Col>
+          </>
         ))
       }
     />
