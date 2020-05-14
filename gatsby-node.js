@@ -130,6 +130,12 @@ exports.createPages = ({ graphql, actions }) => {
                       technique_photo_3
                       descriptif_photo_3
                       descriptif_photo_2
+                      descriptif_photo_4
+                      descriptif_photo_5
+                      descriptif_photo_6
+                      technique_photo_6
+                      technique_photo_5
+                      technique_photo_4
                       Type_d_artiste
                       photo_1 {
                         path
@@ -173,6 +179,48 @@ exports.createPages = ({ graphql, actions }) => {
                           }
                         }
                       }
+                      photo_4 {
+                        path
+                        source_url
+                        alt_text
+                        caption
+                        title
+                        localFile {
+                          childImageSharp {
+                            fluid(maxWidth: 600) {
+                              src
+                            }
+                          }
+                        }
+                      }
+                      photo_5 {
+                        path
+                        source_url
+                        alt_text
+                        caption
+                        title
+                        localFile {
+                          childImageSharp {
+                            fluid(maxWidth: 600) {
+                              src
+                            }
+                          }
+                        }
+                      }
+                      photo_6 {
+                        path
+                        source_url
+                        alt_text
+                        caption
+                        title
+                        localFile {
+                          childImageSharp {
+                            fluid(maxWidth: 600) {
+                              src
+                            }
+                          }
+                        }
+                      }
                       dates
                       titre_anglais
                       texte_anglais
@@ -184,7 +232,7 @@ exports.createPages = ({ graphql, actions }) => {
           `
         ).then((result) => {
           if (result.errors) {
-            console.log(result.errors);
+            // console.log(result.errors);
             reject(result.errors);
           }
           const ArtistsTemplateList = path.resolve(

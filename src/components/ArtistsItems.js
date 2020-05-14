@@ -171,7 +171,6 @@ const ArtistsItems = () => {
                   </StyledImg>
                   <StyledTexte className="texte">
                     <StyledH2>
-                      {" "}
                       <Link
                         to={`/artiste/${ArtistsItem.node.slug}`}
                         style={linkStyles}
@@ -180,12 +179,12 @@ const ArtistsItems = () => {
                       </Link>
                     </StyledH2>
                     <StyledH3>
-                      {" "}
+                    
                       <Link
                         to={`/artiste/${ArtistsItem.node.slug}`}
                         style={linkStyles}
                       >
-                        {" "}
+                       
                         {ArtistsItem.node.acf.Type_d_artiste.map((type) => (
                           <span key={type} style={{ marginRight: "4px" }}>
                             {type}

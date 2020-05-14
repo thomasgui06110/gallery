@@ -43,20 +43,22 @@ const Images = styled.img`
 class artiste extends React.Component {
   constructor(props) {
     super(props);
-   
+
     this.state = {
-      detail1:false,
+      detail1: false,
       detail: true,
       detail2: false,
-      detail3: false
+      detail3: false,
+      detail4: false,
+      detail5: false,
+      detail6: false
     };
   }
 
-
   render() {
     const { pageContext, intl } = this.props;
-    const { detail,detail2, detail3, detail1 } = this.state;
-    
+    const { detail, detail2, detail3, detail1, detail4, detail5, detail6 } = this.state;
+
     return (
       <GLayout>
         <Wrap>
@@ -66,7 +68,6 @@ class artiste extends React.Component {
             <Col className="text-center" mt="0" md="12">
               <HeadlineCenter>
                 <h1 className="display-5">
-             
                   {intl.formatMessage({ id: "title" }) !== "Gatsby English"
                     ? pageContext.title
                     : pageContext.acf.titre_anglais}
@@ -79,7 +80,7 @@ class artiste extends React.Component {
               </HeadlineCenter>
             </Col>
           </Row>
-          {(detail && !detail1 && !detail2 && !detail3) && (
+          {detail && !detail1 && !detail2 && !detail3 && !detail4 && !detail5 && !detail6 && (
             <>
               <Row>
                 <Col>
@@ -135,9 +136,7 @@ class artiste extends React.Component {
                   )}
                 </Col>
                 <Col md="4">
-                
                   {pageContext.acf.wordpress_3eme_photo !== null && (
-                    
                     <Images
                       onClick={(event) => {
                         this.setState({ detail3: true });
@@ -153,11 +152,62 @@ class artiste extends React.Component {
                   )}
                 </Col>
               </Row>
+              {/* 2eme ligne photos  */}
+              <Row className="justify-content-md-center align-items-center">
+                <Col md="4">
+                  {pageContext.acf.photo_4 !== null && (
+                    <Images
+                      onClick={(event) => {
+                        this.setState({ detail4: true });
+                      }}
+                      src={
+                        pageContext.acf.photo_4.localFile.childImageSharp.fluid
+                          .src
+                      }
+                      alt={pageContext.acf.photo_4.alt_text}
+                      width="100%"
+                      className="mb-3"
+                    />
+                  )}
+                </Col>
+                <Col md="4">
+                  {pageContext.acf.photo_5 !== null && (
+                    <Images
+                      onClick={(event) => {
+                        this.setState({ detail5: true });
+                      }}
+                      src={
+                        pageContext.acf.photo_5.localFile.childImageSharp.fluid
+                          .src
+                      }
+                      alt={pageContext.acf.photo_5.alt_text}
+                      width="100%"
+                      className="mb-3"
+                    />
+                  )}
+                </Col>
+                <Col md="4">
+                  {pageContext.acf.photo_6 !== null && (
+                    <Images
+                      onClick={(event) => {
+                        this.setState({ detail6: true });
+                      }}
+                      src={
+                        pageContext.acf.photo_6.localFile.childImageSharp.fluid
+                          .src
+                      }
+                      alt={pageContext.acf.photo_6.alt_text}
+                      width="100%"
+                      className="mb-3"
+                    />
+                  )}
+                </Col>
+              </Row>
             </>
           )}
 
           {detail1 && (
-            <Row style={{padding: "5px"}}>
+            <Row style={{ padding: "5px" }}>
               <Col>
                 <Button
                   className="mb-5"
@@ -182,7 +232,7 @@ class artiste extends React.Component {
             </Row>
           )}
           {detail2 && (
-            <Row style={{padding: "5px"}}>
+            <Row style={{ padding: "5px" }}>
               <Col>
                 <Button
                   className="mb-5"
@@ -200,7 +250,7 @@ class artiste extends React.Component {
                   artiste={pageContext.title}
                   photo={
                     pageContext.acf.wordpress_2eme_photo.localFile
-                          .childImageSharp.fluid.src
+                      .childImageSharp.fluid.src
                   }
                   alt={pageContext.acf.wordpress_2eme_photo.alt_text}
                 />
@@ -208,7 +258,7 @@ class artiste extends React.Component {
             </Row>
           )}
           {detail3 && (
-            <Row style={{padding: "5px"}}>
+            <Row style={{ padding: "5px" }}>
               <Col>
                 <Button
                   className="mb-5"
@@ -226,9 +276,84 @@ class artiste extends React.Component {
                   artiste={pageContext.title}
                   photo={
                     pageContext.acf.wordpress_3eme_photo.localFile
-                          .childImageSharp.fluid.src
+                      .childImageSharp.fluid.src
                   }
                   alt={pageContext.acf.wordpress_3eme_photo.alt_text}
+                />
+              </Col>
+            </Row>
+          )}
+          {detail4 && (
+            <Row style={{ padding: "5px" }}>
+              <Col>
+                <Button
+                  className="mb-5"
+                  variant="secondary"
+                  size="lg"
+                  onClick={(e) => this.setState({ detail4: false })}
+                >
+                  Retour
+                </Button>
+                <DetailOeuvre
+                  title={pageContext.acf.photo_4.title}
+                  description={pageContext.acf.descriptif_photo_4}
+                  dimension={pageContext.acf.photo_4.caption}
+                  technique={pageContext.acf.technique_photo_4}
+                  artiste={pageContext.title}
+                  photo={
+                    pageContext.acf.photo_4.localFile.childImageSharp.fluid.src
+                  }
+                  alt={pageContext.acf.photo_4.alt_text}
+                />
+              </Col>
+            </Row>
+          )}
+          {detail5 && (
+            <Row style={{ padding: "5px" }}>
+              <Col>
+                <Button
+                  className="mb-5"
+                  variant="secondary"
+                  size="lg"
+                  onClick={(e) => this.setState({ detail5: false })}
+                >
+                  Retour
+                </Button>
+                <DetailOeuvre
+                  title={pageContext.acf.photo_5.title}
+                  description={pageContext.acf.descriptif_photo_5}
+                  dimension={pageContext.acf.photo_5.caption}
+                  technique={pageContext.acf.technique_photo_5}
+                  artiste={pageContext.title}
+                  photo={
+                    pageContext.acf.photo_5.localFile.childImageSharp.fluid.src
+                  }
+                  alt={pageContext.acf.photo_5.alt_text}
+                />
+              </Col>
+            </Row>
+          )}
+          {detail6 && (
+            <Row style={{ padding: "5px" }}>
+              <Col>
+                <Button
+                  className="mb-5"
+                  variant="secondary"
+                  size="lg"
+                  onClick={(e) => this.setState({ detail6: false })}
+                >
+                  Retour
+                </Button>
+                <DetailOeuvre
+                  title={pageContext.acf.photo_6.title}
+                  description={pageContext.acf.descriptif_photo_6}
+                  dimension={pageContext.acf.photo_6.caption}
+                  technique={pageContext.acf.technique_photo_6}
+                  artiste={pageContext.title}
+                  photo={
+                    pageContext.acf.photo_6.localFile.childImageSharp.fluid.src
+                  }
+                  alt={pageContext.acf.photo_6.alt_text}
                 />
               </Col>
             </Row>
