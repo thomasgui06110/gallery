@@ -5,6 +5,7 @@ import styled from "styled-components";
 import Img from "gatsby-image";
 import SEO from "./SEO";
 import { Link } from "gatsby-plugin-intl";
+import { FaSitemap } from "react-icons/fa";
 require("../styles/artistes.css");
 
 const StyledFlexBox = styled.div`
@@ -172,19 +173,22 @@ const ArtistsItems = () => {
                   <StyledTexte className="texte">
                     <StyledH2>
                       <Link
-                        to={`/artiste/${ArtistsItem.node.slug}`}
+                        to={FaSitemap`/artiste/${ArtistsItem.node.slug}`}
                         style={linkStyles}
                       >
-                        {ArtistsItem.node.title}{" "}
+                    
+                        <span
+                          dangerouslySetInnerHTML={{
+                            __html: ArtistsItem.node.title,
+                          }}
+                        ></span>
                       </Link>
                     </StyledH2>
                     <StyledH3>
-                    
                       <Link
                         to={`/artiste/${ArtistsItem.node.slug}`}
                         style={linkStyles}
                       >
-                       
                         {ArtistsItem.node.acf.Type_d_artiste.map((type) => (
                           <span key={type} style={{ marginRight: "4px" }}>
                             {type}

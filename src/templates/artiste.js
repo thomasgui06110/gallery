@@ -51,13 +51,21 @@ class artiste extends React.Component {
       detail3: false,
       detail4: false,
       detail5: false,
-      detail6: false
+      detail6: false,
     };
   }
 
   render() {
     const { pageContext, intl } = this.props;
-    const { detail, detail2, detail3, detail1, detail4, detail5, detail6 } = this.state;
+    const {
+      detail,
+      detail2,
+      detail3,
+      detail1,
+      detail4,
+      detail5,
+      detail6,
+    } = this.state;
 
     return (
       <GLayout>
@@ -68,9 +76,20 @@ class artiste extends React.Component {
             <Col className="text-center" mt="0" md="12">
               <HeadlineCenter>
                 <h1 className="display-5">
-                  {intl.formatMessage({ id: "title" }) !== "Gatsby English"
-                    ? pageContext.title
-                    : pageContext.acf.titre_anglais}
+                  {intl.formatMessage({ id: "title" }) !== "Gatsby English" ? (
+                    <span
+                      dangerouslySetInnerHTML={{
+                        __html: pageContext.title,
+                      }}
+                    ></span>
+                  ) : (
+                    <span
+                      dangerouslySetInnerHTML={{
+                        __html: pageContext.acf.titre_anglais,
+                      }}
+                    ></span>
+                  
+                  )}
                 </h1>
                 {pageContext.acf.dates !== null && (
                   <p>
@@ -80,131 +99,137 @@ class artiste extends React.Component {
               </HeadlineCenter>
             </Col>
           </Row>
-          {detail && !detail1 && !detail2 && !detail3 && !detail4 && !detail5 && !detail6 && (
-            <>
-              <Row>
-                <Col>
-                  <Article>
-                    {intl.formatMessage({ id: "title" }) !==
-                    "Gatsby English" ? (
-                      <div
-                        dangerouslySetInnerHTML={{
-                          __html: pageContext.content,
+          {detail &&
+            !detail1 &&
+            !detail2 &&
+            !detail3 &&
+            !detail4 &&
+            !detail5 &&
+            !detail6 && (
+              <>
+                <Row>
+                  <Col>
+                    <Article>
+                      {intl.formatMessage({ id: "title" }) !==
+                      "Gatsby English" ? (
+                        <div
+                          dangerouslySetInnerHTML={{
+                            __html: pageContext.content,
+                          }}
+                        />
+                      ) : (
+                        <div
+                          dangerouslySetInnerHTML={{
+                            __html: pageContext.acf.texte_anglais,
+                          }}
+                        />
+                      )}
+                    </Article>
+                  </Col>
+                </Row>
+                <Row className="justify-content-md-center align-items-center">
+                  <Col md="4">
+                    {pageContext.acf.photo_1 !== null && (
+                      <Images
+                        onClick={(event) => {
+                          this.setState({ detail1: true });
                         }}
-                      />
-                    ) : (
-                      <div
-                        dangerouslySetInnerHTML={{
-                          __html: pageContext.acf.texte_anglais,
-                        }}
+                        src={
+                          pageContext.acf.photo_1.localFile.childImageSharp
+                            .fluid.src
+                        }
+                        alt={pageContext.acf.photo_1.alt_text}
+                        width="100%"
+                        className="mb-3"
                       />
                     )}
-                  </Article>
-                </Col>
-              </Row>
-              <Row className="justify-content-md-center align-items-center">
-                <Col md="4">
-                  {pageContext.acf.photo_1 !== null && (
-                    <Images
-                      onClick={(event) => {
-                        this.setState({ detail1: true });
-                      }}
-                      src={
-                        pageContext.acf.photo_1.localFile.childImageSharp.fluid
-                          .src
-                      }
-                      alt={pageContext.acf.photo_1.alt_text}
-                      width="100%"
-                      className="mb-3"
-                    />
-                  )}
-                </Col>
-                <Col md="4">
-                  {pageContext.acf.wordpress_2eme_photo !== null && (
-                    <Images
-                      onClick={(event) => {
-                        this.setState({ detail2: true });
-                      }}
-                      src={
-                        pageContext.acf.wordpress_2eme_photo.localFile
-                          .childImageSharp.fluid.src
-                      }
-                      alt={pageContext.acf.wordpress_2eme_photo.alt_text}
-                      width="100%"
-                      className="mb-3"
-                    />
-                  )}
-                </Col>
-                <Col md="4">
-                  {pageContext.acf.wordpress_3eme_photo !== null && (
-                    <Images
-                      onClick={(event) => {
-                        this.setState({ detail3: true });
-                      }}
-                      src={
-                        pageContext.acf.wordpress_3eme_photo.localFile
-                          .childImageSharp.fluid.src
-                      }
-                      alt={pageContext.acf.wordpress_3eme_photo.alt_text}
-                      width="100%"
-                      className="mb-3"
-                    />
-                  )}
-                </Col>
-              </Row>
-              {/* 2eme ligne photos  */}
-              <Row className="justify-content-md-center align-items-center">
-                <Col md="4">
-                  {pageContext.acf.photo_4 !== null && (
-                    <Images
-                      onClick={(event) => {
-                        this.setState({ detail4: true });
-                      }}
-                      src={
-                        pageContext.acf.photo_4.localFile.childImageSharp.fluid
-                          .src
-                      }
-                      alt={pageContext.acf.photo_4.alt_text}
-                      width="100%"
-                      className="mb-3"
-                    />
-                  )}
-                </Col>
-                <Col md="4">
-                  {pageContext.acf.photo_5 !== null && (
-                    <Images
-                      onClick={(event) => {
-                        this.setState({ detail5: true });
-                      }}
-                      src={
-                        pageContext.acf.photo_5.localFile.childImageSharp.fluid
-                          .src
-                      }
-                      alt={pageContext.acf.photo_5.alt_text}
-                      width="100%"
-                      className="mb-3"
-                    />
-                  )}
-                </Col>
-                <Col md="4">
-                  {pageContext.acf.photo_6 !== null && (
-                    <Images
-                      onClick={(event) => {
-                        this.setState({ detail6: true });
-                      }}
-                      src={
-                        pageContext.acf.photo_6.localFile.childImageSharp.fluid
-                          .src
-                      }
-                      alt={pageContext.acf.photo_6.alt_text}
-                      width="100%"
-                      className="mb-3"
-                    />
-                  )}
-                </Col>
-              </Row>
-            </>
-          )}
+                  </Col>
+                  <Col md="4">
+                    {pageContext.acf.wordpress_2eme_photo !== null && (
+                      <Images
+                        onClick={(event) => {
+                          this.setState({ detail2: true });
+                        }}
+                        src={
+                          pageContext.acf.wordpress_2eme_photo.localFile
+                            .childImageSharp.fluid.src
+                        }
+                        alt={pageContext.acf.wordpress_2eme_photo.alt_text}
+                        width="100%"
+                        className="mb-3"
+                      />
+                    )}
+                  </Col>
+                  <Col md="4">
+                    {pageContext.acf.wordpress_3eme_photo !== null && (
+                      <Images
+                        onClick={(event) => {
+                          this.setState({ detail3: true });
+                        }}
+                        src={
+                          pageContext.acf.wordpress_3eme_photo.localFile
+                            .childImageSharp.fluid.src
+                        }
+                        alt={pageContext.acf.wordpress_3eme_photo.alt_text}
+                        width="100%"
+                        className="mb-3"
+                      />
+                    )}
+                  </Col>
+                </Row>
+                {/* 2eme ligne photos  */}
+                <Row className="justify-content-md-center align-items-center">
+                  <Col md="4">
+                    {pageContext.acf.photo_4 !== null && (
+                      <Images
+                        onClick={(event) => {
+                          this.setState({ detail4: true });
+                        }}
+                        src={
+                          pageContext.acf.photo_4.localFile.childImageSharp
+                            .fluid.src
+                        }
+                        alt={pageContext.acf.photo_4.alt_text}
+                        width="100%"
+                        className="mb-3"
+                      />
+                    )}
+                  </Col>
+                  <Col md="4">
+                    {pageContext.acf.photo_5 !== null && (
+                      <Images
+                        onClick={(event) => {
+                          this.setState({ detail5: true });
+                        }}
+                        src={
+                          pageContext.acf.photo_5.localFile.childImageSharp
+                            .fluid.src
+                        }
+                        alt={pageContext.acf.photo_5.alt_text}
+                        width="100%"
+                        className="mb-3"
+                      />
+                    )}
+                  </Col>
+                  <Col md="4">
+                    {pageContext.acf.photo_6 !== null && (
+                      <Images
+                        onClick={(event) => {
+                          this.setState({ detail6: true });
+                        }}
+                        src={
+                          pageContext.acf.photo_6.localFile.childImageSharp
+                            .fluid.src
+                        }
+                        alt={pageContext.acf.photo_6.alt_text}
+                        width="100%"
+                        className="mb-3"
+                      />
+                    )}
+                  </Col>
+                </Row>
+              </>
+            )}
 
           {detail1 && (
             <Row style={{ padding: "5px" }}>
