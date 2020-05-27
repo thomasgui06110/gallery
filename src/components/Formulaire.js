@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { Col, Row, Form, InputGroup } from "react-bootstrap";
 import { FaUserCircle, FaEnvelopeOpenText } from "react-icons/fa";
 import { MdPhoneIphone } from "react-icons/md";
-import menuCss from "./menuCss.css";
 
 const Submit = styled.button`
   display: inline-block;

@@ -124,6 +124,7 @@ exports.createPages = ({ graphql, actions }) => {
                     content
                     excerpt
                     acf {
+                      rubrique
                       titre_photo_1
                       technique_photo_1
                       technique_photo_2
@@ -159,7 +160,7 @@ exports.createPages = ({ graphql, actions }) => {
                         alt_text
                         localFile {
                           childImageSharp {
-                            fluid(maxWidth: 400) {
+                            fluid(maxWidth: 550) {
                               src
                             }
                           }
@@ -173,7 +174,7 @@ exports.createPages = ({ graphql, actions }) => {
                         title
                         localFile {
                           childImageSharp {
-                            fluid(maxWidth: 400) {
+                            fluid(maxWidth: 550) {
                               src
                             }
                           }
@@ -232,12 +233,10 @@ exports.createPages = ({ graphql, actions }) => {
           `
         ).then((result) => {
           if (result.errors) {
-            // console.log(result.errors);
+            console.log(result.errors);
             reject(result.errors);
           }
-          const ArtistsTemplateList = path.resolve(
-            "./src/templates/artistes.js"
-          );
+          const ArtistsTemplateList = path.resolve("./src/templates/artistes.js");
           // We want to create a detailed page for each
           // post node. We'll just use the WordPress Slug for the slug.
           // The Post ID is prefixed with 'POST_'
@@ -249,6 +248,8 @@ exports.createPages = ({ graphql, actions }) => {
             });
           });
           const ArtistsTemplate = path.resolve("./src/templates/artiste.js");
+         
+          
           _.each(result.data.allWordpressWpPortfolio.edges, (edge) => {
             createPage({
               path: `/artiste/${edge.node.slug}`,

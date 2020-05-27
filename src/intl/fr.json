@@ -1,10 +1,10 @@
   
 {
-    "title": "Gatsby Fr",
-    "title_home": "Galerie d'art contemporain & urbain - Galerie 122 Vieceli - Cannes",
+    "title": "Galerie 122 Vieceli",
+    "title_home": "Galerie d'art Contemporain & Urbain & Pop - Cannes",
     "description": "Fondée en 2006 sur Cannes puis Paris, la Galerie Vieceli s'oriente avec le 122 sur un style très urbain. La promotion et la défense des artistes sont les mots d’ordres afin de leur assurer une visibilité à travers des publications et des expositions.",
     "author": "@Galerie 122",
-    "artistes": "Artistes",
+    "artistes": "Urban art - Pop Art",
     "expo555": "Expositions",
     "title_contact": "Contactez nous",
     "desc_contact": "Pour toute demande de renseignements, n'hésitez pas à contacter la Gallerie 122 à l'aide du formulaire. Nous vous répondrons très rapidement",
@@ -25,7 +25,8 @@
     "blogSuite": "Lire la suite",
     "expoTitre": "Nos Expositions",
     "expodesc": "La galerie 122 organise régulièrement des expositions d'artistes contemporains. La promotion et la défense des artistes sont les mots d’ordres afin de leur assurer une visibilité à travers des publications et des expositions. ",
-    "expoArtistes": "Artistes",
+    "popart": "Pop Art",
+    "urbanart": "Urban Art",
     "abo": "Abonnez-vous à notre newsletter",
     "aboButton": "S'ABONNER",
     "notfound": {

@@ -75,7 +75,7 @@ class artiste extends React.Component {
           <Row>
             <Col className="text-center" mt="0" md="12">
               <HeadlineCenter>
-                <h1 className="display-5">
+                <h2 className="display-5">
                   {intl.formatMessage({ id: "title" }) !== "Gatsby English" ? (
                     <span
                       dangerouslySetInnerHTML={{
@@ -90,7 +90,7 @@ class artiste extends React.Component {
                     ></span>
                   
                   )}
-                </h1>
+                </h2>
                 {pageContext.acf.dates !== null && (
                   <p>
                     <em>{pageContext.acf.dates}</em>

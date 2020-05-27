@@ -92,11 +92,11 @@ export default ({ pageContext }) => (
               <Row>
                 <Col>
                   {pageContext.title !== "HomePage" && (
-                    <h1>
+                    <h2>
                       {intl.formatMessage({ id: "title" }) !== "Gatsby English"
                         ? pageContext.title
                         : pageContext.acf.titre_anglais}
-                    </h1>
+                    </h2>
                   )}
                 </Col>
               </Row>
