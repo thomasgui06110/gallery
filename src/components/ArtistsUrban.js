@@ -11,7 +11,7 @@ const StyledFlexBox = styled.div`
   border-radius: 5px;
   box-shadow: 2px 2px 1px 3px rgba(0, 0, 0, 0.0);
   transition: box-shadow 0.9s;
-  will-change: transform;
+  
   { /* overflow: hidden; */}
   margin: 1rem 0.5rem;
   ${'' /* transition-duration: 1s; */}
@@ -48,8 +48,8 @@ const StyledTexte = styled.div`
   background-color: #e5e5e5ad;
   left: 6px;
   opacity: 0.1;
-  -webkit-transition: 500ms;
-  transition: 500ms;
+  ${'' /* -webkit-transition: 500ms;
+  transition: 500ms; */}
 
   @media (max-width: 900px) {
     opacity: 1;
