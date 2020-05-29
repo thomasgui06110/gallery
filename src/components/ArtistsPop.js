@@ -5,7 +5,7 @@ import styled from "styled-components";
 import Img from "gatsby-image";
 
 import { Link } from "gatsby-plugin-intl";
-import { FaSitemap } from "react-icons/fa";
+//import { FaSitemap } from "react-icons/fa";
 require("../styles/artistes.css");
 
 const StyledFlexBox = styled.div`
@@ -163,7 +163,7 @@ const ArtistsPop = () => {
               <StyledFlexBox>
                 <StyledFlexBoxArtist className="cadre">
                   <StyledImg className="photo">
-                    <Link to={`/artiste/${ArtistsItem.node.slug}`}>
+                    <Link to={`/artiste/popart/${ArtistsItem.node.slug}`}>
                       <Img
                         fluid={
                           ArtistsItem.node.featured_media.localFile
@@ -176,7 +176,7 @@ const ArtistsPop = () => {
                   <StyledTexte className="texte">
                     <StyledH2>
                       <Link
-                        to={FaSitemap`/artiste/${ArtistsItem.node.slug}`}
+                        to={`/artiste/popart/${ArtistsItem.node.slug}`}
                         style={linkStyles}
                       >
                     
@@ -189,7 +189,7 @@ const ArtistsPop = () => {
                     </StyledH2>
                     <StyledH3>
                       <Link
-                        to={`/artiste/${ArtistsItem.node.slug}`}
+                        to={`/artiste/popart/${ArtistsItem.node.slug}`}
                         style={linkStyles}
                       >
                         {ArtistsItem.node.acf.Type_d_artiste.map((type) => (

@@ -1,6 +1,6 @@
 .cadre:hover .texte {
   opacity: 1!important;
-  transition: 800ms;
+ 
   background-color: #e5e5e5;
 }
 @media (max-width: 1000px) {

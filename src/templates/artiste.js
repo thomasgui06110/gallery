@@ -70,7 +70,7 @@ class artiste extends React.Component {
     return (
       <GLayout>
         <Wrap>
-          <SEO title={pageContext.title} description={pageContext.content} />
+          <SEO title={ pageContext.title  + ' | ' + pageContext.acf.rubrique} description={pageContext.content} />
 
           <Row>
             <Col className="text-center" mt="0" md="12">

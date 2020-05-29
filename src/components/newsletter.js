@@ -84,12 +84,12 @@ const Newsletter = () => {
       >
         <input type="hidden" name="bot-field" />
         <input type="hidden" name="form-name" value="newsletter" />
-        <label for="firstname"></label>
+        <label htmlFor='firstname' style={{display: 'none'}} for="firstname">firstname</label>
         <Input type="text" placeholder="First Name / Prénom" name="Prenom" />
-        <label for="name"></label>
+        <label htmlFor='name' style={{display: 'none'}} for="name">name</label>
         <Input type="text" placeholder="Name / Nom" name="Nom" />
-        <label for="email"></label>
-        <Input type="mail" placeholder="Mail" name="Mail" />
+        <label for="email" htmlFor="mail" style={{display: 'none'}}>mail</label>
+        <Input  type="mail" placeholder="Mail" name="Mail" />
 
         <Button type="submit"> {intl.formatMessage({ id: "aboButton" })}</Button>
       </form>

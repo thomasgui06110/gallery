@@ -4,7 +4,6 @@ import { Col } from "react-bootstrap";
 import styled from "styled-components";
 import Img from "gatsby-image";
 import { Link } from "gatsby-plugin-intl";
-import { FaSitemap } from "react-icons/fa";
 require("../styles/artistes.css");
 
 const StyledFlexBox = styled.div`
@@ -15,11 +14,8 @@ const StyledFlexBox = styled.div`
   will-change: transform;
   { /* overflow: hidden; */}
   margin: 1rem 0.5rem;
-  transition-duration: 1s;
-  &:hover {
-    box-shadow: -1em -2em 20px 2px rgba(0,0,0,0.3)
-    transition: opacity 0.3s ease-in-out, transform 0.6s ease-in-out,
-      -webkit-transform 0.6s ease-in-out;
+  ${'' /* transition-duration: 1s; */}
+  
 `;
 
 const StyledFlexBoxArtist = styled.div`
@@ -162,7 +158,7 @@ const ArtistsUrban = () => {
               <StyledFlexBox>
                 <StyledFlexBoxArtist className="cadre">
                   <StyledImg className="photo">
-                    <Link to={`/artiste/${ArtistsItem.node.slug}`}>
+                    <Link to={`/artiste/urbanart/${ArtistsItem.node.slug}`}>
                       <Img
                         fluid={
                           ArtistsItem.node.featured_media.localFile
@@ -175,7 +171,7 @@ const ArtistsUrban = () => {
                   <StyledTexte className="texte">
                     <StyledH2>
                       <Link
-                        to={FaSitemap`/artiste/${ArtistsItem.node.slug}`}
+                       to={`/artiste/urbanart/${ArtistsItem.node.slug}`}
                         style={linkStyles}
                       >
                     
@@ -188,7 +184,7 @@ const ArtistsUrban = () => {
                     </StyledH2>
                     <StyledH3>
                       <Link
-                        to={`/artiste/${ArtistsItem.node.slug}`}
+                        to={`/artiste/urbanart/${ArtistsItem.node.slug}`}
                         style={linkStyles}
                       >
                         {ArtistsItem.node.acf.Type_d_artiste.map((type) => (

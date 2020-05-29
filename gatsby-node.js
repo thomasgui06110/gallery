@@ -248,11 +248,14 @@ exports.createPages = ({ graphql, actions }) => {
             });
           });
           const ArtistsTemplate = path.resolve("./src/templates/artiste.js");
+        
          
           
           _.each(result.data.allWordpressWpPortfolio.edges, (edge) => {
+            const rub =edge.node.acf.rubrique.toLowerCase().replace(/ /g, "");
+            console.log('Slug : ',rub);
             createPage({
-              path: `/artiste/${edge.node.slug}`,
+              path: `/artiste/${rub}/${edge.node.slug}`,
               component: slash(ArtistsTemplate),
               context: edge.node,
             });
