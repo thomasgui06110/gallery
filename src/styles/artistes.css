@@ -1,18 +1,19 @@
-.cadre:hover .texte {
-  opacity: 1!important;
+.texte {
+  opacity: 0.1!important;
  
   background-color: #e5e5e5;
 }
 @media (max-width: 1000px) {
-  .cadre:hover .texte {
-    opacity: 1;
+   .texte {
+    opacity: 1!important;
     transition: 500ms;
     transform: translateY(0%);
   }
 }
 
-.texte {
-  transform: scale(1) rotate(0deg);
+.texte:hover {
+
+  opacity: 1;
 }
 .photo {
   border-radius: 20px;

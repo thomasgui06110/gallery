@@ -10,11 +10,16 @@ const StyledFlexBox = styled.div`
  
   border-radius: 5px;
   box-shadow: 2px 2px 1px 3px rgba(0, 0, 0, 0.0);
-  transition: box-shadow 0.9s;
-  
+ 
+  transition-duration: 1s;
   { /* overflow: hidden; */}
   margin: 1rem 0.5rem;
   ${'' /* transition-duration: 1s; */}
+  &:hover > .texte {
+    opacity: 1!important;
+    transition-duration: 1s;
+  }
+
   
 `;
 
@@ -26,7 +31,7 @@ const StyledFlexBoxArtist = styled.div`
   height: 18rem;
   width: 18rem;
   overflow: hidden;
-  
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
   z-index: 1;
   border-radius: 50%;
   margin: 8px auto;
@@ -52,7 +57,9 @@ const StyledTexte = styled.div`
   opacity: 0.1;
   ${'' /* -webkit-transition: 500ms;
   transition: 500ms; */}
-
+&:hover{
+  opacity:1!important;
+}
   @media (max-width: 900px) {
     opacity: 1;
     transition: 800ms;
@@ -65,9 +72,10 @@ const linkStyles = {
 };
 
 const StyledImg = styled.div`
+-webkit-mask-image: -webkit-radial-gradient(white, black);
  border-radius:50%;
-  ${'' /* transition: opacity 0.3s ease-in-out, transform 0.5s ease-in-out; */}
-
+  ${'' /* transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out; */}
+  transition: opacity 0.5s, transform 0.5s;
   &:hover {
     transform: scale(1.3) rotate(5deg);
     opacity: 0.5;
@@ -171,7 +179,9 @@ const ArtistsUrban = () => {
                       />
                     </Link>
                   </StyledImg>
-                  <StyledTexte className="texte">
+
+                </StyledFlexBoxArtist>
+                <StyledTexte className="texte">
                     <StyledH2>
                       <Link
                        to={`/artiste/urbanart/${ArtistsItem.node.slug}`}
@@ -198,7 +208,6 @@ const ArtistsUrban = () => {
                       </Link>
                     </StyledH3>
                   </StyledTexte>
-                </StyledFlexBoxArtist>
               </StyledFlexBox>
             </Col>
           </>
