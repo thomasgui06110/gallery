@@ -20,7 +20,7 @@ const StyledFlexBox = styled.div`
     transition-duration: 1s;
   }
 
-  
+
 `;
 
 const StyledFlexBoxArtist = styled.div`
@@ -54,7 +54,7 @@ const StyledTexte = styled.div`
   line-height: 20px;
   background-color: #e5e5e5ad;
   left: 6px;
-  opacity: 0.1;
+  opacity: 0;
   ${'' /* -webkit-transition: 500ms;
   transition: 500ms; */}
 &:hover{

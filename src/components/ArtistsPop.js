@@ -3,24 +3,24 @@ import { graphql, StaticQuery } from "gatsby";
 import { Col } from "react-bootstrap";
 import styled from "styled-components";
 import Img from "gatsby-image";
-
 import { Link } from "gatsby-plugin-intl";
-//import { FaSitemap } from "react-icons/fa";
 require("../styles/artistes.css");
 
 const StyledFlexBox = styled.div`
  
   border-radius: 5px;
   box-shadow: 2px 2px 1px 3px rgba(0, 0, 0, 0.0);
-  transition: box-shadow 0.9s;
-  will-change: transform;
+ 
+  transition-duration: 1s;
   { /* overflow: hidden; */}
   margin: 1rem 0.5rem;
-  transition-duration: 1s;
-  &:hover {
-    box-shadow: -1em -2em 20px 2px rgba(0,0,0,0.3)
-    transition: opacity 0.3s ease-in-out, transform 0.6s ease-in-out,
-      -webkit-transform 0.6s ease-in-out;
+  ${'' /* transition-duration: 1s; */}
+  &:hover > .texte {
+    opacity: 1!important;
+    transition-duration: 1s;
+  }
+
+
 `;
 
 const StyledFlexBoxArtist = styled.div`
@@ -30,8 +30,10 @@ const StyledFlexBoxArtist = styled.div`
   max-height: 20rem;
   height: 18rem;
   width: 18rem;
-  border-radius: 50%;
   overflow: hidden;
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
+  z-index: 1;
+  border-radius: 50%;
   margin: 8px auto;
   background-size: cover;
   background-position: center center;
@@ -52,10 +54,12 @@ const StyledTexte = styled.div`
   line-height: 20px;
   background-color: #e5e5e5ad;
   left: 6px;
-  opacity: 0.1;
-  -webkit-transition: 500ms;
-  transition: 500ms;
-
+  opacity: 0;
+  ${'' /* -webkit-transition: 500ms;
+  transition: 500ms; */}
+&:hover{
+  opacity:1!important;
+}
   @media (max-width: 900px) {
     opacity: 1;
     transition: 800ms;
@@ -68,12 +72,14 @@ const linkStyles = {
 };
 
 const StyledImg = styled.div`
-  transition: opacity 0.3s ease-in-out, transform 0.5s ease-in-out,
-    -webkit-transform 0.5s ease-in-out;
-
+-webkit-mask-image: -webkit-radial-gradient(white, black);
+ border-radius:50%;
+  ${'' /* transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out; */}
+  transition: opacity 0.5s, transform 0.5s;
   &:hover {
     transform: scale(1.3) rotate(5deg);
     opacity: 0.5;
+    border-radius:50%
   }
 `;
 
@@ -116,12 +122,12 @@ const StyledH3 = styled.h3`
   }
 `;
 
-const ArtistsPop = () => {
+const ArtistsUrban = () => {
   return (
     <StaticQuery
       query={graphql`
         {
-          allWordpressWpPortfolio(sort: { fields: acf___ordre, order: ASC }, , filter: {acf: {rubrique: {eq: "Pop art"}}}) {
+          allWordpressWpPortfolio(sort: { fields: acf___ordre, order: ASC },filter: {acf: {rubrique: {eq: "Pop art"}}}) {
             edges {
               node {
                 excerpt
@@ -155,7 +161,7 @@ const ArtistsPop = () => {
 
         props.allWordpressWpPortfolio.edges.map((ArtistsItem) => (
           <>
-          
+           
             <Col
               className="d-flex justify-content-center"
               key={ArtistsItem.node.id}
@@ -173,10 +179,12 @@ const ArtistsPop = () => {
                       />
                     </Link>
                   </StyledImg>
-                  <StyledTexte className="texte">
+
+                </StyledFlexBoxArtist>
+                <StyledTexte className="texte">
                     <StyledH2>
                       <Link
-                        to={`/artiste/popart/${ArtistsItem.node.slug}`}
+                       to={`/artiste/popart/${ArtistsItem.node.slug}`}
                         style={linkStyles}
                       >
                     
@@ -200,7 +208,6 @@ const ArtistsPop = () => {
                       </Link>
                     </StyledH3>
                   </StyledTexte>
-                </StyledFlexBoxArtist>
               </StyledFlexBox>
             </Col>
           </>
@@ -210,4 +217,4 @@ const ArtistsPop = () => {
   );
 };
 
-export default ArtistsPop;
+export default ArtistsUrban;
