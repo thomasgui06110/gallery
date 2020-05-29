@@ -25,8 +25,10 @@ const StyledFlexBoxArtist = styled.div`
   max-height: 20rem;
   height: 18rem;
   width: 18rem;
-  border-radius: 50%;
   overflow: hidden;
+  
+  z-index: 1;
+  border-radius: 50%;
   margin: 8px auto;
   background-size: cover;
   background-position: center center;
@@ -63,12 +65,13 @@ const linkStyles = {
 };
 
 const StyledImg = styled.div`
-  transition: opacity 0.3s ease-in-out, transform 0.5s ease-in-out,
-    -webkit-transform 0.5s ease-in-out;
+ border-radius:50%;
+  transition: opacity 0.3s ease-in-out, transform 0.5s ease-in-out;
 
   &:hover {
     transform: scale(1.3) rotate(5deg);
     opacity: 0.5;
+    border-radius:50%
   }
 `;
 
