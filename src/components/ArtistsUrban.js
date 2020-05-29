@@ -66,7 +66,7 @@ const linkStyles = {
 
 const StyledImg = styled.div`
  border-radius:50%;
-  transition: opacity 0.3s ease-in-out, transform 0.5s ease-in-out;
+  ${'' /* transition: opacity 0.3s ease-in-out, transform 0.5s ease-in-out; */}
 
   &:hover {
     transform: scale(1.3) rotate(5deg);
