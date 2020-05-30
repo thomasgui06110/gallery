@@ -39,6 +39,10 @@ const Images = styled.img`
     cursor: pointer;
   }
 `;
+const Rubrique = styled.h3`
+font-size: 1.6rem;
+text-transform: capitalize;
+`
 
 class artiste extends React.Component {
   constructor(props) {
@@ -91,12 +95,14 @@ class artiste extends React.Component {
                   
                   )}
                 </h2>
-                {pageContext.acf.dates !== null && (
-                  <p>
-                    <em>{pageContext.acf.dates}</em>
-                  </p>
-                )}
+              
               </HeadlineCenter>
+              <Rubrique >  {pageContext.acf.rubrique !== null && (
+                 <>
+                    {pageContext.acf.rubrique}
+                  </>
+                )}</Rubrique>
+            
             </Col>
           </Row>
           {detail &&
