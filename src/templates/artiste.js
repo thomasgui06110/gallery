@@ -40,9 +40,9 @@ const Images = styled.img`
   }
 `;
 const Rubrique = styled.h3`
-font-size: 1.6rem;
-text-transform: capitalize;
-`
+  font-size: 1.6rem;
+  text-transform: capitalize;
+`;
 
 class artiste extends React.Component {
   constructor(props) {
@@ -70,39 +70,36 @@ class artiste extends React.Component {
       detail5,
       detail6,
     } = this.state;
-
+    const title_ok = (t) => {
+      return <span dangerouslySetInnerHTML={{__html: t}}></span>
+    }
+   
+    
     return (
       <GLayout>
         <Wrap>
-          <SEO title={ pageContext.title  + ' | ' + pageContext.acf.rubrique} description={pageContext.content} />
+          <SEO
+            title= { pageContext.title + " | " + pageContext.acf.rubrique}
+            description={pageContext.content}
+          />
 
           <Row>
             <Col className="text-center" mt="0" md="12">
               <HeadlineCenter>
                 <h2 className="display-5">
                   {intl.formatMessage({ id: "title" }) !== "Gatsby English" ? (
-                    <span
-                      dangerouslySetInnerHTML={{
-                        __html: pageContext.title,
-                      }}
-                    ></span>
+                    title_ok(pageContext.title)
                   ) : (
-                    <span
-                      dangerouslySetInnerHTML={{
-                        __html: pageContext.acf.titre_anglais,
-                      }}
-                    ></span>
-                  
+                    title_ok(pageContext.acf.titre_anglais)
+
                   )}
+                
                 </h2>
-              
               </HeadlineCenter>
-              <Rubrique >  {pageContext.acf.rubrique !== null && (
-                 <>
-                    {pageContext.acf.rubrique}
-                  </>
-                )}</Rubrique>
+              <Rubrique>
             
+               { title_ok(pageContext.acf.rubrique)}
+              </Rubrique>
             </Col>
           </Row>
           {detail &&

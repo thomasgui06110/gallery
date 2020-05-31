@@ -52,7 +52,7 @@ const StyledTexte = styled.div`
   text-align: center;
   border-radius: 20px;
   line-height: 20px;
-  background-color: #e5e5e5ad;
+  background-color: #fff;
   left: 6px;
   opacity: 0;
   ${'' /* -webkit-transition: 500ms;
