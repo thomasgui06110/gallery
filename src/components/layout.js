@@ -22,7 +22,7 @@ const Space = styled.div`
   }
 `;
 const Section = styled.section`
-  margin: 5rem auto 1rem auto;
+  margin: 5.5rem auto 1rem auto;
   background: black;
   color: white;
   padding: 2% 2% 5% 2%;

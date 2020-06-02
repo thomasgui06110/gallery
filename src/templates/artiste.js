@@ -58,6 +58,9 @@ class artiste extends React.Component {
       detail6: false,
     };
   }
+  componentDidUpdate() {
+    window.scrollTo(0, 0)
+  }
 
   render() {
     const { pageContext, intl } = this.props;
@@ -235,7 +238,8 @@ class artiste extends React.Component {
             )}
 
           {detail1 && (
-            <Row style={{ padding: "5px" }}>
+            
+            <Row  style={{ padding: "5px" }}>
               <Col>
                 <Button
                   className="mb-5"
