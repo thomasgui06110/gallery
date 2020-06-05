@@ -41,7 +41,6 @@ module.exports = {
         siteSpeedSampleRate: 10,
         cookieDomain: "example.com",
       },
-    
       resolve: `gatsby-plugin-intl`,
       options: {
         // language JSON resource path
