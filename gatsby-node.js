@@ -253,7 +253,7 @@ exports.createPages = ({ graphql, actions }) => {
           
           _.each(result.data.allWordpressWpPortfolio.edges, (edge) => {
             const rub =edge.node.acf.rubrique.toLowerCase().replace(/ /g, "");
-            console.log('Slug : ',rub);
+            
             createPage({
               path: `/artiste/${rub}/${edge.node.slug}`,
               component: slash(ArtistsTemplate),

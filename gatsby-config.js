@@ -1,5 +1,5 @@
 require("dotenv").config({
-  path: ".env"
+  path: ".env",
 });
 
 module.exports = {
@@ -9,38 +9,18 @@ module.exports = {
 122 GALERIE VIECELI c’est avant tout une ligne artistique indépendante reposant sur un équilibre entre artistes établis et talents de demain.`,
     author: `@122Galleryvieceli`,
     keywords: `gallerie, art contemporain, sculpteurs, art urbain, urban art`,
-    image: '/static/gallerie_icon.png',
-    url: 'https://122gallerievieceli.com'
+    image: "/static/gallerie_icon.png",
+    url: "https://122gallerievieceli.com",
   },
   plugins: [
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         // The property ID; the tracking code won't be generated without it
-        trackingId: 'UA-168629495-1',
-        // Defines where to place the tracking script - `true` in the head and `false` in the body
-        head: false,
-        // Setting this parameter is optional
-        anonymize: true,
-        // Setting this parameter is also optional
-        respectDNT: true,
-        // Avoids sending pageview hits from custom paths
-        exclude: ["/preview/**", "/do-not-track/me/too/"],
-        // Delays sending pageview hits on route update (in milliseconds)
-        pageTransitionDelay: 0,
-        // Enables Google Optimize using your container Id
-        optimizeId: "YOUR_GOOGLE_OPTIMIZE_TRACKING_ID",
-        // Enables Google Optimize Experiment ID
-        experimentId: "YOUR_GOOGLE_EXPERIMENT_ID",
-        // Set Variation ID. 0 for original 1,2,3....
-        variationId: "YOUR_GOOGLE_OPTIMIZE_VARIATION_ID",
-        // Defers execution of google analytics script after page load
-        defer: false,
-        // Any additional optional fields
-        sampleRate: 5,
-        siteSpeedSampleRate: 10,
-        cookieDomain: "example.com",
+        trackingId: "UA-168629495-1",
       },
+    },
+    {
       resolve: `gatsby-plugin-intl`,
       options: {
         // language JSON resource path
@@ -60,17 +40,17 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/src/images`
-      }
+        path: `${__dirname}/src/images`,
+      },
     },
     {
       resolve: `gatsby-wordpress-inline-images`,
       options: {
-       baseUrl: `admin.122galerievieceli.com/gallery`,
+        baseUrl: `admin.122galerievieceli.com/gallery`,
         //baseUrl: `gallery.planethoster.world/gallery`,
         protocol: `https`,
-        maxWidth: 1050
-      }
+        maxWidth: 1050,
+      },
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
@@ -81,10 +61,10 @@ module.exports = {
         short_name: `starter`,
         start_url: `/`,
         background_color: `#f0f0f0`,
-        theme_color: `#663399`,
+        theme_color: `#000`,
         display: `minimal-ui`,
-        icon: `src/images/gallerie_icon_122.png` // This path is relative to the root of the site.
-      }
+        icon: `src/images/gallerie_icon_122.png`, // This path is relative to the root of the site.
+      },
     },
     {
       resolve: "gatsby-source-wordpress",
@@ -138,7 +118,7 @@ module.exports = {
           // plugin, you can specify user and password to obtain access token and use authenticated requests against WordPress REST API.
           jwt_user: process.env.JWT_USER,
           jwt_pass: process.env.JWT_PASSWORD,
-          jwt_base_path: "/jwt-auth/v1/token" // Default - can skip if you are using https://wordpress.org/plugins/jwt-authentication-for-wp-rest-api/
+          jwt_base_path: "/jwt-auth/v1/token", // Default - can skip if you are using https://wordpress.org/plugins/jwt-authentication-for-wp-rest-api/
         },
         // Set cookies that should be send with requests to WordPress as key value pairs
         cookies: {},
@@ -150,7 +130,7 @@ module.exports = {
         // Search and Replace Urls across WordPress content.
         searchAndReplaceContentUrls: {
           sourceUrl: "https://source-url.com",
-          replacementUrl: "https://replacement-url.com"
+          replacementUrl: "https://replacement-url.com",
         },
         // Set how many simultaneous requests are sent at once.
         concurrentRequests: 10,
@@ -174,7 +154,7 @@ module.exports = {
           "**/users",
           "**/*/*/menus",
           "**/*/*/portfolio",
-          "**/*/*/portfolio2"
+          "**/*/*/portfolio2",
         ],
         // Blacklisted routes using glob patterns
         excludedRoutes: ["**/posts/1456"],
@@ -184,15 +164,15 @@ module.exports = {
         // Defaults to false
         keepMediaSizes: false,
         // use a custom normalizer which is applied after the built-in ones.
-        normalizer: function({ entities }) {
+        normalizer: function ({ entities }) {
           return entities;
-        }
-      }
+        },
+      },
     },
-    
+
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
-    "gatsby-plugin-netlify"
-  ]
+    "gatsby-plugin-netlify",
+  ],
 };
