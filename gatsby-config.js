@@ -4,16 +4,55 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: `Galerie d’art contemporain - urbain - Galerie 122 Vieceli`,
+    title: `Galerie d’art contemporain - urbain`,
     description: `Fondée en 2006 sur Cannes puis Paris, la Galerie Vieceli s’oriente avec le 122 sur un style très urbain. La promotion et la défense des artistes sont les mots d’ordres afin de leur assurer une visibilité à travers des publications et des expositions.
 122 GALERIE VIECELI c’est avant tout une ligne artistique indépendante reposant sur un équilibre entre artistes établis et talents de demain.`,
     author: `@122Galleryvieceli`,
-    keywords: `gallerie, art contemporain, sculpteurs, art urbain`,
+    keywords: `gallerie, art contemporain, sculpteurs, art urbain, urban art`,
     image: '/static/gallerie_icon.png',
-    url: 'https://www.122gallerievieceli.com'
+    url: 'https://122gallerievieceli.com'
   },
   plugins: [
-   
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        // The property ID; the tracking code won't be generated without it
+        trackingId: 'UA-168629495-1',
+        // Defines where to place the tracking script - `true` in the head and `false` in the body
+        head: false,
+        // Setting this parameter is optional
+        anonymize: true,
+        // Setting this parameter is also optional
+        respectDNT: true,
+        // Avoids sending pageview hits from custom paths
+        exclude: ["/preview/**", "/do-not-track/me/too/"],
+        // Delays sending pageview hits on route update (in milliseconds)
+        pageTransitionDelay: 0,
+        // Enables Google Optimize using your container Id
+        optimizeId: "YOUR_GOOGLE_OPTIMIZE_TRACKING_ID",
+        // Enables Google Optimize Experiment ID
+        experimentId: "YOUR_GOOGLE_EXPERIMENT_ID",
+        // Set Variation ID. 0 for original 1,2,3....
+        variationId: "YOUR_GOOGLE_OPTIMIZE_VARIATION_ID",
+        // Defers execution of google analytics script after page load
+        defer: false,
+        // Any additional optional fields
+        sampleRate: 5,
+        siteSpeedSampleRate: 10,
+        cookieDomain: "example.com",
+      },
+      resolve: `gatsby-plugin-intl`,
+      options: {
+        // language JSON resource path
+        path: `${__dirname}/src/intl`,
+        // supported language
+        languages: [`en`, `fr`],
+        // language file path
+        defaultLanguage: `fr`,
+        // option to redirect to `/ko` when connecting `/`
+        redirect: false,
+      },
+    },
     `gatsby-plugin-transition-link`,
     `gatsby-plugin-react-helmet`,
 
@@ -27,7 +66,8 @@ module.exports = {
     {
       resolve: `gatsby-wordpress-inline-images`,
       options: {
-        baseUrl: `admin.122galerievieceli.com/gallery`,
+       baseUrl: `admin.122galerievieceli.com/gallery`,
+        //baseUrl: `gallery.planethoster.world/gallery`,
         protocol: `https`,
         maxWidth: 1050
       }
@@ -41,7 +81,7 @@ module.exports = {
         short_name: `starter`,
         start_url: `/`,
         background_color: `#f0f0f0`,
-        theme_color: `#663399`,
+        theme_color: `#000`,
         display: `minimal-ui`,
         icon: `src/images/gallerie_icon_122.png` // This path is relative to the root of the site.
       }
@@ -156,3 +196,4 @@ module.exports = {
     "gatsby-plugin-netlify"
   ]
 };
+
