@@ -56,22 +56,22 @@ const GLayout = ({ children, title, description }) => {
       <Footer />
       <CookieConsent
         acceptOnScroll={true}
-        acceptOnScrollPercentage={50}
-        onAccept={({ acceptedByScrolling }) => {
-          if (acceptedByScrolling) {
-            // triggered if user scrolls past threshold
-            alert("You must accept cookies. Click Ok. Thanks");
-          } else {
-            alert("Accept was triggered by clicking the Accept button");
-          }
-        }}
+        acceptOnScrollPercentage={150}
+        // onAccept={({ acceptedByScrolling }) => {
+        //   if (acceptedByScrolling) {
+        //     // triggered if user scrolls past threshold
+        //     alert("You must accept cookies. Click Ok. Thanks");
+        //   } else {
+        //     alert("Accept was triggered by clicking the Accept button");
+        //   }
+        // }}
         flipButtons
         location="bottom"
         buttonText="OK, I accept"
         cookieName="myAwesomeCookieName2"
         style={{ background: "#2B373B" }}
         buttonStyle={{ color: "#4e503b", fontSize: "13px" }}
-        expires={150}
+        expires={550}
       >
         By continuing on this site, you accept the use of third-party services
         that may install cookies for statistical purposes only.
