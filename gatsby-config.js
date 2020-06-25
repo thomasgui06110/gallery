@@ -10,8 +10,8 @@ module.exports = {
     author: `@122Galleryvieceli`,
     keywords: `gallerie, art contemporain, sculpteurs, art urbain, urban art`,
     image: "/static/gallerie_icon.png",
-    url: "https://122gallerievieceli.com",
-    siteUrl: "https://122gallerievieceli.com"
+    url: "https://122galerievieceli.com",
+    siteUrl: "https://122galerievieceli.com"
   },
   plugins: [
     {
