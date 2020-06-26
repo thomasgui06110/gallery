@@ -213,7 +213,8 @@ const Contact = ({ intl }) => {
               122 Rue d'Antibes
               <br />
               06400 Cannes - France <br />
-              +33 (0)4 93 45 86 41
+              +33 (0)4 93 45 86 41  <br />
+              +33 (0)6 49 82 81 50
               <HeadlineCenter />
               <h3 className="text-center">
                 {/* {intl.formatMessage({ id: "adresse_contact" })} */}

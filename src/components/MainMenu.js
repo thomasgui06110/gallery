@@ -14,17 +14,16 @@ const GlobalMenu = styled.div`
   justify-content: center;
   font-size: 1.2rem;
   font-weight: 600;
-  ${'' /* border-bottom: 1px solid #eeeeee; */}
+  ${"" /* border-bottom: 1px solid #eeeeee; */}
   margin-right: 20px;
-  ${'' /* box-shadow: 0px 15px 10px 5px #cfcfcf96; */}
+  ${"" /* box-shadow: 0px 15px 10px 5px #cfcfcf96; */}
   &:hover {
     text-decoration: none;
   }
   @media screen and (max-width: 995px) {
-   margin-left:20px;
-   margin-top:5px;
+    margin-left: 20px;
+    margin-top: 5px;
   }
-
 `;
 
 const MenuItems = styled(Link)`
@@ -64,21 +63,19 @@ const Contact = styled(Link)`
     transition: 0.5s;
     color: #333333;
     text-decoration: none;
-  
   }
 `;
 
 const activeStyles = {
-  border: 'white',
-  color: '#707B7C'
+  border: "white",
+  color: "#707B7C",
 };
 let men = 1;
 const MainMenu = ({ intl }) => {
-  {
-    intl.formatMessage({ id: "title" }) !== "Gatsby English"
-      ? (men = 1)
-      : (men = 2);
-  }
+  intl.formatMessage({ id: "title" }) !== "Gatsby English"
+    ? (men = 1)
+    : (men = 2);
+
   return (
     <StaticQuery
       query={graphql`
@@ -98,7 +95,7 @@ const MainMenu = ({ intl }) => {
           }
         }
       `}
-      render={props => (
+      render={(props) => (
         <GlobalMenu>
           <Navbar collapseOnSelect expand="lg" variant="dark">
             {/* <Navbar.Brand href="#home">Gallery 122</Navbar.Brand> */}
@@ -110,7 +107,7 @@ const MainMenu = ({ intl }) => {
               <Nav className="mr-auto">
                 {props.allWordpressWpApiMenusMenusItems.edges[
                   men
-                ].node.items.map(item => (
+                ].node.items.map((item) => (
                   <MenuItems
                     className="menu"
                     variant="bold"

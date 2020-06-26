@@ -51,13 +51,13 @@ const Footer = () => (
     </p>
     <Font style={{fontSize: '2.5rem'}}>
       <a
-        href="https://instagram.com/galerievieceli?igshid=1vgijnannwbqf"
+        href="https://www.instagram.com/122galerievieceli/?hl=fr"
         target="_blanck"
       >
         <FaInstagram />
       </a>
       <a
-        href="https://www.facebook.com/Galerie-Vieceli-414384205380337"
+        href="https://www.facebook.com/122GalerieVieceli-100220951737216"
         target="_blanck"
       >
         <FaFacebookF />
