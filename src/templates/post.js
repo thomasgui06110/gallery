@@ -46,27 +46,8 @@ export default ({ pageContext }) => (
               excerpt
               title
               content
-              acf {
-                photo_principale {
-                  alt_text
-                  source_url
-                  localFile {
-                    base
-                  }
-                }
-              }
-              featured_media {
-                alt_text
-                source_url
-                localFile {
-                  childImageSharp {
-                    fluid(maxWidth: 500, quality: 100) {
-                      ...GatsbyImageSharpFluid
-                      presentationWidth
-                    }
-                  }
-                }
-              }
+             
+              
             }
           }
         }
