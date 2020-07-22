@@ -46,7 +46,7 @@ const Formulaire = ({ title, artiste, photo }) => {
     >
       <input type="hidden" name="bot-field" />
       <input type="hidden" name="form-name" value="artiste" />
-      <Row>
+      <Row className="row-cols-1 row-cols-md-2">
         <Col>
           <Form.Group>
             <InputGroup>
@@ -82,7 +82,7 @@ const Formulaire = ({ title, artiste, photo }) => {
           </Form.Group>
         </Col>
       </Row>
-      <Row>
+      <Row className="row-cols-1 row-cols-md-2">
         <Col>
           <Form.Group>
             <InputGroup>

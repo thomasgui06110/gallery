@@ -24,7 +24,7 @@ const DetailOeuvre = ({
           />
         </Col>
         <Col md="6" xs="12">
-          <p style={{ fontSize: "2rem", marginTop:"-10px", marginBottom: "-5px" }} dangerouslySetInnerHTML={{
+          <p style={{ fontSize: "2rem", marginTop:"10px", marginBottom: "-5px" }} dangerouslySetInnerHTML={{
                 __html:title}}></p>
           <p>
             <span

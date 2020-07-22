@@ -13,7 +13,9 @@ exports.createPages = ({ graphql, actions }) => {
   const { createPage, createRedirect } = actions;
   createRedirect({
     fromPath: "/",
+    //toPath: "/fr/home",
     toPath: "/fr/home",
+    Language: 'fr',
     redirectInBrowser: true,
     isPermanent: true,
   });
@@ -102,7 +104,8 @@ exports.createPages = ({ graphql, actions }) => {
             // as a template component. The `context` is
             // optional but is often necessary so the template
             // can query data specific to each page.
-            path: `/${edge.node.slug}/`,
+            path: `/home`,
+            //path: `/${edge.node.slug}/`,
             component: slash(pageTemplate),
             context: edge.node,
           });

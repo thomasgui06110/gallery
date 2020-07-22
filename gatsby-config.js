@@ -11,7 +11,7 @@ module.exports = {
     keywords: `gallerie, art contemporain, sculpteurs, art urbain, urban art`,
     image: "/static/gallerie_icon.png",
     url: "https://122galerievieceli.com",
-    siteUrl: "https://122galerievieceli.com"
+    siteUrl: "https://122galerievieceli.com",
   },
   plugins: [
     {
@@ -27,11 +27,14 @@ module.exports = {
         // language JSON resource path
         path: `${__dirname}/src/intl`,
         // supported language
-        languages: [`en`, `fr`],
+        // languages: [`en`, `fr`],
+        languages: [`fr`],
         // language file path
         defaultLanguage: `fr`,
         // option to redirect to `/ko` when connecting `/`
         redirect: false,
+        //redirectComponent: `/home`
+        redirectDefaultLanguageToRoot: [`/fr/home/`],
       },
     },
     `gatsby-plugin-transition-link`,
@@ -175,6 +178,15 @@ module.exports = {
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
     "gatsby-plugin-netlify",
-    `gatsby-plugin-sitemap`
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        
+        // Exclude specific pages or groups of pages using glob parameters
+        // See: https://github.com/isaacs/minimatch
+        // The example below will exclude the single `path/to/page` and all routes beginning with `category`
+        exclude: [`/politique-de-confidentialite/`, `/home`, `/artistes`, `/expositions`, `/blog`],
+      },
+    },
   ],
 };

@@ -57,7 +57,7 @@ const Footer = () => (
         <FaInstagram />
       </a>
       <a
-        href="https://www.facebook.com/122GalerieVieceli-100220951737216"
+        href="https://www.facebook.com/122-Galerie-Vieceli-112396450530049"
         target="_blanck"
       >
         <FaFacebookF />
