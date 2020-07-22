@@ -42,7 +42,7 @@ const Footer = () => (
       © Galerie Vieceli - 5 rue du Pas de la Mule Place des Vosges 75004 Paris - France 
     </p>
     <p>
-      <Link to="/politique-de-confidentialite" style={styledLink}>
+      <Link to="/fr/politique-de-confidentialite" style={styledLink}>
         <em>
           <small>  Tous
       droits réservés | Mentions Légales</small>
