@@ -11,7 +11,7 @@ module.exports = {
     keywords: `gallerie, art contemporain, sculpteurs, art urbain, urban art`,
     image: "/static/gallerie_icon.png",
     url: "https://122galerievieceli.com",
-    siteUrl: "https://122galerievieceli.com",
+    siteUrl: `https://122galerievieceli.com`,
   },
   plugins: [
     {
@@ -181,11 +181,24 @@ module.exports = {
     {
       resolve: `gatsby-plugin-sitemap`,
       options: {
-        output: `/sitemap-1.xml`,
+        output: `/sitemap.xml`,
         // Exclude specific pages or groups of pages using glob parameters
         // See: https://github.com/isaacs/minimatch
         // The example below will exclude the single `path/to/page` and all routes beginning with `category`
-        exclude: [`/politique-de-confidentialite/`, `/home`, `/artistes`, `/expositions`, `/blog`],
+        exclude: [
+          `/politique-de-confidentialite`,
+          `/fr/politique-de-confidentialite`,
+          `/home`,
+          `/contact`,
+          `/success`,
+          `/fr/404`,
+          `/fr/success`,
+          `/artistes`,
+          `/artiste`,
+          `/artiste/*`,
+          `/expositions`,
+          `/blog`,`/blog/*`,
+        ],
       },
     },
   ],
