@@ -82,7 +82,7 @@ class artiste extends React.Component {
       <GLayout>
         <Wrap>
           <SEO
-            title= { pageContext.title + " | " + pageContext.acf.rubrique}
+            title= { pageContext.title}
             description={pageContext.content}
           />
 
@@ -100,8 +100,9 @@ class artiste extends React.Component {
                 </h2>
               </HeadlineCenter>
               <Rubrique>
-            
-               { title_ok(pageContext.acf.rubrique)}
+          
+               { (pageContext.acf.rubrique) == "Urban art" ? "Street Art" : "Pop Art"}
+               {console.log(pageContext.acf.rubrique)}
               </Rubrique>
             </Col>
           </Row>

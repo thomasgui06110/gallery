@@ -169,7 +169,7 @@ const ArtistsUrban = () => {
               <StyledFlexBox>
                 <StyledFlexBoxArtist className="cadre">
                   <StyledImg className="photo">
-                    <Link to={`/artiste/urbanart/${ArtistsItem.node.slug}`}>
+                    <Link to={`/artiste/street-art/${ArtistsItem.node.slug}`}>
                       <Img
                         fluid={
                           ArtistsItem.node.featured_media.localFile

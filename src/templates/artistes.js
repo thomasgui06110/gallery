@@ -32,7 +32,8 @@ const artistes = ({ pageContext, intl }) => {
         <Col className="text-center" mt="0" md="12">
           <Title mb="0">
             <HeadlineCenter className="display-4">
-              {intl.formatMessage({ id: "urbanart" })}
+              {intl.formatMessage({ id: "Street Art" })}
+              
             </HeadlineCenter>
           </Title>
         </Col>
@@ -45,7 +46,7 @@ const artistes = ({ pageContext, intl }) => {
         <Col className="text-center" mt="0" md="12">
           <Title mb="0">
             <HeadlineCenter className="display-4">
-              {intl.formatMessage({ id: "popart" })}
+              {intl.formatMessage({ id: "pop art" })}
             </HeadlineCenter>
           </Title>
         </Col>

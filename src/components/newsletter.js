@@ -89,7 +89,7 @@ const Newsletter = () => {
         <label htmlFor='name' style={{display: 'none'}} for="name">name</label>
         <Input type="text" placeholder="Name / Nom" name="Nom" />
         <label for="email" htmlFor="mail" style={{display: 'none'}}>mail</label>
-        <Input  type="mail" placeholder="Mail" name="Mail" />
+        <Input  require type="mail" placeholder="Mail" name="Mail" />
 
         <Button type="submit"> {intl.formatMessage({ id: "aboButton" })}</Button>
       </form>
