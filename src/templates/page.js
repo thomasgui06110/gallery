@@ -41,7 +41,7 @@ const ImgHover = styled.div`
   border: 6px solid white;
   border-radius: 10px;
   width: 100%;
-  height: 100%;
+  /* height: 100%; */
   margin-bottom: 5px;
   box-shadow: 2rem 1rem 30px -5px rgba(0, 0, 0, 0.3);
   &:hover {
