@@ -101,8 +101,8 @@ class artiste extends React.Component {
               </HeadlineCenter>
               <Rubrique>
           
-               { (pageContext.acf.rubrique) == "Urban art" ? "Street Art" : "Pop Art"}
-               {console.log(pageContext.acf.rubrique)}
+               { (pageContext.acf.rubrique) === "Urban art" ? "Street Art" : "Pop Art"}
+               
               </Rubrique>
             </Col>
           </Row>

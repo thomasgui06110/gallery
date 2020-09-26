@@ -127,7 +127,7 @@ const ArtistsUrban = () => {
     <StaticQuery
       query={graphql`
         {
-          allWordpressWpPortfolio(sort: { fields: acf___ordre, order: ASC },filter: {acf: {rubrique: {eq: "Urban art"}}}) {
+          allWordpressWpPortfolio(sort: { fields: acf___ordre, order: ASC },filter: {acf: {rubrique: {eq: "Street art"}}}) {
             edges {
               node {
                 excerpt

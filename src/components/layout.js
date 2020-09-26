@@ -46,7 +46,8 @@ const GLayout = ({ children, title, description }) => {
 
   return (
     <>
-      <SEO title={title} description={description} />
+       <SEO title={title} description={description} />
+      
       <Header />
       <ContainerFluid>
         <Space>
