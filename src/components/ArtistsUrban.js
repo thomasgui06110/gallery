@@ -184,7 +184,7 @@ const ArtistsUrban = () => {
                 <StyledTexte className="texte">
                     <StyledH2>
                       <Link
-                       to={`/artiste/urbanart/${ArtistsItem.node.slug}`}
+                       to={`/artiste/streetart/${ArtistsItem.node.slug}`}
                         style={linkStyles}
                       >
                     
@@ -197,7 +197,7 @@ const ArtistsUrban = () => {
                     </StyledH2>
                     <StyledH3>
                       <Link
-                        to={`/artiste/urbanart/${ArtistsItem.node.slug}`}
+                        to={`/artiste/streetart/${ArtistsItem.node.slug}`}
                         style={linkStyles}
                       >
                         {ArtistsItem.node.acf.Type_d_artiste.map((type) => (
