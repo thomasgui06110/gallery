@@ -118,6 +118,13 @@ const MainMenu = ({ intl }) => {
                     {item.title}
                   </MenuItems>
                 ))}
+                <MenuItems
+                  to="/Instagram"
+                  className="menu"
+                  activeStyle={activeStyles}
+                >
+                  Instagram
+                </MenuItems>
                 <Contact
                   to="/contact"
                   className="mb-0 mt-0 pt-2 pb-2 pr-4 pl-4"

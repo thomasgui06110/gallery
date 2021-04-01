@@ -14,7 +14,7 @@ const ArtistsItems = () => {
     <>
     <h2>Pop art</h2>
     <ArtistsPop />
-    <h2>Urban art</h2>
+    <h2>Street Art</h2>
     <ArtistsUrban />
     </>
   )
