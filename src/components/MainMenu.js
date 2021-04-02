@@ -70,10 +70,10 @@ const activeStyles = {
   border: "white",
   color: "#707B7C",
 };
-let men = 1;
+let men = 0;
 const MainMenu = ({ intl }) => {
   intl.formatMessage({ id: "title" }) !== "Gatsby English"
-    ? (men = 1)
+    ? (men = 0)
     : (men = 2);
 
   return (
