@@ -43,13 +43,22 @@ letter-spacing:0.5rem;
   }
 
 `
+const Titlelogo1 = styled.div`
+  width: 550px;
+  text-align:center;
+  margin: 0 auto 0 auto;
+ @media (max-width: 995px) {
+   width: 95%;
+  }
+
+`
 
 const Header = ({ siteTitle }) => (
   <HeaderMain>
     <TopLogo>
     
-      <Titlelogo>
-      <img src={logo} alt="122 galerie vieceli" /></Titlelogo>
+      <Titlelogo1>
+      <img width="100%" src={logo} alt="122 galerie vieceli" /></Titlelogo1>
     </TopLogo>
   
       <MainMenu />
