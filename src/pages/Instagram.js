@@ -1,5 +1,5 @@
 import React from "react";
-//import SEO from "../components/SEO";
+import SEO from "../components/SEO";
 import Layout from "../components/layout"
 import styled from "styled-components";
 
@@ -11,11 +11,14 @@ const H1 = styled.h1`
 
 const Insragram = () => (
   <Layout>
-
+ <SEO
+          title="Nos publications Instagram"
+          description="Retrouvez nos publications Instagram"
+        />
     <H1>Instagram</H1>
     
     <script src="https://apps.elfsight.com/p/platform.js" defer></script>
-        <div className="elfsight-app-18195354-3936-4960-b939-d0e171950e02"></div>
+    <div class="elfsight-app-a6bb62f3-9da3-4df0-98a8-b8192507bb2b"></div> 
   </Layout>
 )
 
