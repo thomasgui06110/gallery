@@ -1,5 +1,5 @@
 import React from "react";
-import SEO from "../components/SEO";
+//import SEO from "../components/SEO";
 import Layout from "../components/layout"
 import styled from "styled-components";
 
@@ -9,7 +9,7 @@ const H1 = styled.h1`
   text-align:center;
 `;
 
-const NotFoundPage = () => (
+const Insragram = () => (
   <Layout>
 
     <H1>Instagram</H1>
@@ -19,4 +19,4 @@ const NotFoundPage = () => (
   </Layout>
 )
 
-export default NotFoundPage
+export default Insragram
