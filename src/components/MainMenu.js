@@ -74,7 +74,7 @@ let men = 0;
 const MainMenu = ({ intl }) => {
   intl.formatMessage({ id: "title" }) !== "Gatsby English"
     ? (men = 0)
-    : (men = 2);
+    : (men = 1);
 
   return (
     <StaticQuery
