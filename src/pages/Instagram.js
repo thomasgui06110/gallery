@@ -21,5 +21,4 @@ const Insragram = () => (
     <div class="elfsight-app-a6bb62f3-9da3-4df0-98a8-b8192507bb2b"></div> 
   </Layout>
 )
-
 export default Insragram
