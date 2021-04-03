@@ -119,7 +119,7 @@ const MainMenu = ({ intl }) => {
                   </MenuItems>
                 ))}
                 <MenuItems
-                  to="/Instagram"
+                  to="/instagram"
                   className="menu"
                   activeStyle={activeStyles}
                 >

@@ -32,7 +32,7 @@ const TopLogo = styled.div`
     margin-left:20px;
   }
 `;
-const Titlelogo = styled.h1`
+/*const Titlelogo = styled.h1`
 
 text-align: center;
 color:white;
@@ -42,7 +42,7 @@ letter-spacing:0.5rem;
    font-size: 1.8rem;
   }
 
-`
+`*/
 const Titlelogo1 = styled.div`
   width: 550px;
   text-align:center;
