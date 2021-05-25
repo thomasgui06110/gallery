@@ -112,7 +112,7 @@ const MainMenu = ({ intl }) => {
                     className="menu"
                     variant="bold"
                     activeStyle={activeStyles}
-                    to={"/" + item.url}
+                    to={item.url}
                     key={item.object_id}
                   >
                     {item.title}
