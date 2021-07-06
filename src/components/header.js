@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import React from "react";
 import MainMenu from "./MainMenu";
-import logo from "../img/Vieceli122.jpg"
+import logo from "../img/Vieceli_122.jpg";
 import styled from "styled-components";
 // import Sticky from "react-stickynode";
 
